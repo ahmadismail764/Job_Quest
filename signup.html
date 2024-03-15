@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="author" content="Ahmad Ismail" />
-		<meta name="description" content="The signup page for Job Quest" />
-		<link rel="stylesheet" href="styles/signup.css" />
-		<script src="scripts/signup.js"></script>
-		<title>Job Quest-Sign Up</title>
-	</head>
-	<body>
-		<h1>Welcome to Job Quest</h1>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Quest</title>
+</head>
+<body>
+    <header>
+        <a href="" class = "logo"> Job Quest</a>
+        <nav>
+            contact us
+            <a href="#" target="_blank">Facebooke</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twiter</a>
+        </nav>
+    </header>
+    <section>
+        <h3>Sign Up</h3>
+        <div class="login">
+            <form >
+                
+                <input type="radio" name="type_job" value="user" checked >
+                <label for="user">User</label>
+                <br>
+                <input type="radio" name="type_job" value="admin" >
+                <label for="admin">Company Admin</label>
+                <br>
+
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+                <br>
+
+                <label for="password">Password</label>
+                <input type="password" id = "password" required>
+                <br>
+
+                <label for="comfirm_password">Comfirm Password</label>
+                <input type="password" id = "comfirm_password" required>
+                <br>
+
+                <label for="email">Email</label>
+                <input type="email" id = "email" required>
+                <br>
+
+                <label for="company_name">Company Name</label>
+                <input type="text" id = "company_name" required>
+                <br>
+                <a href="file:///C:/html_project/Job_Quest/login.html">Go To Login</a>
+                <br>
+
+                <input type="submit" value="Login"> 
+
+            </form>
+        </div>
+        
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>
