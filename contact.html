@@ -1,15 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="author" content="Ahmad Ismail" />
-		<meta name="description" content="The admin dashboard for Job Quest" />
-		<link rel="stylesheet" href="styles/contact.css" />
-		<script src="scripts/contact.js"></script>
-		<title>Job Quest-Dashboard</title>
-	</head>
-	<body>
-		<h1>Contact Us</h1>
-		<form action="https://httpbin.org"></form>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Belal Ahemd" />
+    <meta name="description" content="Contact Page" />
+    <link rel="stylesheet" href="styles/contact.css" />
+    <script src="scripts/contact.js"></script>
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <header><h1>Contact Us</h1></header>
+    <main>
+      <article id="get in touch">
+        <h2>Get in Touch</h2>
+        <p>
+          Having a question or a comment ? feel free to contact us! <br />
+          Fill the form down below and we will reply as soon as possible
+        </p>
+        <form action="https://httpbin.org/post" method="post">
+          <fieldset>
+            <legend>Contact Us</legend>
+            <p>
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                required
+                autocomplete="on"
+                minlength="8"
+                autofocus
+              />
+            </p>
+            <p>
+              <label for="email"
+                >Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@mail.com"
+                requiredautocomplete="on"
+                required
+              />
+            </p>
+            <p>
+              <label for="message">Your message</label>
+              <br />
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Type your message here."
+              ></textarea>
+            </p>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </article>
+      <article id="reach us">
+        <h2>Reach Us</h2>
+        <p>Email: admin@jobquest.com</p>
+        <p>Phone: <a href="tel:+41 43 222 7272">+41 43 222 7272</a></p>
+        <address>10 Main Street, Giza, Egypt. Postal Code: 3387722</address>
+      </article>
+      <hr />
+      <article id="Social ">
+        <h2>Social</h2>
+        <ul>
+          <li>
+            <a href="https://web.facebook.com/" target="_blank">Facebook</a>
+          </li>
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li>
+            <a href="https://www.linkedin.com/" target="_blank">Linkedin</a>
+          </li>
+        </ul>
+      </article>
+      <hr />
+    </main>
+  </body>
 </html>
