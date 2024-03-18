@@ -2,13 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="author" content="Ahmad Ismail" />
+		<meta name="author" content="Mohamed Zidan" />
 		<meta name="description" content="The job search page for Job Quest" />
 		<link rel="stylesheet" href="styles/jobsearch.css" />
 		<script src="scripts/jobsearch.js"></script>
 		<title>Job Quest-Search</title>
 	</head>
 	<body>
-		<h1>Welcome to Job Quest</h1>
+		<form action="/search" method="get">
+			<input type="text" name="keywords" placeholder="Search for a Job...">
+			<button type="submit">Search</button>
+	</form>
 	</body>
 </html>
