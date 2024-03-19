@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Job Quest</title>
-	</head>
-	<body>
-		<header>
-			<a href="" class="logo"> Job Quest</a>
-		</header>
-		<main>
-			<h3>Sign Up</h3>
-			<div class="login">
-				<form>
-					<input type="radio" name="type_job" value="user" checked />
-					<label for="user">User</label>
-					<br />
-					<input type="radio" name="type_job" value="admin" />
-					<label for="admin">Company Admin</label>
-					<br />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Quest</title>
+  </head>
+  <body>
+    <header>
+      <p>
+        <img src="Images/logo.jpeg" alt="Siteloge" , height="20" , width="20" />
+        <a href="homepage.html"> Job Quest</a>
+      </p>
+	  <hr>
+      <nav>
+        <a href="homepage.html">Homepage</a>&nbsp;
+        <a href="admindashboard.html">Dashboard</a> &nbsp;
+        <a href="joblisting.html">Job listing</a>&nbsp;
+        <a href="jobpost.html">Jobpost</a>&nbsp;
+        <a href="jobsearch.html">Search</a>&nbsp;
+        <a href="contact.html">Contact Us</a> &nbsp;
+      </nav>
+	  <hr>
+    </header>
+    <main>
+      <h3>Sign Up</h3>
+      <div class="login">
+        <form>
+          <input type="radio" name="type_job" value="user" checked />
+          <label for="user">User</label>
+          <br />
+          <input type="radio" name="type_job" value="admin" />
+          <label for="admin">Company Admin</label>
+          <br />
 
-					<label for="username">Username</label>
-					<input type="text" id="username" required />
-					<br />
+          <label for="username">Username</label>
+          <input type="text" id="username" required />
+          <br />
 
-					<label for="password">Password</label>
-					<input type="password" id="password" required />
-					<br />
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+          <br />
 
-					<label for="comfirm_password">Comfirm Password</label>
-					<input type="password" id="comfirm_password" required />
-					<br />
+          <label for="comfirm_password">Comfirm Password</label>
+          <input type="password" id="comfirm_password" required />
+          <br />
 
-					<label for="email">Email</label>
-					<input type="email" id="email" required />
-					<br />
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+          <br />
 
-					<label for="company_name">Company Name</label>
-					<input type="text" id="company_name" required />
-					<br />
-					<a href="login.html">Go To Login</a>
-					<br />
-					<input type="submit" value="Login" />
-				</form>
-			</div>
-		</main>
-		<footer>
-			<h3><a href="contact.html">Contact Us</a></h3>
-			<nav>
-				<ul>
-					Check out our socials
-					<li><a href="#" target="_blank">Facebook</a></li>
-					<li><a href="#" target="_blank">Instagram</a></li>
-					<li><a href="#" target="_blank">Twitter</a></li>
-				</ul>
-			</nav>
-			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
-		</footer>
-	</body>
+          <label for="company_name">Company Name</label>
+          <input type="text" id="company_name" required />
+          <br />
+          <input type="submit" value="Sign Up" />
+          <br />
+          <br />
+          <a href="login.html">Go to Login</a>
+        </form>
+      </div>
+    </main>
+    <hr />
+    <footer>
+      <h3><a href="contact.html">Contact Us</a></h3>
+      <nav>
+        <ul>
+          Check out our socials
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>
