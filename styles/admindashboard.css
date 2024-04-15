@@ -3,8 +3,11 @@
 :root {
 	--PAD: 1.25rem;
 	--SM-PAD: 0.75rem;
-	--BGCOLOR1: lightgray;
-	--BGCOLOR2: navy;
+	--LGT-GRAY: #eaebfe;
+	--BIT-DARK: #b0b8ce;
+	--GO-TO-BLUE: #505a74;
+	--GOOD-BLUE: #354c7c;
+	--FIN-BLUE: #022954;
 }
 * {
 	box-sizing: border-box;
@@ -12,47 +15,39 @@
 }
 
 body {
-	background-color: var(--BGCOLOR1);
+	background-color: var(--LGT-GRAY);
 }
 /* PRE-STYLES */
 
 header {
-	position: sticky;
-	max-width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 4fr 1fr;
-	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 	align-items: center;
-	height: 125px;
+	background-color: var(--GOOD-BLUE);
+	height: 15vh;
+	overflow: auto;
 }
 
-.header1,
-.header2 {
-	display: grid;
-	grid-template-rows: auto;
-	justify-content: center;
-}
-
-.header2 .profile {
-	grid-row: 1;
-}
-
-.header2 p {
-	grid-row: 2;
-	padding: auto 2px;
-	margin: 0;
-	text-align: center;
+.header1 img,
+.header2 img {
+	margin-right: auto;
 }
 
 .header2 button {
-	grid-row: 3; /* Place the button in the third row */
+	margin-left: auto;
+}
+.header1,
+.header2,
+.above {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	border: 2px solid black;
+	padding: 2rem;
 }
 .above {
-	display: flex; /* Use flexbox */
-	justify-content: center; /* Center content horizontally */
-	align-items: center; /* Center content vertically */
 	height: 100%;
-	gap: var(--PAD);
 }
 
 img {
@@ -85,7 +80,15 @@ a:any-link {
 }
 a:hover,
 a:focus {
-	color: rgba(0, 0, 215, 0.8);
+	color: #eaebfe;
+}
+
+main a:any-link {
+	color: var(--FIN-BLUE);
+}
+main a:hover,
+main a:focus {
+	color: var(--GO-TO-BLUE);
 }
 
 .suggestions {
@@ -114,7 +117,7 @@ dl {
 }
 
 footer {
-	background-color: rgb(70, 70, 70);
+	background-color: #354c7c;
 	margin: 0;
 }
 
