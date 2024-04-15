@@ -9,13 +9,19 @@
 		<title>Admin-Dashboard</title>
 	</head>
 	<body>
-		<header>
-			<p>
-				<img src="Images/logo.jpeg" alt="Sitelogo" , height="20" , width="20" />
-				<a href="homepage.html"> Job Quest</a>
-			</p>
-			<hr />
-			<nav>
+		<header class="el">
+			<section class="header1">
+				<img
+					class="logo"
+					src="img/logo.jpg"
+					alt="Sitelogo"
+					height="100"
+					width="100" />
+				<p>
+					<a href="homepage.html"> Job Quest</a>
+				</p>
+			</section>
+			<nav class="above">
 				<a href="homepage.html">Homepage</a>&nbsp;
 				<a href="admindashboard.html">Dashboard</a> &nbsp;
 				<a href="joblisting.html">Job listing</a>&nbsp;
@@ -23,24 +29,30 @@
 				<a href="jobsearch.html">Search</a>&nbsp;
 				<a href="contact.html">Contact Us</a> &nbsp;
 			</nav>
-			<hr />
-			<article id="main">
-				<img src="profile.jpeg" alt="Insert Profile Pic here" />
+			<section class="header2">
+				<img
+					class="profile"
+					src="img/profile.png"
+					alt="Insert Profile Pic here"
+					height="70"
+					width="70" />
 				<p>Admin1</p>
-				<input type="button" name="addinfo" value="Add info" />
-				<aside>
-					<ul>
-						What do you want to do?
-						<li><a href="joblisting.html">Check out job listings</a></li>
-						<li><a href="jobsearch.html">Look up a certain job</a></li>
-						<li><a href="jobpost.html">Post a new job</a></li>
-						<li><a href="login.html">Log Out</a></li>
-					</ul>
-				</aside>
-			</article>
+				<button name="addinfo">Add info</button>
+			</section>
 		</header>
+
 		<hr />
-		<main>
+		<aside class="sidebar el">
+			<ul>
+				<span class="suggestions">What do you want to do?</span>
+				<li><a href="joblisting.html">Check out job listings</a></li>
+				<li><a href="jobsearch.html">Look up a certain job</a></li>
+				<li><a href="jobpost.html">Post a new job</a></li>
+				<li><a href="login.html">Log Out</a></li>
+			</ul>
+		</aside>
+		<hr />
+		<main class="container">
 			<article id="suggest">
 				<h2>Suggested for you</h2>
 				<p>
@@ -48,27 +60,38 @@
 					performance.
 				</p>
 			</article>
+			<hr />
 			<article id="others">
 				<h2>People you may know</h2>
 				<p>
 					Connect with professionals in your industry and expand your network.
 				</p>
 				<dl>
-					<dt><a href="">Adam Johnson</a></dt>
-					<dd>Triple Z-Tech Inc. CEO</dd>
-					<dt><a href="">Alan Jackson</a></dt>
-					<dd>Triple Z-Tech Inc. COO</dd>
-					<dt><a href="">Alina Jackson</a></dt>
-					<dd>Triple Z-Tech Inc. CFO</dd>
-					<dt><a href="">Thomas Harrison</a></dt>
-					<dd>Freelance Programmer at Innova Tech</dd>
+					<div class="pair">
+						<dt><a href="">Adam Johnson</a></dt>
+						<dd>Triple Z-Tech Inc. CEO</dd>
+					</div>
+					<div class="pair">
+						<dt><a href="">Alan Jackson</a></dt>
+						<dd>Triple Z-Tech Inc. COO</dd>
+					</div>
+					<div class="pair">
+						<dt><a href="">Alina Jackson</a></dt>
+						<dd>Triple Z-Tech Inc. CFO</dd>
+					</div>
+					<div class="pair">
+						<dt><a href="">Thomas Harrison</a></dt>
+						<dd>Freelance Programmer at Innova Tech</dd>
+					</div>
 				</dl>
 			</article>
+			<hr />
 			<article id="about-comp">
 				<h2>About your company</h2>
 				<p>Learn more about your company's mission, vision, and values.</p>
 				<button>Edit</button>
 			</article>
+			<hr />
 			<article id="history">
 				<h2>Company History</h2>
 				<p>
@@ -76,6 +99,7 @@
 					development.
 				</p>
 			</article>
+			<hr />
 			<article id="analytics">
 				<h2>Company Analytics</h2>
 				<p>
@@ -83,11 +107,13 @@
 					performance.
 				</p>
 			</article>
+			<hr />
 			<article id="certs">
 				<h2>Awards & Certs</h2>
 				<p>See the awards and certifications your company has achieved.</p>
 				<button>Add Award</button> <button>Add Certificate</button>
 			</article>
+			<hr />
 			<article id="partners">
 				<h2>Partners</h2>
 				<p>
@@ -97,11 +123,11 @@
 			</article>
 		</main>
 		<hr />
-		<footer>
+		<footer class="footer el">
 			<h3><a href="contact.html">Contact Us</a></h3>
-			<nav>
+			<nav class="below">
 				<ul>
-					Check out our socials
+					<span class="suggestions">Check out our socials</span>
 					<li><a href="#" target="_blank">Facebook</a></li>
 					<li><a href="#" target="_blank">Instagram</a></li>
 					<li><a href="#" target="_blank">Twitter</a></li>
