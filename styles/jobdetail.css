@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+/* PRE-STYLES */
+:root {
+  --PAD: 1.25rem;
+  --SM-PAD: 0.75rem;
+  --LGT-GRAY: #eaebfe;
+  --BIT-DARK: #b0b8ce;
+  --GO-TO-BLUE: #505a74;
+  --GOOD-BLUE: #354c7c;
+  --FIN-BLUE: #022954;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+/* PRE-STYLES */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--LGT-GRAY);
+}
+
+/* Header Styling */
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
+  padding: 20px;
+}
+
+header figure img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header figcaption a {
+  color: var(--LGT-GRAY);
+  text-decoration: none;
+  font-size: 24px;
+}
+
+header nav a {
+  color: var(--LGT-GRAY);
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.header1,
+.header2,
+.above {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+}
+
+.header1 {
+  margin-left: 25px;
+}
+.header2 {
+  margin-right: 25px;
+}
+
+.above {
+  height: 100%;
+}
+
+/* Main Styling */
+main {
+  padding: 20px;
+}
+
+#job_details {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.detail h3,
+strong,
+#title {
+  color: #354c7c;
+  margin-top: 0;
+  margin-bottom: 20;
+}
+
+.detail p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.detail ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.detail ul li {
+  margin-bottom: 10px;
+}
+
+.apply-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.apply-button {
+  background-color: #354c7c;
+  color: #eaebfe;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+  background-color: #1e2932;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #354c7c;
+  color: #eaebfe;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #eaebfe;
+  text-decoration: none;
+}
+
+footer nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
