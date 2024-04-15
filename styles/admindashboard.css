@@ -26,7 +26,6 @@ header {
 	align-items: center;
 	background-color: var(--GOOD-BLUE);
 	height: 15vh;
-	overflow: auto;
 }
 
 .header1 img,
