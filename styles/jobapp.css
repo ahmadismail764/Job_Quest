@@ -123,6 +123,7 @@ input[type="submit"] {
   font-size: 18px;
   transition: background-color 0.3s;
   cursor: pointer;
+  border: 0px;
 }
 
 input[type="submit"]:hover {
