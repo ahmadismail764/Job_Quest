@@ -41,7 +41,7 @@ header figure img {
 	object-fit: cover;
 }
 
-header figcaption a {
+header a {
 	color: var(--LGT-GRAY);
 	text-decoration: none;
 	font-size: 24px;
@@ -78,15 +78,16 @@ header nav a {
 /* Header Styling */
 
 /* Main Styling */
+
 main {
-	padding: var(--PAD);
+	padding: 20px;
 }
 
 #dashboard {
 	background-color: #fff;
 	padding: 30px;
 	border-radius: 10px;
-	box-shadow: 0 0 var(--PAD) rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 main a:any-link {
@@ -117,7 +118,7 @@ button:hover {
 
 .suggestions {
 	font-style: italic;
-	font-size: var(--PAD);
+	font-size: 1.25rem;
 }
 
 dl {
@@ -139,7 +140,7 @@ dl {
 .pair dd {
 	margin: 0;
 }
-/* Main Styling */
+/* Main */
 
 /* Footer Styling */
 footer {
