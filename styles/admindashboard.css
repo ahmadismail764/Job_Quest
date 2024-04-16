@@ -1,76 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 /* PRE-STYLES */
 :root {
-	--PAD: 1.25rem;
-	--SM-PAD: 0.75rem;
-	--LGT-GRAY: #eaebfe;
-	--BIT-DARK: #b0b8ce;
-	--GO-TO-BLUE: #505a74;
-	--GOOD-BLUE: #354c7c;
-	--FIN-BLUE: #022954;
+  --PAD: 1.25rem;
+  --SM-PAD: 0.75rem;
+  --LGT-GRAY: #eaebfe;
+  --BIT-DARK: #b0b8ce;
+  --GO-TO-BLUE: #505a74;
+  --GOOD-BLUE: #354c7c;
+  --FIN-BLUE: #022954;
 }
 * {
-	box-sizing: border-box;
-	font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 /* PRE-STYLES */
 
 body {
-	margin: 0;
-	padding: 0;
-	background-color: var(--BIT-DARK);
+  margin: 0;
+  padding: 0;
+  background-color: var(--BIT-DARK);
 }
 
 /* Header Styling */
 
 header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	background-color: var(--GOOD-BLUE);
-	color: var(--LGT-GRAY);
-	padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
+  padding: 20px;
 }
 header figure img {
-	height: 75px;
-	width: 75px;
-	border-radius: 50%;
-	object-fit: cover;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 header a {
-	color: var(--LGT-GRAY);
-	text-decoration: none;
-	font-size: 24px;
+  color: var(--LGT-GRAY);
+  text-decoration: none;
+  font-size: 24px;
 }
 
 header nav a {
-	color: var(--LGT-GRAY);
-	text-decoration: none;
-	margin-right: 20px;
-	font-size: 18px;
+  color: var(--LGT-GRAY);
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 18px;
 }
 
 .header1,
 .header2,
 .above {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	margin: auto;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
 }
 
 .header1 {
-	margin-left: 25px;
+  margin-left: 25px;
 }
 .header2 {
-	margin-right: 25px;
+  margin-right: 25px;
 }
 
 .above {
-	height: 100%;
+  height: 100%;
 }
 
 /* Header Styling */
@@ -78,89 +78,95 @@ header nav a {
 /* Main Styling */
 
 main {
-	padding: 20px;
+  padding: 20px;
 }
 
-#dashboard {
-	background-color: #fff;
-	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.dashboard {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 var(--PAD) rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+  color: var(--GOOD-BLUE);
+  margin-top: 0;
+  margin-bottom: 20;
 }
 
 main a:any-link {
-	color: var(--FIN-BLUE);
+  color: var(--FIN-BLUE);
 }
 
 main a:hover,
 main a:focus {
-	color: var(--GO-TO-BLUE);
+  color: var(--GO-TO-BLUE);
 }
 button {
-	background-color: var(--GOOD-BLUE);
-	color: var(--LGT-GRAY);
-	padding: 6px 15px;
-	text-decoration: none;
-	border-radius: 25px;
-	font-size: 10;
-	transition: background-color 0.3s;
-	cursor: pointer;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
+  padding: 6px 15px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 10;
+  transition: background-color 0.3s;
+  cursor: pointer;
 }
 button:hover {
-	background-color: var(--FIN-BLUE);
+  background-color: var(--FIN-BLUE);
 }
 
 #certs button {
-	margin-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .suggestions {
-	font-style: italic;
-	font-size: 1.25rem;
+  font-style: italic;
+  font-size: 1.25rem;
 }
 
 dl {
-	display: flex;
-	flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .pair {
-	display: flex;
-	flex-direction: column;
-	margin-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.5rem;
 }
 
 .pair:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .pair dt,
 .pair dd {
-	margin: 0;
+  margin: 0;
 }
 /* Main */
 
 /* Footer Styling */
 footer {
-	background-color: var(--GOOD-BLUE);
-	color: var(--LGT-GRAY);
-	padding: 20px;
-	text-align: center;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
+  padding: 20px;
+  text-align: center;
 }
 
 footer a {
-	color: var(--LGT-GRAY);
-	text-decoration: none;
+  color: var(--LGT-GRAY);
+  text-decoration: none;
 }
 
 footer nav ul {
-	list-style-type: none;
-	padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 footer nav ul li {
-	display: inline;
-	margin-right: 10px;
+  display: inline;
+  margin-right: 10px;
 }
 
 /* Footer Styling */
