@@ -34,69 +34,67 @@
       </a>
     </header>
     <main>
-      <h1>Contact Us</h1>
-      <article id="get-in-touch">
-        <h2>Get in Touch</h2>
-        <p>
-          Have a question or a comment? Feel free to contact us! <br />
-          Fill the form down below and we will reply as soon as possible
-        </p>
-        <form action="https://httpbin.org/post" method="post">
-          <fieldset>
-            <legend>Contact Us</legend>
-            <p>
-              <label for="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                required
-                autocomplete="on"
-                minlength="8"
-                autofocus
-              />
-            </p>
-            <p>
-              <label for="email"
-                >Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
-              >
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="example@mail.com"
-                autocomplete="on"
-                required
-              />
-            </p>
-            <p>
-              <label for="message">Your message</label>
-              <br />
-              <textarea
-                name="message"
-                id="message"
-                cols="40"
-                rows="10"
-                placeholder="Type your message here."
-              ></textarea>
-            </p>
-            <button type="submit">Submit</button>
-          </fieldset>
-        </form>
+      <article class="contact">
+        <article id="get-in-touch">
+          <h2>Get in Touch</h2>
+          <p>
+            Have a question or a comment? Feel free to contact us! <br />
+            Fill the form down below and we will reply as soon as possible.
+          </p>
+          <form action="https://httpbin.org/post" method="post">
+            <fieldset>
+              <legend>Contact Us</legend>
+              <p>
+                <label for="username">Username:</label> <br />
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  required
+                  autocomplete="on"
+                  minlength="8"
+                  autofocus
+                />
+              </p>
+              <p>
+                <label for="email">Email: </label><br />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@mail.com"
+                  autocomplete="on"
+                  required
+                />
+              </p>
+              <p>
+                <label for="message">Your message:</label>
+                <br />
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="40"
+                  rows="10"
+                  placeholder="Type your message here."
+                ></textarea>
+              </p>
+              <button type="submit">Submit</button>
+            </fieldset>
+          </form>
+        </article>
+        <article id="reach-us">
+          <h2>Reach Us</h2>
+          <p>Email: admin@jobquest.com</p>
+          <p>Phone: <a href="tel:+41 43 222 7272">+41 43 222 7272</a></p>
+          <address>10 Main Street, Giza, Egypt. Postal Code: 3387722</address>
+        </article>
       </article>
-      <article id="reach-us">
-        <h2>Reach Us</h2>
-        <p>Email: admin@jobquest.com</p>
-        <p>Phone: <a href="tel:+41 43 222 7272">+41 43 222 7272</a></p>
-        <address>10 Main Street, Giza, Egypt. Postal Code: 3387722</address>
-      </article>
-      <hr />
     </main>
     <footer>
       <h3><a href="contact.html">Contact Us</a></h3>
       <nav>
         <ul>
-          Check out our socials
+          <p>Check out our socials</p>
           <li><a href="#" target="_blank">Facebook</a></li>
           <li><a href="#" target="_blank">Instagram</a></li>
           <li><a href="#" target="_blank">Twitter</a></li>
