@@ -19,7 +19,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--LGT-GRAY);
+  background-color: var(--BIT-DARK);
 }
 
 /* Header Styling */
@@ -97,8 +97,8 @@ main a:focus {
   color: var(--GO-TO-BLUE);
 }
 button {
-  background-color: #354c7c;
-  color: #eaebfe;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
   padding: 6px 15px;
   text-decoration: none;
   border-radius: 25px;
@@ -107,7 +107,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #1e2932;
+  background-color: var(--FIN-BLUE);
 }
 
 #certs button {
@@ -141,14 +141,14 @@ dl {
 
 /* Footer Styling */
 footer {
-  background-color: #354c7c;
-  color: #eaebfe;
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
   padding: 20px;
   text-align: center;
 }
 
 footer a {
-  color: #eaebfe;
+  color: var(--LGT-GRAY);
   text-decoration: none;
 }
 

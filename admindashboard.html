@@ -9,13 +9,11 @@
 		<title>Admin-Dashboard</title>
 	</head>
 	<body>
-		<header class="el">
-			<article class="header1">
-				<img class="logo" src="img/logo.jpg" alt="Sitelogo" />
-				<p>
-					<a href="homepage.html"> Job Quest</a>
-				</p>
-			</article>
+		<header>
+			<figure class="header1">
+				<a href="homepage.html"><img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" /></a></figcaption>
+        <figcaption><a href="homepage.html">Job Quest</a></figcaption>
+      </figure>
 			<article class="above">
 				<nav>
 					<a href="homepage.html">Homepage</a>&nbsp;
@@ -25,27 +23,17 @@
 					<a href="jobsearch.html">Search</a>&nbsp;
 				</nav>
 			</article>
-			<article class="header2">
-				<img
-					class="profile"
-					src="img/profile.png"
-					alt="Insert Profile Pic here" />
-				<p>Admin1</p>
-				<button name="addinfo">Add info</button>
-			</article>
+			<figure class="header2">
+				<a id="add-info" href=""><img src="img/profile.png" alt="Insert Profile Pic here" /></a>
+        <figcaption>
+          <a id="add-info" href="">Admin Name</a>
+        </figcaption>
+      </figure>
 		</header>
-		<aside class="sidebar el">
-			<ul>
-				<span class="suggestions">What do you want to do?</span>
-				<li><a href="joblisting.html">Check out job listings</a></li>
-				<li><a href="jobsearch.html">Look up a certain job</a></li>
-				<li><a href="jobpost.html">Post a new job</a></li>
-				<li><a href="login.html">Log Out</a></li>
-			</ul>
-		</aside>
 		<hr />
-		<main class="container">
-			<article id="suggest">
+		<main>
+			<article id="dashboard">
+				<article id="suggest">
 				<h2>Suggested for you</h2>
 				<p>
 					Discover personalized suggestsions for improving your company's
@@ -113,19 +101,20 @@
 					success.
 				</p>
 			</article>
+			</article>
 		</main>
 		<hr />
-		<footer class="footer el">
-			<h3><a href="contact.html">Contact Us</a></h3>
-			<nav class="below">
-				<ul>
-					<span class="suggestions">Check out our socials</span>
-					<li><a href="#" target="_blank">Facebook</a></li>
-					<li><a href="#" target="_blank">Instagram</a></li>
-					<li><a href="#" target="_blank">Twitter</a></li>
-				</ul>
-			</nav>
-			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
-		</footer>
+		<footer>
+      <h3><a href="contact.html">Contact Us</a></h3>
+      <nav>
+        <ul>
+          Check out our socials
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+    </footer>
 	</body>
 </html>
