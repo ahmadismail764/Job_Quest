@@ -95,7 +95,7 @@ main {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-fieldset{
+fieldset {
   border-color: var(--FIN-BLUE);
 }
 
@@ -103,13 +103,15 @@ form p {
   margin-bottom: 20px;
 }
 
-label, legend {
+label,
+legend {
   font-weight: bold;
   color: var(--GOOD-BLUE);
 }
 
-textarea, button{
-  font:inherit;
+textarea,
+button {
+  font: inherit;
   resize: initial;
 }
 
@@ -130,8 +132,15 @@ footer a {
 footer nav ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
+footer h3 {
+  margin: 5px 0;
+}
+footer div{
+  margin-bottom: 5px;
+}
 footer nav ul li {
   display: inline;
   margin-right: 10px;
