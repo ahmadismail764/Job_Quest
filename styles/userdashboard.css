@@ -87,9 +87,9 @@ main {
 }
 
 .dashboard h2 {
-  color: var(--GOOD-BLUE);
-  margin-top: 0;
-  margin-bottom: 20;
+	color: var(--GOOD-BLUE);
+	margin-top: 0;
+	margin-bottom: 20;
 }
 
 main a:any-link {
