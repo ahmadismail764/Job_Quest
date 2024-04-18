@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-
 /* PRE-STYLES */
 :root {
 	--PAD: 1.25rem;
@@ -16,16 +15,14 @@
 	font-family: "Nunito", sans-serif;
 }
 
-/* PRE-STYLES */
-
 body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--BIT-DARK);
 }
+/* PRE-STYLES */
 
 /* Header Styling */
-
 header {
 	display: flex;
 	flex-direction: row;
@@ -77,11 +74,9 @@ header nav a {
 .above {
 	height: 100%;
 }
-
 /* Header Styling */
 
 /* Main Styling */
-
 main {
 	padding: 20px;
 }
@@ -151,8 +146,7 @@ dl {
 .pair dd {
 	margin: 0;
 }
-
-/* Main */
+/* Main Styling*/
 
 /* Footer Styling */
 footer {
@@ -185,5 +179,4 @@ footer nav ul li {
 	display: inline;
 	margin-right: 10px;
 }
-
 /* Footer Styling */
