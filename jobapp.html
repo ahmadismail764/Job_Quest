@@ -12,32 +12,31 @@
   <body>
     <header>
       <a href="homepage.html">
-				<figure class="header1">
-					<img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
-					<figcaption>Job Quest</figcaption>
-				</figure>
-			</a>
+        <figure class="header1">
+          <img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
+          <figcaption>Job Quest</figcaption>
+        </figure>
+      </a>
       <article class="above">
         <nav>
-				<a href="homepage.html">Homepage</a>&nbsp;
-				<a href="admindashboard.html">Dashboard</a> &nbsp;
-				<a href="joblisting.html">Job listing</a>&nbsp;
-				<a href="jobsearch.html">Search</a>&nbsp;
-			</nav>
+          <a href="homepage.html">Homepage</a>&nbsp;
+          <a href="admindashboard.html">Dashboard</a> &nbsp;
+          <a href="joblisting.html">Job listing</a>&nbsp;
+          <a href="jobsearch.html">Search</a>&nbsp;
+        </nav>
       </article>
-			<a href="" id="add-info">
-				<figure class="header2">
-					<img src="img/profile.png" alt="Insert Profile Pic here" />
-					<figcaption>User Name</figcaption>
-				</figure>
-			</a>
+      <a href="" id="add-info">
+        <figure class="header2">
+          <img src="img/profile.png" alt="Insert Profile Pic here" />
+          <figcaption>User Name</figcaption>
+        </figure>
+      </a>
     </header>
-		<hr />
-    </header>
+    <hr />
     <main>
       <div id="job_application_form">
         <form
-          action=""
+          onsubmit="saveApp(event)"
           method="post"
           enctype="multipart/form-data"
           class="form"
@@ -120,7 +119,7 @@
           </div>
 
           <div class="form-group">
-            <input type="submit" value="Submit" /><br />
+            <input type="submit" value="Apply" /><br />
           </div>
         </form>
       </div>
