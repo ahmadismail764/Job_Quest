@@ -79,6 +79,60 @@ header nav a {
 }
 
 /* Main Styling */
+main {
+  padding: 20px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--GOOD-BLUE);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: none;
+}
+
+input[type="file"] {
+  padding: 8px 0;
+}
+
+input[type="submit"] {
+  background-color: var(--GOOD-BLUE);
+  color: var(--LGT-GRAY);
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: 0px;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--FIN-BLUE);
+}
 
 /* Footer Styling */
 footer {
