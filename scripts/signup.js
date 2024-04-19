@@ -8,7 +8,12 @@ function toggleCompanyNameInput() {
       companyNameDiv.style.display = 'none';
     }
   }
-  
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // do not refresh on form submission
+    signUp(); 
+});
+
+
   function signUp() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
@@ -50,7 +55,13 @@ function toggleCompanyNameInput() {
     window.location.href = 'login.html';
     return true;
   }
+
+
   
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // do not refresh on form submission
+    login(); 
+});
 
   function login() {
     var username = document.getElementById('username').value;
