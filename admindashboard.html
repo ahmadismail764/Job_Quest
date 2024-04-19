@@ -7,7 +7,7 @@
 		<meta name="description" content="The admin dashboard for Job Quest" />
 		<link rel="stylesheet" href="styles/admindashboard.css" />
 		<script src="scripts/admindashboard.js"></script>
-		<title>Admin-Dashboard</title>
+		<title>Admin Dashboard</title>
 	</head>
 	<body>
 		<header>
@@ -60,17 +60,20 @@
 						<h2>Posted Jobs</h2>
 						<section class="job">
 							<h3>Job #1</h3>
-							<button>Edit</button><button>Delete</button>
+							<button>Edit</button
+							><button onclick="confirmDelete()">Delete</button>
 						</section>
 						<hr />
 						<section class="job">
 							<h3>Job #2</h3>
-							<button>Edit</button><button>Delete</button>
+							<button>Edit</button
+							><button onclick="confirmDelete.call()">Delete</button>
 						</section>
 						<hr />
 						<section class="job">
 							<h3>Job #3</h3>
-							<button>Edit</button><button>Delete</button>
+							<button>Edit</button
+							><button onclick="confirmDelete.call()">Delete</button>
 						</section>
 						<hr />
 						<a href="jobpost.html"><button>Post New Job</button></a>
