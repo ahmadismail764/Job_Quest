@@ -18,6 +18,8 @@ function savePost(event) {
 	posts.push(postFormData);
 	localStorage.setItem("postedJobs", JSON.stringify(posts));
 
+	
+
 	//Clear form fields after submission
 	document.getElementById("title").value = "";
 	document.getElementById("description").value = "";

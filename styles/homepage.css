@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* PRE-STYLES */
+:root {
+  --PAD: 1.25rem;
+  --SM-PAD: 0.75rem;
+  --LGT-GRAY: #eaebfe;
+  --BIT-DARK: #b0b8ce;
+  --GO-TO-BLUE: #505a74;
+  --GOOD-BLUE: #354c7c;
+  --FIN-BLUE: #022954;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+  }
+  section {
+    padding: 100px 50px;
+  }
+  .main {
+    background: url('../img/home.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 99vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: rgb(7, 7, 78);
+  }
+  h3 {
+    margin: 20px;
+  }
+  h2 {
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #022954;
+
+  }
+  .btn {
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 30px;
+    letter-spacing: 1px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+
+  }
+  section .icons {
+    display: block;
+  }
+  .icons a {
+    color: #022954;
+    font-size: 25px;
+    padding-right: 30px;
+    margin-left: 10px;
+
+  }
+  h4{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #022954;
+  }
+  
+
+  footer {
+    padding-left: 30px;
+  }
