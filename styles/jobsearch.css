@@ -79,7 +79,36 @@ header nav a {
 }
 
 /* Main Styling */
+#SearchBar{
+ text-align: center;
 
+}
+#Search {
+	width: 100px;
+	padding: 10px;
+	border: none;
+	border-radius: 20px;
+  outline: none;
+	background-color: white;
+	transition: width 0.4s ease-in-out;
+}
+
+#Search:focus {
+	width: 300px;
+}
+
+#button {
+	background-color: #88a3bf;
+	color: black;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color 0.4s ease-in-out;
+}
+#button:hover {
+	background-color:#354c7c;
+}
 /* Footer Styling */
 footer {
 	background-color: var(--GOOD-BLUE);
