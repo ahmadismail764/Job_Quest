@@ -34,7 +34,7 @@
 		<hr />
 		<main>
 			<article class="dashboard">
-				<article id="suggest">
+				<article class="inner" id="suggest">
 					<h2>Suggested for you</h2>
 					<p>
 						Explore personalized job recommendations and skill-building
@@ -42,14 +42,14 @@
 					</p>
 				</article>
 				<hr />
-				<article id="others">
+				<article class="inner" id="others">
 					<h2>People you may know</h2>
 					<p>
 						Connect with professionals in your industry and expand your network.
 					</p>
 				</article>
 				<hr />
-				<article id="analytics">
+				<article class="inner" id="analytics">
 					<h2>Your analytics</h2>
 					<p>
 						View statistics and insights about your job search and skill
@@ -57,7 +57,7 @@
 					</p>
 				</article>
 				<hr />
-				<article id="personal-info">
+				<article class="inner" id="personal-info">
 					<article id="about">
 						<h2>About you</h2>
 						<p>
@@ -76,34 +76,53 @@
 					</article>
 				</article>
 				<hr />
-				<article id="experience">
+				<article class="inner" id="experience">
 					<h2>Experience</h2>
 					<p>Explore your work history and past projects</p>
-					<button>Add Experience</button> <button>Add Project</button>
+					<ul class="list-for-addition"></ul>
+					<section class="button-holder">
+						<button>Add Experience</button> <button>Add Project</button>
+					</section>
 				</article>
 				<hr />
-				<article id="edu">
+				<article class="inner" id="edu">
 					<h2>Education</h2>
 					<p>View your educational background and qualifications.</p>
-					<button>Add Education</button>
+					<ul class="list-for-addition"></ul>
+					<section class="button-holder">
+						<button>Add Education</button>
+					</section>
 				</article>
 				<hr />
-				<article id="certs">
+				<article class="inner" id="certs">
 					<h2>Licenses & Certs</h2>
 					<p>See your professional certifications and licenses.</p>
-					<button>Add License</button>
+					<section id="licandcert">
+						<ul id="license-list"></ul>
+						<hr />
+						<ul id="cert-list"></ul>
+					</section>
+					<section class="button-holder">
+						<button>Add License</button> <button>Add Certification</button>
+					</section>
 				</article>
 				<hr />
-				<article id="skill">
+				<article class="inner" id="skill">
 					<h2>Skills</h2>
 					<p>Discover and showcase your skills.</p>
-					<button>Add Skill</button>
+					<ul id="skill-list"></ul>
+					<section class="button-holder">
+						<button>Add Skill</button>
+					</section>
 				</article>
 				<hr />
-				<article id="interest">
+				<article class="inner" id="interest">
 					<h2>Interests</h2>
-					<p>Explore your interests and hobbies.</p>
-					<button>Add Interest</button>
+					<p class="suggestions">Explore your interests and hobbies.</p>
+					<ul id="interest-list"></ul>
+					<section class="button-holder">
+						<button onclick="addInterest()">Add Interest</button>
+					</section>
 				</article>
 			</article>
 		</main>
