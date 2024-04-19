@@ -28,7 +28,7 @@ body {
     padding: 100px 50px;
   }
   .main {
-    background: url("https://th.bing.com/th/id/OIG2.IIB27yirR1pkHqCrdRGF?w=270&h=270&c=6&r=0&o=5&dpr=1.3&pid=ImgGn") no-repeat;
+    background: url('../img/home.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 99vh;
