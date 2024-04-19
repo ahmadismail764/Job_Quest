@@ -6,7 +6,7 @@ function displayData() {
 	const dataList = document.getElementById("dataList");
 	const applications =
 		JSON.parse(localStorage.getItem("jobApplications")) || [];
-	
+
 	if (applications.length == 0) {
 		dataList.innerHTML = "<li>No applications found</li>";
 		return;
@@ -23,8 +23,9 @@ function displayData() {
       Phone: ${application.phone}<br>
       Education: ${application.education}<br>
       Experience: ${application.experience}<br>
-      LinkedIn: <a href="${application.linkedin}">${application.linkedin
-			}</a><br>
+      LinkedIn: <a href="${application.linkedin}">${
+			application.linkedin
+		}</a><br>
       Comments: ${application.comments}<br>
       <hr>
     `;

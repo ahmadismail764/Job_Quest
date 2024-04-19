@@ -1,22 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-  displayData();
+	displayData();
 });
 
 function displayData() {
-  const dataList = document.getElementById("dataList");
-  const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
+	const dataList = document.getElementById("dataList");
+	const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
 
-  if (posts.length == 0) {
-    dataList.innerHTML = "<li>No jobs found</li>";
-    return;
-  }
+	if (posts.length == 0) {
+		dataList.innerHTML = "<li>No jobs found</li>";
+		return;
+	}
 
-  dataList.innerHTML = "";
+	dataList.innerHTML = "";
 
-  posts.forEach(function (post, index) {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `
-			<a href="jobdetail.html?index=${index}"><strong>Job ${index + 1}</strong></a><br>
+	posts.forEach(function (post, index) {
+		const listItem = document.createElement("li");
+		listItem.innerHTML = `
+			<a href="jobdetail.html?index=${index}"><strong>Job ${
+			index + 1
+		}</strong></a><br>
       Job Title: ${post.title}<br>
       Job Description: ${post.description}<br>
       Location: ${post.location}<br>
@@ -26,6 +28,6 @@ function displayData() {
       Company link: <a href="${post.companyLink}">${post.companyLink}</a><br>
       <hr>
     `;
-    dataList.appendChild(listItem);
-  });
+		dataList.appendChild(listItem);
+	});
 }
