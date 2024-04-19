@@ -13,7 +13,7 @@ function displayData() {
 		return;
 	}
 
-	dataList.innerHTML = ""; // Clear previous entries
+	dataList.innerHTML = "";
 
 	applications.forEach(function (application, index) {
 		const listItem = document.createElement("li");
@@ -24,9 +24,8 @@ function displayData() {
       Phone: ${application.phone}<br>
       Education: ${application.education}<br>
       Experience: ${application.experience}<br>
-      LinkedIn: <a href="${application.linkedin}">${
-			application.linkedin
-		}</a><br>
+      LinkedIn: <a href="${application.linkedin}">${application.linkedin
+			}</a><br>
       Comments: ${application.comments}<br>
       <hr>
     `;
@@ -35,7 +34,7 @@ function displayData() {
 	posts.forEach(function (post, index) {
 		const listItem = document.createElement("li");
 		listItem.innerHTML = `
-      <strong>Job ${index + 1}</strong><br>
+			<a href="jobdetail.html?index=${index}"><strong>Job ${index + 1}</strong></a><br>
       Job Title: ${post.title}<br>
       Job Description: ${post.description}<br>
       Location: ${post.location}<br>
