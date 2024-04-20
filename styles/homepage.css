@@ -2,13 +2,14 @@
 
 /* PRE-STYLES */
 :root {
-	--PAD: 1.25rem;
-	--SM-PAD: 0.75rem;
-	--LGT-GRAY: #eaebfe;
-	--BIT-DARK: #b0b8ce;
-	--GO-TO-BLUE: #505a74;
-	--GOOD-BLUE: #354c7c;
-	--FIN-BLUE: #022954;
+	--padding: 1.25rem;
+	--small-padding: 0.75rem;
+	--big-padding: 2rem;
+	--light-gray: #eaebfe;
+	--bit-dark: #b0b8ce;
+	--go-to-blue: #505a74;
+	--good-blue: #354c7c;
+	--fin-blue: #022954;
 }
 
 * {
@@ -25,7 +26,7 @@ section {
 	padding: 100px 50px;
 }
 .main {
-	background: url("../img/home1jpg.jpg") no-repeat;
+	/* background: url("../img/home1jpg.jpg") no-repeat; */
 	background-size: cover;
 	background-position: center;
 	min-height: 99vh;
@@ -34,33 +35,33 @@ section {
 	align-items: center;
 }
 h1 {
-	font-size: 36px;
+	font-size: 2.25rem;
 	font-weight: 900;
 	color: rgb(15, 190, 190);
 }
 h3 {
-	margin: 20px;
+	margin: var(--padding);
 }
 h2 {
-	margin-left: 20px;
-	font-size: 35px;
+	margin-left: var(--padding);
+	font-size: 2.25rem;
 	font-weight: 900;
 	letter-spacing: 1px;
-	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-top: var(--small-padding);
+	margin-bottom: var(--big-padding);
 	color: #dadada;
 }
 .btn {
-	color: #000000;
+	color: black;
 	/* background-color: #007bff; */
-	background-color: #fff;
+	background-color: white;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: var(--padding);
 	font-weight: 600;
 	display: inline-block;
-	margin-left: 30px;
+	margin-left: 1.75rem;
 	letter-spacing: 1px;
-	padding: 10px;
+	padding: var(--small-padding);
 	border-radius: 10px;
 	transition: 0.5s;
 }
@@ -73,17 +74,16 @@ section .icons {
 }
 .icons a {
 	color: #022954;
-	font-size: 25px;
-	padding-right: 30px;
+	font-size: 1.5rem;
+	padding-right: 1.75rem;
 	margin-left: 10px;
 }
 h4 {
 	display: inline-block;
-	font-size: 30px;
+	font-size: 1.75rem;
 	font-weight: 700;
 	color: #022954;
 }
-
 footer {
-	padding-left: 30px;
+	padding-left: var(--big-padding);
 }

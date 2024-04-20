@@ -35,8 +35,6 @@ header {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
 	padding: var(--padding);
-	position: sticky;
-	top: 0;
 }
 
 header figure img {
@@ -94,7 +92,7 @@ h2 {
 #keyword {
 	width: 200px;
 	padding: var(--small-padding);
-	padding-left: 25px;
+	padding-left: 1.5rem;
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
@@ -107,8 +105,8 @@ h2 {
 
 #salary {
 	width: 90px;
-	padding: 10px;
-	padding-left: 20px;
+	padding: var(--small-padding);
+	padding-left: var(--padding);
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
@@ -145,14 +143,14 @@ button[type="submit"]:hover {
 	width: 100%;
 	height: 130px;
 	padding: var(--padding);
-	border-radius: 8px;
+	border-radius: 0.5rem;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	background-color: var(--light-gray);
 	margin-bottom: var(--padding);
 }
 .job-content p,
 h3 {
-	margin: 5px;
+	margin: 0.25rem;
 }
 .job-title {
 	color: var(--good-blue);
@@ -172,7 +170,7 @@ h3 {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
 	border: none;
-	padding: 10px var(--padding);
+	padding: 0.75rem var(--padding);
 	border-radius: var(--padding);
 	cursor: pointer;
 	transition: background-color 0.4s ease-in-out;
@@ -182,32 +180,27 @@ h3 {
 	background-color: var(--fin-blue);
 }
 
-/* Footer Styling */
+/* Footer Styles */
 footer {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
 	padding: var(--small-padding);
 	text-align: center;
-	position: sticky;
-	bottom: 0;
 }
-
 footer a {
 	color: var(--light-gray);
 	text-decoration: none;
 }
-
 footer nav ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
-
 footer h3 {
-	margin: 5px 0;
+	margin: 0.25rem 0;
 }
-
 footer nav ul li {
 	display: inline;
 	margin-right: var(--small-padding);
 }
+/* Footer Styles */

@@ -36,8 +36,6 @@ header {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
 	padding: var(--padding);
-	position: sticky;
-	top: 0;
 }
 header figure img {
 	height: 75px;
@@ -126,10 +124,8 @@ button:hover {
 footer {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: var(--padding);
+	padding: var(--small-padding);
 	text-align: center;
-	position: sticky;
-	bottom: 0;
 }
 footer h3 {
 	margin: 0.3rem 0;

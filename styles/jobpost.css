@@ -38,8 +38,8 @@ header {
 }
 
 header figure img {
-	height: 70.25rem;
-	width: 70.25rem;
+	height: 75px;
+	width: 75px;
 	border-radius: 50%;
 	object-fit: cover;
 }
@@ -54,7 +54,7 @@ header nav a {
 	color: var(--light-gray);
 	text-decoration: none;
 	margin-right: 20px;
-	font-size: 10.5rem;
+	font-size: 1rem;
 }
 
 .header1,
