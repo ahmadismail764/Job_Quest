@@ -88,10 +88,13 @@ form {
   margin: 0 auto;
   background-color: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-
+form :hover{
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.04);
+}
 .form-group {
   margin-bottom: 20px;
 }
