@@ -1,8 +1,17 @@
+let postIdCounter
+posts = JSON.parse(localStorage.getItem("allJobs")) || [];
+
+if (posts.length === 0) {
+	postIdCounter = 0;
+}
+else {
+	postIdCounter = posts[posts.length - 1].id;
+}
 function savePost(event) {
 	event.preventDefault();
-
 	// Get form data
 	const postFormData = {
+		id: postIdCounter,
 		title: document.getElementById("title").value,
 		company: document.getElementById("company").value,
 		description: document.getElementById("description").value,
@@ -12,13 +21,16 @@ function savePost(event) {
 		experience: document.getElementById("experience").value,
 		overview: document.getElementById("overview").value,
 		companyLink: document.getElementById("companyLink").value,
+		applliedUsers: new Array()
 	};
+
+	// Increment the counter
+	postIdCounter++;
 
 	// Save form data to local storage
 	let posts = new Array();
-	posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
 	posts.push(postFormData);
-	localStorage.setItem("postedJobs", JSON.stringify(posts));
+	localStorage.setItem("allJobs", JSON.stringify(posts));
 
 
 	var currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || [];
@@ -41,6 +53,7 @@ function savePost(event) {
 	document.getElementById("location").value = "";
 	document.getElementById("requirements").value = "";
 	document.getElementById("salary").value = "";
+	document.getElementById("experience").value = "";
 	document.getElementById("overview").value = "";
 	document.getElementById("companyLink").value = "";
 

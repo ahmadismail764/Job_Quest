@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function displayData() {
-	const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
+	const posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 	if (posts.length == 0) {
 		document.getElementById("job-list").innerHTML = '<h1>No jobs found</h3>';
@@ -12,7 +12,7 @@ function displayData() {
 
 	document.getElementById("job-list").innerHTML = "";
 
-	posts.forEach(function (post, index) {
+	posts.forEach(function (post) {
 		const jobs = document.createElement('div');
 		jobs.innerHTML = `
 		<div class="job">
@@ -21,7 +21,7 @@ function displayData() {
 				<p class="company-name">${post.company}</p>
 				<p class="job-description">${post.description}</p>
 			</div>
-			<div class="details"><a href="jobdetail.html?index=${index}" class="job-link" ><span title="See Full Description">&rarr;</span></a></div>
+			<div class="details"><a href="jobdetail.html?id=${post.id}" class="job-link" ><span title="See Full Description">&rarr;</span></a></div>
 		</div>
 			    `;
 		document.getElementById("job-list").appendChild(jobs);
@@ -31,7 +31,7 @@ function displayData() {
 function search(event) {
 	event.preventDefault();
 
-	const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
+	const posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 	var experience = document.getElementById("experience").value;
 	var keyword = document.getElementById("keyword").value;
@@ -50,7 +50,7 @@ function search(event) {
 
 	const search = posts.filter(function (post) {
 		if (!isEmptyOrSpaces(keyword) && isEmptyOrSpaces(experience)) {
-			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword))) {
+			if ((post.title.toLowerCase().includes(keyword) || post.company.toLowerCase().includes(keyword))) {
 				return true;
 			}
 		}
@@ -60,7 +60,7 @@ function search(event) {
 			}
 		}
 		if (!isEmptyOrSpaces(keyword) && !isEmptyOrSpaces(experience)) {
-			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword)) && post.experience >= experience) {
+			if ((post.title.toLowerCase().includes(keyword) || post.company.toLowerCase().includes(keyword)) && post.experience >= experience) {
 				return true;
 			}
 		}
@@ -90,13 +90,13 @@ function search(event) {
 }
 
 function logout() {
-    sessionStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }
