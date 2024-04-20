@@ -8,10 +8,10 @@ function toggleCompanyNameInput() {
       companyNameDiv.style.display = 'none';
     }
   }
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // do not refresh on form submission
-    signUp(); 
-});
+// document.getElementById('signupForm').addEventListener('submit', function(event) {
+//     event.preventDefault(); // do not refresh on form submission
+//     signUp(); 
+// });
 
 
   function signUp() {
@@ -58,10 +58,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
 
   
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // do not refresh on form submission
-    login(); 
-});
 
   function login() {
     var username = document.getElementById('username').value;
