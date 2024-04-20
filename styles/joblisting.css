@@ -131,28 +131,37 @@ input[value="Search"]:hover {
 .job {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
 	border: 1px solid #ccc;
+	overflow: hidden;
+	width: 100%;
+	height: 130px;
 	padding: 20px;
 	border-radius: 8px;
-	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	background-color: var(--LGT-GRAY);
 	margin-bottom: 20px;
+
+	
   }
 
-  .job-title{
+  .job-content p, h3{
 	margin: 5px;
+  }
+  .job-title{
 	color: var(--GOOD-BLUE);
   }
-  .job-text {
-	margin: 5px;
-  }
 
+	.job-description{
+		opacity: .5;
+		overflow: hidden;
+	}
+  
   .jobl{
 	margin-top: 15px;
 	margin-right: 20px;
   }
+
+
   .job-link{
 	color: var(--GOOD-BLUE);
 	text-decoration: none;
