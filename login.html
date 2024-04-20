@@ -15,12 +15,12 @@
       <h4>Login to your account</h4>
   
       <form onsubmit="login(); return false;">
-        <label for="username">Username</label>
-        <input type="text" id="username" minlength="6" required>
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email address" required>
         <br/>
   
         <label for="password">Password</label>
-        <input type="password" id="password" minlength="8" required>
+        <input type="password" id="password" minlength="8" placeholder="Enter your password" required>
         <br/>
   
         <a href="#">Forgotten Password?</a>
@@ -35,6 +35,9 @@
     <footer>
       <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
     </footer>
-    <script src="../Job_Quest/scripts/signup.js"></script>
+    <script>
+      // checkAuthentication();
+    </script>
+    <script src="../Job_Quest/scripts/login.js"></script>
   </body>
 </html>
