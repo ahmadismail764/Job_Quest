@@ -83,49 +83,88 @@ main {
 	padding: 20px;
 }
 
+
 .listing {
 	background-color: #fff;
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-.card {
-	width: 300px;
+}	
+.job {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: var(--LGT-GRAY);
   }
-  
-  .card-image {
-	width: 50px;
-	height: auto;
+
+	h2{
+		color: var(--GOOD-BLUE);	
+		margin-bottom: 10px;
+	}
+	#SearchBar {
+	  text-align: center;
+	}
+	#keyword {
+	  width: 100px;
+	  padding: 10px;
+	  margin-top: 0px;
+		margin-bottom: 20px;
+	  border: none;
+	  border-radius: 20px;
+	  outline: none;
+	  background-color: white;
+	  transition: width 0.4s ease-in-out;
+	}
+	
+	#keyword:hover,
+	#keyword:focus {
+	  width: 300px;
+	}
+	
+	input[value="Search"] {
+	  background-color: var(--GOOD-BLUE);
+	  color: var(--LGT-GRAY);
+	  border: none;
+	  padding: 10px 20px;
+	  border-radius: 20px;
+	  cursor: pointer;
+	  transition: background-color 0.4s ease-in-out;
+	}
+
+	input[value="Search"]:hover {
+	  background-color:var(--FIN-BLUE);
+	}
+
+  .job-title{
+	margin: 5px;
+	color: var(--GOOD-BLUE);
   }
-  
-  .card-content {
-	padding: 20px;
+  .job-text {
+	margin: 5px;
   }
-  
-  .card-title {
-	margin-top: 0;
+
+  .jobl{
+	margin-top: 15px;
+	margin-right: 20px;
   }
-  
-  .card-text {
-	margin-bottom: 20px;
-  }
-  
-  .card-link {
-	display: inline-block;
-	padding: 8px 16px;
-	background-color: #007bff;
-	color: #fff;
+  .job-link{
+	color: var(--GOOD-BLUE);
 	text-decoration: none;
-	border-radius: 4px;
+	border-radius: 25px;
+	font-size: 20px;
+	transition: background-color 0.3s;
+	cursor: pointer;
   }
-  
-  .card-link:hover {
-	background-color: #0056b3;
+
+  .job-link:hover{
+	background-color: var(--FIN-BLUE);
+	color: var(--LGT-GRAY);
   }
+
 /* Footer Styling */
 footer {
 	background-color: var(--GOOD-BLUE);
