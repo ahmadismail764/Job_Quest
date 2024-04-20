@@ -4,6 +4,7 @@ function savePost(event) {
 	// Get form data
 	const postFormData = {
 		title: document.getElementById("title").value,
+		company: document.getElementById("company").value,
 		description: document.getElementById("description").value,
 		location: document.getElementById("location").value,
 		requirements: document.getElementById("requirements").value,
@@ -20,6 +21,7 @@ function savePost(event) {
 
 	//Clear form fields after submission
 	document.getElementById("title").value = "";
+	document.getElementById("company").value = "";
 	document.getElementById("description").value = "";
 	document.getElementById("location").value = "";
 	document.getElementById("requirements").value = "";

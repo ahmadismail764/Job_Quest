@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function displayJobDetails(job) {
 	document.getElementById("title").textContent = job.title;
+	document.getElementById("company").textContent = job.company;
 	document.getElementById("description").textContent = job.description;
 	document.getElementById("location").textContent = job.location;
 	document.getElementById("requirements").textContent = job.requirements;
