@@ -90,54 +90,56 @@ main {
 	border-radius: 10px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }	
+
+h2{
+	color: var(--GOOD-BLUE);	
+	margin-bottom: 10px;
+}
+#SearchBar {
+	text-align: center;
+}
+#keyword {
+	width: 100px;
+	padding: 10px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	background-color: white;
+	transition: width 0.4s ease-in-out;
+}
+
+#keyword:hover,
+#keyword:focus {
+	width: 300px;
+}
+
+input[value="Search"] {
+	background-color: var(--GOOD-BLUE);
+	color: var(--LGT-GRAY);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: background-color 0.4s ease-in-out;
+}
+
+input[value="Search"]:hover {
+	background-color:var(--FIN-BLUE);
+}
 .job {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 	border: 1px solid #ccc;
+	padding: 20px;
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	background-color: var(--LGT-GRAY);
+	margin-bottom: 20px;
   }
-
-	h2{
-		color: var(--GOOD-BLUE);	
-		margin-bottom: 10px;
-	}
-	#SearchBar {
-	  text-align: center;
-	}
-	#keyword {
-	  width: 100px;
-	  padding: 10px;
-	  margin-top: 0px;
-		margin-bottom: 20px;
-	  border: none;
-	  border-radius: 20px;
-	  outline: none;
-	  background-color: white;
-	  transition: width 0.4s ease-in-out;
-	}
-	
-	#keyword:hover,
-	#keyword:focus {
-	  width: 300px;
-	}
-	
-	input[value="Search"] {
-	  background-color: var(--GOOD-BLUE);
-	  color: var(--LGT-GRAY);
-	  border: none;
-	  padding: 10px 20px;
-	  border-radius: 20px;
-	  cursor: pointer;
-	  transition: background-color 0.4s ease-in-out;
-	}
-
-	input[value="Search"]:hover {
-	  background-color:var(--FIN-BLUE);
-	}
 
   .job-title{
 	margin: 5px;
