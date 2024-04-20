@@ -9,7 +9,6 @@
     <script src="scripts/jobpost.js"></script>
     <title>Job Post Form</title>
   </head>
-
   <body>
     <header>
       <a href="homepage.html">
@@ -47,6 +46,11 @@
           </div>
 
           <div class="form-group">
+            <label for="companyName">Job Title:</label><br />
+            <input type="text" id="title" name="title" required /><br />
+          </div>
+
+          <div class="form-group">
             <label for="description">Job Description:</label><br />
             <textarea
               id="description"
@@ -55,11 +59,6 @@
               cols="50"
             ></textarea
             ><br />
-          </div>
-
-          <div class="form-group">
-            <label for="location">Location:</label><br />
-            <input type="text" id="location" name="location" required /><br />
           </div>
 
           <div class="form-group">
@@ -83,8 +82,14 @@
               required
             /><br />
           </div>
+
           <div class="form-group">
-            <label for="overview">Company overview:</label><br />
+            <label for="location">Location:</label><br />
+            <input type="text" id="location" name="location" required /><br />
+          </div>
+
+          <div class="form-group">
+            <label for="overview">Company Overview:</label><br />
             <textarea
               id="overview"
               name="overview"
