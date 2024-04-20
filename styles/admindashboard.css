@@ -36,6 +36,8 @@ header {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
 	padding: var(--padding);
+	position: sticky;
+	top: 0;
 }
 header figure img {
 	height: 75px;
@@ -126,6 +128,8 @@ footer {
 	color: var(--light-gray);
 	padding: var(--padding);
 	text-align: center;
+	position: sticky;
+	bottom: 0;
 }
 footer h3 {
 	margin: 0.3rem 0;
