@@ -49,7 +49,8 @@ function search(event) {
 	const search = posts.filter(function (post) {
 		return (
 			post.title.toLowerCase().includes(keyword) ||
-			post.description.toLowerCase().includes(keyword)
+			post.description.toLowerCase().includes(keyword) ||
+			post.company.toLowerCase().includes(keyword)
 		);
 	});
 
