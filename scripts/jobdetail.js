@@ -18,6 +18,20 @@ function displayJobDetails(job) {
 	document.getElementById("description").textContent = job.description;
 	document.getElementById("location").textContent = job.location;
 	document.getElementById("requirements").textContent = job.requirements;
+	document.getElementById("experience").textContent = job.experience;
 	document.getElementById("salary").textContent = job.salary;
 	document.getElementById("overview").textContent = job.overview;
+
+}
+
+function logout() {
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
+}
+
+function checkAuthentication() {
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }

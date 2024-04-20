@@ -18,7 +18,7 @@
 						name="type_job"
 						value="user"
 						checked
-						onchange="toggleCompanyNameInput()" />
+						onchange="checkCompanyNameInput()" />
 					<label class="b" for="user">User</label>
 					<br />
 					<br />
@@ -26,30 +26,51 @@
 						type="radio"
 						name="type_job"
 						value="admin"
-						onchange="toggleCompanyNameInput()" />
+						onchange="checkCompanyNameInput()" />
 					<label class="b" for="admin">Company Admin</label>
 					<br />
 					<br />
 
 					<label for="username">Username</label>
-					<input type="text" id="username" minlength="6" required />
+					<input
+						type="text"
+						id="username"
+						minlength="6"
+						placeholder="Enter your full name"
+						required />
 					<br />
 
 					<label for="password">Password</label>
-					<input type="password" id="password" minlength="8" required />
+					<input
+						type="password"
+						id="password"
+						minlength="8"
+						placeholder="Enter your password"
+						required />
 					<br />
 
 					<label for="confirm_password">Confirm Password</label>
-					<input type="password" id="confirm_password" required />
+					<input
+						type="password"
+						id="confirm_password"
+						placeholder="Confirm your password"
+						required />
 					<br />
 
 					<label for="email">Email</label>
-					<input type="email" id="email" required />
+					<input
+						type="email"
+						id="email"
+						placeholder="Enter your email address"
+						required />
 					<br />
 
 					<div id="companyNameDiv" style="display: none">
 						<label for="company_name">Company Name</label>
-						<input type="text" id="company_name" />
+						<input
+							type="text"
+							id="company_name"
+							placeholder="Enter your company name" />
 					</div>
 
 					<input type="submit" value="Sign Up" />
@@ -64,6 +85,9 @@
 		<footer>
 			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
 		</footer>
+		<script>
+			// checkAuthentication();
+		</script>
 
 		<script src="../Job_Quest/scripts/signup.js"></script>
 	</body>

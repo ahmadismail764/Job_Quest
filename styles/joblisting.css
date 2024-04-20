@@ -92,8 +92,9 @@ h2 {
 	text-align: center;
 }
 #keyword {
-	width: 130px;
+	width: 200px;
 	padding: var(--small-padding);
+	padding-left: 25px;
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
@@ -103,10 +104,11 @@ h2 {
 	transition: width 0.4s ease-in-out;
 	text-align: center;
 }
+
 #salary {
 	width: 90px;
-	padding: var(--small-padding);
-	padding-left: var(--padding);
+	padding: 10px;
+	padding-left: 20px;
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
@@ -116,6 +118,7 @@ h2 {
 	transition: width 0.4s ease-in-out;
 	text-align: center;
 }
+
 #keyword:hover,
 #keyword:focus,
 #keyword:not(:placeholder-shown) {
