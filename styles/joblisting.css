@@ -111,10 +111,26 @@ h2{
 	text-align: center;
 }
 
+#salary {
+	width: 90px;
+	padding: 10px;
+	padding-left: 20px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border: 2px solid var(--GOOD-BLUE);
+	border-radius: 20px;
+	outline: none;
+	background-color: white;
+	transition: width 0.4s ease-in-out;
+	text-align: center;
+}
+
 #keyword:hover,
-#keyword:focus {
+#keyword:focus,
+#keyword:not(:placeholder-shown) {
 	width: 400px;
 }
+
 
 button[type="submit"] {
 	background-color: var(--GOOD-BLUE);
