@@ -14,7 +14,7 @@ function displayData() {
 
 	posts.forEach(function (post, index) {
 		const jobs = document.createElement('div');
-				jobs.innerHTML = `
+		jobs.innerHTML = `
 		<div class="job">
 			<div class="job-content">
 				<h3 class="job-title">${post.title}</h3>
@@ -32,26 +32,38 @@ function search(event) {
 	event.preventDefault();
 
 	const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
-	
+
+	var salary = document.getElementById("salary").value;
 	var keyword = document.getElementById("keyword").value;
 	keyword = keyword.toLowerCase();
 	localStorage.setItem("keyword", keyword);
+	localStorage.setItem("salary", salary);
 
 	function isEmptyOrSpaces(str) {
 		return (str == null || (typeof str === "string" && str.trim().length === 0));
 	}
 
-	if (isEmptyOrSpaces(keyword)) {
+	if (isEmptyOrSpaces(keyword) && isEmptyOrSpaces(salary)) {
 		displayData();
 		return;
 	}
 
 	const search = posts.filter(function (post) {
-		return (
-			post.title.toLowerCase().includes(keyword) ||
-			post.description.toLowerCase().includes(keyword) ||
-			post.company.toLowerCase().includes(keyword)
-		);
+		if (!isEmptyOrSpaces(keyword) && isEmptyOrSpaces(salary)) {
+			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword))) {
+				return true;
+			}
+		}
+		if (!isEmptyOrSpaces(salary) && isEmptyOrSpaces(keyword)) {
+			if (post.salary >= salary) {
+				return true;
+			}
+		}
+		if (!isEmptyOrSpaces(keyword) && !isEmptyOrSpaces(salary)) {
+			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword)) && post.salary >= salary) {
+				return true;
+			}
+		}
 	});
 
 	if (search.length == 0) {
