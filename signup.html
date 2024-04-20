@@ -12,7 +12,7 @@
     <section>
       <h3>Sign Up</h3>
       <div class="login">
-        <form id="signupForm">
+        <form onsubmit="signUp(); return false;">
           <input type="radio" name="type_job" value="user" checked onchange="toggleCompanyNameInput()">
           <label class="b" for="user">User</label>
           <br/>
