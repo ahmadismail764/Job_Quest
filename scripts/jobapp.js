@@ -18,6 +18,17 @@ function saveApp(event) {
 	applications.push(appFormData);
 	localStorage.setItem("jobApplications", JSON.stringify(applications));
 
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || [];
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+	currentUser.applliedUsers.push(appFormData);
+	users.forEach(function (user) {
+		if (user.email === currentUser.email) {
+			user.applliedUsers.push(appFormData);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("currentUser", JSON.stringify(users));
+		}
+	});
+
 	//Clear form fields after submission
 	document.getElementById("fullname").value = "";
 	document.getElementById("email").value = "";
@@ -31,13 +42,13 @@ function saveApp(event) {
 }
 
 function logout() {
-    sessionStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }

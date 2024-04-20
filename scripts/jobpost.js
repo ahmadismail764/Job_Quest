@@ -9,6 +9,7 @@ function savePost(event) {
 		location: document.getElementById("location").value,
 		requirements: document.getElementById("requirements").value,
 		salary: document.getElementById("salary").value,
+		experience: document.getElementById("experience").value,
 		overview: document.getElementById("overview").value,
 		companyLink: document.getElementById("companyLink").value,
 	};
@@ -18,6 +19,20 @@ function savePost(event) {
 	posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
 	posts.push(postFormData);
 	localStorage.setItem("postedJobs", JSON.stringify(posts));
+
+
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || [];
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+	currentUser.postedJobs.push(postFormData);
+
+	users.forEach(function (user) {
+		if (user.email === currentUser.email) {
+			user.postedJobs.push(postFormData);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("users", JSON.stringify(users));
+		}
+	});
+
 
 	//Clear form fields after submission
 	document.getElementById("title").value = "";
@@ -34,13 +49,13 @@ function savePost(event) {
 
 
 function logout() {
-    sessionStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }

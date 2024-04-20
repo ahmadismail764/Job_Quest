@@ -99,8 +99,9 @@ h2{
 	text-align: center;
 }
 #keyword {
-	width: 130px;
+	width: 200px;
 	padding: 10px;
+	padding-left: 25px;
 	margin-top: 0px;
 	margin-bottom: 20px;
 	border: 2px solid var(--GOOD-BLUE);
@@ -111,8 +112,8 @@ h2{
 	text-align: center;
 }
 
-#salary {
-	width: 90px;
+#experience {
+	width: 170px;
 	padding: 10px;
 	padding-left: 20px;
 	margin-top: 0px;
@@ -125,7 +126,11 @@ h2{
 	text-align: center;
 }
 
-#keyword:hover,
+#experience:focus,
+#experience:not(:placeholder-shown) {
+	width: 90px;
+}
+
 #keyword:focus,
 #keyword:not(:placeholder-shown) {
 	width: 400px;

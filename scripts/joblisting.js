@@ -33,34 +33,34 @@ function search(event) {
 
 	const posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
 
-	var salary = document.getElementById("salary").value;
+	var experience = document.getElementById("experience").value;
 	var keyword = document.getElementById("keyword").value;
 	keyword = keyword.toLowerCase();
 	localStorage.setItem("keyword", keyword);
-	localStorage.setItem("salary", salary);
+	localStorage.setItem("experience", experience);
 
 	function isEmptyOrSpaces(str) {
 		return (str == null || (typeof str === "string" && str.trim().length === 0));
 	}
 
-	if (isEmptyOrSpaces(keyword) && isEmptyOrSpaces(salary)) {
+	if (isEmptyOrSpaces(keyword) && isEmptyOrSpaces(experience)) {
 		displayData();
 		return;
 	}
 
 	const search = posts.filter(function (post) {
-		if (!isEmptyOrSpaces(keyword) && isEmptyOrSpaces(salary)) {
+		if (!isEmptyOrSpaces(keyword) && isEmptyOrSpaces(experience)) {
 			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword))) {
 				return true;
 			}
 		}
-		if (!isEmptyOrSpaces(salary) && isEmptyOrSpaces(keyword)) {
-			if (post.salary >= salary) {
+		if (!isEmptyOrSpaces(experience) && isEmptyOrSpaces(keyword)) {
+			if (post.experience >= experience) {
 				return true;
 			}
 		}
-		if (!isEmptyOrSpaces(keyword) && !isEmptyOrSpaces(salary)) {
-			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword)) && post.salary >= salary) {
+		if (!isEmptyOrSpaces(keyword) && !isEmptyOrSpaces(experience)) {
+			if ((post.title.toLowerCase().includes(keyword)||post.company.toLowerCase().includes(keyword)) && post.experience >= experience) {
 				return true;
 			}
 		}
