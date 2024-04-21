@@ -68,3 +68,13 @@ function checkAuthentication() {
 		window.location.href = "login.html";
 	}
 }
+
+function checkAdmin() {
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (currentUser.userType == 'admin') {
+		return true;
+	}
+	else {
+		return false;
+	}
+}

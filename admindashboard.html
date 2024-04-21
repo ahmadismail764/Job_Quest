@@ -1,139 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" href="img/icon.png" />
-		<meta name="author" content="Ahmad Ismail" />
-		<meta name="description" content="The admin dashboard for Job Quest" />
-		<link rel="stylesheet" href="styles/admindashboard.css" />
-		<script src="scripts/admindashboard.js"></script>
-		<title>Admin Dashboard</title>
-	</head>
-	<body>
-		<header>
-			<a href="homepage.html">
-				<figure class="header1">
-					<img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
-					<figcaption>Job Quest</figcaption>
-				</figure>
-			</a>
-			<article class="above">
-				<nav>
-					<a href="">Dashboard</a> &nbsp;
-					<a href="">Browse Jobs/Post Job</a>
-					<a href="contact.html">Contact Us</a>
-					<a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
-				</nav>
-			</article>
-			<a href="" id="add-info">
-				<figure class="header2">
-					<img src="img/profile.png" alt="Insert Profile Pic here" />
-					<figcaption>Admin Name</figcaption>
-				</figure>
-			</a>
-		</header>
-		<main>
-			<article class="dashboard">
-				<article id="suggest">
-					<h2>Suggested for you</h2>
-					<p>
-						Discover personalized suggestsions for improving your company's
-						performance.
-					</p>
-				</article>
-				<hr />
-				<article id="others">
-					<h2>People you may know</h2>
-					<p>
-						Connect with professionals in your industry and expand your network.
-					</p>
-				</article>
-				<hr />
-				<article id="about-comp">
-					<section class="about">
-						<h2>About your company</h2>
-						<p>Learn more about your company's mission, vision, and values.</p>
-						<p id="button-container">
-							<button onclick="editAbout()">Edit</button>
-						</p>
-					</section>
-					<hr />
-					<section class="postedjobs">
-						<h2>Posted Jobs</h2>
-						<section class="job" id="job1">
-							<h3>Job #1</h3>
-							<button onclick="editJob()">Edit</button
-							><button onclick="deleteJob()">Delete</button>
-						</section>
-						<hr />
-						<section class="job" id="job2">
-							<h3>Job #2</h3>
-							<button onclick="editJob()">Edit</button
-							><button onclick="deleteJob()">Delete</button>
-						</section>
-						<hr />
-						<section class="job" id="job3">
-							<h3>Job #3</h3>
-							<button onclick="editJob()">Edit</button
-							><button onclick="deleteJob()">Delete</button>
-						</section>
-						<hr />
-						<a href="jobpost.html"><button>Post New Job</button></a>
-					</section>
-				</article>
-				<hr />
-				<article id="history">
-					<h2>Company History</h2>
-					<p>
-						Showcase the jounrey and milestones of your company's growth and
-						development.
-					</p>
-				</article>
-				<hr />
-				<article id="analytics">
-					<h2>Company Analytics</h2>
-					<p>
-						View insightful analytics and metrics to track your company's
-						performance.
-					</p>
-				</article>
-				<hr />
-				<article id="certs">
-					<h2>Awards & Certs</h2>
-					<p>See the awards and certifications your company has achieved.</p>
-					<section class="list-holder">
-						<dl class="list-for-addition"><h3>Awards</h3></dl>
-						<hr />
-						<dl class="list-for-addition"><h3>Certs</h3></dl>
-					</section>
-					<button onclick="addAward()">Add Award</button>
-					<button onclick="addCert()">Add Certificate</button>
-				</article>
-				<hr />
-				<article id="partners">
-					<h2>Partners</h2>
-					<p>
-						Discover the partners and collaborators contributing to your
-						company's success.
-					</p>
-				</article>
-			</article>
-		</main>
-		<hr />
-		<footer>
-			<h3><a href="contact.html">Contact Us</a></h3>
-			<nav>
-				<ul>
-					<p>Check out our socials</p>
-					<li><a href="#" target="_blank">Facebook</a></li>
-					<li><a href="#" target="_blank">Instagram</a></li>
-					<li><a href="#" target="_blank">Twitter</a></li>
-				</ul>
-			</nav>
-			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
-		</footer>
-		<script>
-			// checkAuthentication();
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="img/icon.png" />
+    <meta name="author" content="Ahmad Ismail" />
+    <meta name="description" content="The admin dashboard for Job Quest" />
+    <link rel="stylesheet" href="styles/admindashboard.css" />
+    <script src="scripts/admindashboard.js"></script>
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <a href="homepage.html">
+        <figure class="header1">
+          <img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
+          <figcaption>Job Quest</figcaption>
+        </figure>
+      </a>
+      <article class="above">
+        <nav>
+          <a href="">Dashboard</a> &nbsp;
+          <a href="">Browse Jobs/Post Job</a>
+          <a href="contact.html">Contact Us</a>
+          <a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+        </nav>
+      </article>
+      <a href="" id="add-info">
+        <figure class="header2">
+          <img src="img/profile.png" alt="Insert Profile Pic here" />
+          <figcaption>Admin Name</figcaption>
+        </figure>
+      </a>
+    </header>
+    <main>
+      <article class="dashboard">
+        <article id="suggest">
+          <h2>Suggested for you</h2>
+          <p>
+            Discover personalized suggestsions for improving your company's
+            performance.
+          </p>
+        </article>
+        <hr />
+        <article id="others">
+          <h2>People you may know</h2>
+          <p>
+            Connect with professionals in your industry and expand your network.
+          </p>
+        </article>
+        <hr />
+        <article id="about-comp">
+          <section class="about">
+            <h2>About your company</h2>
+            <p>Learn more about your company's mission, vision, and values.</p>
+            <button>Edit</button>
+          </section>
+          <hr />
+          <section class="postedjobs">
+            <h2>Posted Jobs</h2>
+            <section class="job">
+              <h3>Job #1</h3>
+              <button>Edit</button
+              ><button onclick="confirmDelete()">Delete</button>
+            </section>
+            <hr />
+            <section class="job">
+              <h3>Job #2</h3>
+              <button>Edit</button
+              ><button onclick="confirmDelete()">Delete</button>
+            </section>
+            <hr />
+            <section class="job">
+              <h3>Job #3</h3>
+              <button>Edit</button
+              ><button onclick="confirmDelete()">Delete</button>
+            </section>
+            <hr />
+            <a href="jobpost.html"><button>Post New Job</button></a>
+          </section>
+        </article>
+        <hr />
+        <article id="history">
+          <h2>Company History</h2>
+          <p>
+            Showcase the jounrey and milestones of your company's growth and
+            development.
+          </p>
+        </article>
+        <hr />
+        <article id="analytics">
+          <h2>Company Analytics</h2>
+          <p>
+            View insightful analytics and metrics to track your company's
+            performance.
+          </p>
+        </article>
+        <hr />
+        <article id="certs">
+          <h2>Awards & Certs</h2>
+          <p>See the awards and certifications your company has achieved.</p>
+          <button>Add Award</button> <button>Add Certificate</button>
+        </article>
+        <hr />
+        <article id="partners">
+          <h2>Partners</h2>
+          <p>
+            Discover the partners and collaborators contributing to your
+            company's success.
+          </p>
+        </article>
+      </article>
+    </main>
+    <hr />
+    <footer>
+      <h3><a href="contact.html">Contact Us</a></h3>
+      <nav>
+        <ul>
+          <p>Check out our socials</p>
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+    </footer>
+    <script>
+      // checkAuthentication();
+    </script>
+  </body>
 </html>
