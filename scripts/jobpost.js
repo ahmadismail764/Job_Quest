@@ -1,4 +1,4 @@
-let postIdCounter;
+let postIdCounter
 posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 if (posts.length === 0) {
