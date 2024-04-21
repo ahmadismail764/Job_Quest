@@ -242,10 +242,17 @@ function logout() {
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+	if (!currentUser) {
+		window.location.href = "login.html";
+	}
 }
-
-
+function checkAdmin() {
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (currentUser.userType == 'admin') {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
