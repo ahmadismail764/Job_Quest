@@ -17,7 +17,6 @@ function signUp() {
 	var userType = document.querySelector('input[name="type_job"]:checked').value;
 	var companyName = "";
 	var postedJobs = new Array();
-	var applliedUsers = new Array();
 	var applliedJobs = new Array();
 
 	// check confirming password
@@ -60,7 +59,6 @@ function signUp() {
 		userType: userType,
 		companyName: companyName,
 		postedJobs: postedJobs,
-		applliedUsers: applliedUsers,
 		applliedJobs: applliedJobs,
 	};
 

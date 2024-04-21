@@ -46,26 +46,28 @@ function saveApp(event) {
 		account: currentUser,
 	};
 
-	var wanted;
+	users.forEach(function (user) {
+		if ((user.email === currentUser.email && !checkAdmin())) {
+			user.applliedJobs.push(thisJob);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("currentUser", JSON.stringify(user));
+		}
+	});
+
 	users.forEach(function (user) {
 		user.postedJobs.forEach(function (job) {
 			if (job.id === id) {
-				user.applliedUsers.push(appUser);
+				job.applliedUsers.push(appUser);
 				localStorage.setItem("users", JSON.stringify(users));
 			}
 		});
 	});
 
 	users.forEach(function (user) {
-		if (user.email === currentUser.email) {
-			user.applliedJobs.push(thisJob);
-			localStorage.setItem("users", JSON.stringify(users));
-			sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+		if ((user.email === currentUser.email) && checkAdmin()) {
+			sessionStorage.setItem("currentUser", JSON.stringify(user));
 		}
 	});
-	// wanted.applliedUsers
-	// 	.push(appUser);
-	// console.log(wanted);
 
 	//Clear form fields after submission
 	document.getElementById("fullname").value = "";

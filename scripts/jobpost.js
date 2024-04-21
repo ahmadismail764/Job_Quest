@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let postIdCounter;
+let posts = new Array();
 posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 if (posts.length === 0) {
@@ -45,7 +46,7 @@ function savePost(event) {
 	postIdCounter++;
 
 	// Save form data to local storage
-	let posts = new Array();
+
 	posts.push(postFormData);
 	localStorage.setItem("allJobs", JSON.stringify(posts));
 
@@ -57,7 +58,7 @@ function savePost(event) {
 		if (user.email === currentUser.email) {
 			user.postedJobs.push(postFormData);
 			localStorage.setItem("users", JSON.stringify(users));
-			sessionStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("currentUser", JSON.stringify(user));
 		}
 	});
 
