@@ -1,10 +1,9 @@
-let postIdCounter
+let postIdCounter;
 posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 if (posts.length === 0) {
 	postIdCounter = 0;
-}
-else {
+} else {
 	postIdCounter = posts[posts.length - 1].id;
 }
 function savePost(event) {
@@ -21,7 +20,7 @@ function savePost(event) {
 		experience: document.getElementById("experience").value,
 		overview: document.getElementById("overview").value,
 		companyLink: document.getElementById("companyLink").value,
-		applliedUsers: new Array()
+		applliedUsers: new Array(),
 	};
 
 	// Increment the counter
@@ -32,8 +31,7 @@ function savePost(event) {
 	posts.push(postFormData);
 	localStorage.setItem("allJobs", JSON.stringify(posts));
 
-
-	var currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || [];
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser")) || [];
 	const users = JSON.parse(localStorage.getItem("users")) || [];
 	currentUser.postedJobs.push(postFormData);
 
@@ -44,7 +42,6 @@ function savePost(event) {
 			sessionStorage.setItem("users", JSON.stringify(users));
 		}
 	});
-
 
 	//Clear form fields after submission
 	document.getElementById("title").value = "";
@@ -60,15 +57,14 @@ function savePost(event) {
 	alert("Job posted successfully!");
 }
 
-
 function logout() {
-	sessionStorage.removeItem('currentUser');
-	window.location.href = 'login.html';
+	sessionStorage.removeItem("currentUser");
+	window.location.href = "login.html";
 }
 
 function checkAuthentication() {
-	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 	if (!currentUser) {
-		window.location.href = 'login.html';
+		window.location.href = "login.html";
 	}
 }

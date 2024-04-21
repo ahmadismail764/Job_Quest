@@ -32,7 +32,7 @@ function saveApp(event) {
 
 	const appUser = {
 		application: appFormData,
-		account: currentUser
+		account: currentUser,
 	};
 
 	var wanted;
@@ -42,8 +42,7 @@ function saveApp(event) {
 				user.applliedUsers.push(appUser);
 				localStorage.setItem("users", JSON.stringify(users));
 			}
-		})
-
+		});
 	});
 
 	users.forEach(function (user) {
@@ -52,7 +51,7 @@ function saveApp(event) {
 			localStorage.setItem("users", JSON.stringify(users));
 			sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 		}
-	})
+	});
 	// wanted.applliedUsers
 	// 	.push(appUser);
 	// console.log(wanted);
@@ -70,13 +69,13 @@ function saveApp(event) {
 }
 
 function logout() {
-	sessionStorage.removeItem('currentUser');
-	window.location.href = 'login.html';
+	sessionStorage.removeItem("currentUser");
+	window.location.href = "login.html";
 }
 
 function checkAuthentication() {
-	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 	if (!currentUser) {
-		window.location.href = 'login.html';
+		window.location.href = "login.html";
 	}
 }

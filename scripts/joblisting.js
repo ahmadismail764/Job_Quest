@@ -6,14 +6,14 @@ function displayData() {
 	const posts = JSON.parse(localStorage.getItem("allJobs")) || [];
 
 	if (posts.length == 0) {
-		document.getElementById("job-list").innerHTML = '<h1>No jobs found</h3>';
+		document.getElementById("job-list").innerHTML = "<h1>No jobs found</h3>";
 		return;
 	}
 
 	document.getElementById("job-list").innerHTML = "";
 
 	posts.forEach(function (post) {
-		const jobs = document.createElement('div');
+		const jobs = document.createElement("div");
 		jobs.innerHTML = `
 		<div class="job">
 			<div class="job-content">
@@ -40,7 +40,7 @@ function search(event) {
 	localStorage.setItem("experience", experience);
 
 	function isEmptyOrSpaces(str) {
-		return (str == null || (typeof str === "string" && str.trim().length === 0));
+		return str == null || (typeof str === "string" && str.trim().length === 0);
 	}
 
 	if (isEmptyOrSpaces(keyword) && isEmptyOrSpaces(experience)) {
@@ -50,7 +50,10 @@ function search(event) {
 
 	const search = posts.filter(function (post) {
 		if (!isEmptyOrSpaces(keyword) && isEmptyOrSpaces(experience)) {
-			if ((post.title.toLowerCase().includes(keyword) || post.company.toLowerCase().includes(keyword))) {
+			if (
+				post.title.toLowerCase().includes(keyword) ||
+				post.company.toLowerCase().includes(keyword)
+			) {
 				return true;
 			}
 		}
@@ -60,21 +63,25 @@ function search(event) {
 			}
 		}
 		if (!isEmptyOrSpaces(keyword) && !isEmptyOrSpaces(experience)) {
-			if ((post.title.toLowerCase().includes(keyword) || post.company.toLowerCase().includes(keyword)) && post.experience >= experience) {
+			if (
+				(post.title.toLowerCase().includes(keyword) ||
+					post.company.toLowerCase().includes(keyword)) &&
+				post.experience >= experience
+			) {
 				return true;
 			}
 		}
 	});
 
 	if (search.length == 0) {
-		document.getElementById("job-list").innerHTML = '<h1>No results found</h3>';;
+		document.getElementById("job-list").innerHTML = "<h1>No results found</h3>";
 		return;
 	}
 
 	document.getElementById("job-list").innerHTML = "";
 
 	search.forEach(function (result, index) {
-		const jobs = document.createElement('div');
+		const jobs = document.createElement("div");
 		jobs.innerHTML = `
 		<div class="job">
 			<div class="job-content">
@@ -90,13 +97,13 @@ function search(event) {
 }
 
 function logout() {
-	sessionStorage.removeItem('currentUser');
-	window.location.href = 'login.html';
+	sessionStorage.removeItem("currentUser");
+	window.location.href = "login.html";
 }
 
 function checkAuthentication() {
-	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 	if (!currentUser) {
-		window.location.href = 'login.html';
+		window.location.href = "login.html";
 	}
 }
