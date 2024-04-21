@@ -98,7 +98,7 @@ h2 {
 #keyword {
 	width: 200px;
 	padding: var(--small-padding);
-	padding-left: 1.5rem;
+	padding-left: 20px;
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
