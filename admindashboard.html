@@ -53,27 +53,29 @@
 					<section class="about">
 						<h2>About your company</h2>
 						<p>Learn more about your company's mission, vision, and values.</p>
-						<button>Edit</button>
+						<p id="button-container">
+							<button onclick="editAbout()">Edit</button>
+						</p>
 					</section>
 					<hr />
 					<section class="postedjobs">
 						<h2>Posted Jobs</h2>
-						<section class="job">
+						<section class="job" id="job1">
 							<h3>Job #1</h3>
-							<button>Edit</button
-							><button onclick="confirmDelete()">Delete</button>
+							<button onclick="editJob()">Edit</button
+							><button onclick="deleteJob()">Delete</button>
 						</section>
 						<hr />
-						<section class="job">
+						<section class="job" id="job2">
 							<h3>Job #2</h3>
-							<button>Edit</button
-							><button onclick="confirmDelete()">Delete</button>
+							<button onclick="editJob()">Edit</button
+							><button onclick="deleteJob()">Delete</button>
 						</section>
 						<hr />
-						<section class="job">
+						<section class="job" id="job3">
 							<h3>Job #3</h3>
-							<button>Edit</button
-							><button onclick="confirmDelete()">Delete</button>
+							<button onclick="editJob()">Edit</button
+							><button onclick="deleteJob()">Delete</button>
 						</section>
 						<hr />
 						<a href="jobpost.html"><button>Post New Job</button></a>
@@ -99,7 +101,13 @@
 				<article id="certs">
 					<h2>Awards & Certs</h2>
 					<p>See the awards and certifications your company has achieved.</p>
-					<button>Add Award</button> <button>Add Certificate</button>
+					<section class="list-holder">
+						<dl class="list-for-addition"><h3>Awards</h3></dl>
+						<hr />
+						<dl class="list-for-addition"><h3>Certs</h3></dl>
+					</section>
+					<button onclick="addAward()">Add Award</button>
+					<button onclick="addCert()">Add Certificate</button>
 				</article>
 				<hr />
 				<article id="partners">
