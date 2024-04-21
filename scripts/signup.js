@@ -10,23 +10,38 @@ function checkCompanyNameInput() {
   }
 
 
-  function signUp() {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    var confirmPassword = document.getElementById('confirm_password').value;
-    var email = document.getElementById('email').value;
-    var userType = document.querySelector('input[name="type_job"]:checked').value;
-    var companyName = '';
+function signUp() {
   
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return false; // do not allow to submit
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirm_password').value;
+  var email = document.getElementById('email').value;
+  var userType = document.querySelector('input[name="type_job"]:checked').value;
+  var companyName = '';
+
+  // check confirming password
+  if (password !== confirmPassword) {
+    alert("Passwords do not match");
+    return false; // do not allow to submit
+  }
+
+  // check validation of email must have (.) and one of ['net', 'org', 'edu', 'gov', 'com']
+  if (email.indexOf('.') === -1) {
+    alert("Invalid email address please enter a valid email.");
+    return false; // do not allow to submit
     }
-  
-    var users = JSON.parse(localStorage.getItem('users')) || [];
-    var existingUser = users.find(function(user) {
-      return user.email === email;
-    });
+
+  var domain = email.split('.')[1];
+  var validDomains = ['net', 'org', 'edu', 'gov', 'com'];
+  if (validDomains.indexOf(domain) == -1) {
+        alert("Invalid email address. Please enter a valid email.");
+        return false; // do not allow to submit
+      }
+
+  var users = JSON.parse(localStorage.getItem('users')) || [];
+  var existingUser = users.find(function(user) {
+    return user.email === email;
+  });
   
     if (existingUser) {
       alert("Email already exists");
