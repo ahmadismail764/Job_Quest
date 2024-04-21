@@ -103,8 +103,8 @@ h2 {
 	text-align: center;
 }
 
-#salary {
-	width: 90px;
+#experience {
+	width: 160px;
 	padding: var(--small-padding);
 	padding-left: var(--padding);
 	margin-top: 0px;
@@ -117,10 +117,24 @@ h2 {
 	text-align: center;
 }
 
-#keyword:hover,
 #keyword:focus,
 #keyword:not(:placeholder-shown) {
 	width: 400px;
+}
+
+
+#experience:not(:placeholder-shown) {
+	width: 60px;
+	padding: var(--small-padding);
+	padding-left: var(--padding);
+	margin-top: 0px;
+	margin-bottom: var(--padding);
+	border: 2px solid var(--good-blue);
+	border-radius: var(--padding);
+	outline: none;
+	background-color: white;
+	transition: width 0.4s ease-in-out;
+	text-align: center;
 }
 
 button[type="submit"] {

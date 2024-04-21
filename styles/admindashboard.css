@@ -69,7 +69,7 @@ header nav a {
 
 /* Main Styles */
 main {
-	padding: var(--small-padding);
+	padding: var(--padding);
 }
 .dashboard {
 	background-color: #fff;
