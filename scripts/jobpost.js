@@ -39,21 +39,16 @@ function savePost(event) {
 		experience: document.getElementById("experience").value,
 		overview: document.getElementById("overview").value,
 		companyLink: document.getElementById("companyLink").value,
-		applliedUsers: new Array(),
+		applliedUsers: [],
 	};
 
-	// Increment the counter
 	postIdCounter++;
-
-	// Save form data to local storage
-
 	posts.push(postFormData);
 	localStorage.setItem("allJobs", JSON.stringify(posts));
-
 	var currentUser = JSON.parse(sessionStorage.getItem("currentUser")) || [];
+
 	const users = JSON.parse(localStorage.getItem("users")) || [];
 	currentUser.postedJobs.push(postFormData);
-
 	users.forEach(function (user) {
 		if (user.email === currentUser.email) {
 			user.postedJobs.push(postFormData);
@@ -62,7 +57,6 @@ function savePost(event) {
 		}
 	});
 
-	//Clear form fields after submission
 	document.getElementById("title").value = "";
 	document.getElementById("company").value = "";
 	document.getElementById("description").value = "";
@@ -72,8 +66,8 @@ function savePost(event) {
 	document.getElementById("experience").value = "";
 	document.getElementById("overview").value = "";
 	document.getElementById("companyLink").value = "";
-
 	alert("Job posted successfully!");
+	window.location.href = "admindashboard.html";
 }
 
 function logout() {
