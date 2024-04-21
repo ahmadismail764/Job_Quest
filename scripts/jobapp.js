@@ -1,4 +1,13 @@
+document.addEventListener("DOMContentLoaded", function () {
+	const urlParams = new URLSearchParams(window.location.search);
+	const id = parseInt(urlParams.get("id"));
+});
+
 function saveApp(event) {
+	const urlParams = new URLSearchParams(window.location.search);
+	const id = parseInt(urlParams.get("id"));
+	const allJobs = JSON.parse(localStorage.getItem("allJobs")) || [];
+	const thisJob = allJobs[id];
 	event.preventDefault();
 
 	// Get form data
@@ -18,6 +27,36 @@ function saveApp(event) {
 	applications.push(appFormData);
 	localStorage.setItem("jobApplications", JSON.stringify(applications));
 
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+	const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+	const appUser = {
+		application: appFormData,
+		account: currentUser
+	};
+
+	var wanted;
+	users.forEach(function (user) {
+		user.postedJobs.forEach(function (job) {
+			if (job.id === id) {
+				user.applliedUsers.push(appUser);
+				localStorage.setItem("users", JSON.stringify(users));
+			}
+		})
+
+	});
+
+	users.forEach(function (user) {
+		if (user.email === currentUser.email) {
+			user.applliedJobs.push(thisJob);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+		}
+	})
+	// wanted.applliedUsers
+	// 	.push(appUser);
+	// console.log(wanted);
+
 	//Clear form fields after submission
 	document.getElementById("fullname").value = "";
 	document.getElementById("email").value = "";
@@ -31,13 +70,13 @@ function saveApp(event) {
 }
 
 function logout() {
-    sessionStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }

@@ -1,23 +1,50 @@
+let postIdCounter
+posts = JSON.parse(localStorage.getItem("allJobs")) || [];
+
+if (posts.length === 0) {
+	postIdCounter = 0;
+}
+else {
+	postIdCounter = posts[posts.length - 1].id;
+}
 function savePost(event) {
 	event.preventDefault();
-
 	// Get form data
 	const postFormData = {
+		id: postIdCounter,
 		title: document.getElementById("title").value,
 		company: document.getElementById("company").value,
 		description: document.getElementById("description").value,
 		location: document.getElementById("location").value,
 		requirements: document.getElementById("requirements").value,
 		salary: document.getElementById("salary").value,
+		experience: document.getElementById("experience").value,
 		overview: document.getElementById("overview").value,
 		companyLink: document.getElementById("companyLink").value,
+		applliedUsers: new Array()
 	};
+
+	// Increment the counter
+	postIdCounter++;
 
 	// Save form data to local storage
 	let posts = new Array();
-	posts = JSON.parse(localStorage.getItem("postedJobs")) || [];
 	posts.push(postFormData);
-	localStorage.setItem("postedJobs", JSON.stringify(posts));
+	localStorage.setItem("allJobs", JSON.stringify(posts));
+
+
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || [];
+	const users = JSON.parse(localStorage.getItem("users")) || [];
+	currentUser.postedJobs.push(postFormData);
+
+	users.forEach(function (user) {
+		if (user.email === currentUser.email) {
+			user.postedJobs.push(postFormData);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("users", JSON.stringify(users));
+		}
+	});
+
 
 	//Clear form fields after submission
 	document.getElementById("title").value = "";
@@ -26,6 +53,7 @@ function savePost(event) {
 	document.getElementById("location").value = "";
 	document.getElementById("requirements").value = "";
 	document.getElementById("salary").value = "";
+	document.getElementById("experience").value = "";
 	document.getElementById("overview").value = "";
 	document.getElementById("companyLink").value = "";
 
@@ -34,13 +62,13 @@ function savePost(event) {
 
 
 function logout() {
-    sessionStorage.removeItem('currentUser');
-    window.location.href = 'login.html';
+	sessionStorage.removeItem('currentUser');
+	window.location.href = 'login.html';
 }
 
 function checkAuthentication() {
-    var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-    if (!currentUser) {
-        window.location.href = 'login.html';
-    }
+	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	if (!currentUser) {
+		window.location.href = 'login.html';
+	}
 }

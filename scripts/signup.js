@@ -1,13 +1,13 @@
 function checkCompanyNameInput() {
-    var userType = document.querySelector('input[name="type_job"]:checked').value;
-    var companyNameDiv = document.getElementById('companyNameDiv');
-  
-    if (userType === 'admin') {
-      companyNameDiv.style.display = 'block';
-    } else {
-      companyNameDiv.style.display = 'none';
-    }
+  var userType = document.querySelector('input[name="type_job"]:checked').value;
+  var companyNameDiv = document.getElementById('companyNameDiv');
+
+  if (userType === 'admin') {
+    companyNameDiv.style.display = 'block';
+  } else {
+    companyNameDiv.style.display = 'none';
   }
+}
 
 
 function signUp() {
@@ -18,6 +18,9 @@ function signUp() {
   var email = document.getElementById('email').value;
   var userType = document.querySelector('input[name="type_job"]:checked').value;
   var companyName = '';
+  var postedJobs = new Array();
+  var applliedUsers = new Array();
+  var applliedJobs = new Array();
 
   // check confirming password
   if (password !== confirmPassword) {
@@ -47,22 +50,27 @@ function signUp() {
       alert("Email already exists");
       return false; // do not allow to submit
     }
+ 
 
-    if (userType === 'admin') {
-        companyName = document.getElementById('company_name').value;
-      }
-  
-    var user = {
-      username: username,
-      password: password,
-      email: email,
-      userType: userType,
-      companyName: companyName
-    };
-  
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
-    alert("Sign Up Successful");
-    window.location.href = 'login.html';
-    return true;
+  if (userType === 'admin') {
+    companyName = document.getElementById('company_name').value;
   }
+
+  var user = {
+    username: username,
+    password: password,
+    email: email,
+    userType: userType,
+    companyName: companyName,
+    postedJobs: postedJobs,
+    applliedUsers: applliedUsers,
+    applliedJobs: applliedJobs
+  };
+
+  users = JSON.parse(localStorage.getItem("users")) || [];
+  users.push(user);
+  localStorage.setItem('users', JSON.stringify(users));
+  alert("Sign Up Successful");
+  window.location.href = 'login.html';
+  return true;
+}

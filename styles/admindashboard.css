@@ -124,7 +124,7 @@ button:hover {
 footer {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: var(--padding);
+	padding: var(--small-padding);
 	text-align: center;
 }
 footer h3 {
