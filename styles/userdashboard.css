@@ -147,12 +147,13 @@ footer {
 	padding: 0.25rem;
 	text-align: center;
 }
-
+/* footer h3 {
+	color: var(--light-gray);
+} */
 footer a {
 	color: var(--light-gray);
 	text-decoration: none;
 }
-
 footer nav ul {
 	list-style-type: none;
 	padding: 0;
@@ -160,6 +161,7 @@ footer nav ul {
 
 footer nav ul li {
 	display: inline;
+	color: var(--light-gray);
 	margin-right: var(--small-padding);
 }
 /* Footer Styles */
