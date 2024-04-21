@@ -54,30 +54,15 @@
           <section class="about">
             <h2>About your company</h2>
             <p>Learn more about your company's mission, vision, and values.</p>
-            <button>Edit</button>
+            <p id="button-container1">
+            <button onclick="editAbout()">Edit</button></p>
           </section>
           <hr />
           <section class="postedjobs">
             <h2>Posted Jobs</h2>
-            <section class="job">
-              <h3>Job #1</h3>
-              <button>Edit</button
-              ><button onclick="confirmDelete()">Delete</button>
-            </section>
-            <hr />
-            <section class="job">
-              <h3>Job #2</h3>
-              <button>Edit</button
-              ><button onclick="confirmDelete()">Delete</button>
-            </section>
-            <hr />
-            <section class="job">
-              <h3>Job #3</h3>
-              <button>Edit</button
-              ><button onclick="confirmDelete()">Delete</button>
-            </section>
-            <hr />
-            <a href="jobpost.html"><button>Post New Job</button></a>
+            <section id="jobholder"></section>
+            <p id="button-container2">
+            <button onclick="redirectTo('jobpost.html')">Post New Job</button></p>
           </section>
         </article>
         <hr />
@@ -98,9 +83,21 @@
         </article>
         <hr />
         <article id="certs">
-          <h2>Awards & Certs</h2>
-          <p>See the awards and certifications your company has achieved.</p>
-          <button>Add Award</button> <button>Add Certificate</button>
+          <section class="about">
+            <h2>Awards</h2>
+            <section class="awards">
+              <dl class="list-for-addition"></dl>
+            </section>
+            <p class="button-container3">
+            <button onclick="addAward()">Add Award</button></p>
+          </section>
+          <hr />
+          <section class="about">
+            <h2>Certifications</h2>
+            <dl class="list-for-addition"></dl>
+            <p class="button-container4">
+            <button onclick="addCert()">Add Certificate</button></p>
+          </section>
         </article>
         <hr />
         <article id="partners">

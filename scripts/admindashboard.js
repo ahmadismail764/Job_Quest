@@ -16,6 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+document
+	.querySelector(".postedjobs")
+	.addEventListener("click", function (event) {
+		// Check if the clicked element is a delete button
+		if (event.target.matches('.job button[data-action="delete"]')) {
+			// Find the closest job section element
+			var jobSection = event.target.closest(".job");
+			// If a job section is found, remove it from the DOM
+			if (jobSection) {
+				jobSection.parentNode.removeChild(jobSection);
+			}
+		}
+	});
+
+function redirectTo(pageUrl) {
+	window.location.href = pageUrl;
+}
 function logout() {
 	sessionStorage.removeItem("currentUser");
 	window.location.href = "login.html";
@@ -27,6 +44,7 @@ function checkAuthentication() {
 		window.location.href = "login.html";
 	}
 }
+
 var originalAboutText = "";
 function editAbout() {
 	var aboutSection = document.querySelector("#about-comp .about");
@@ -35,7 +53,7 @@ function editAbout() {
 	var textarea = document.createElement("textarea");
 	textarea.value = aboutText;
 	textarea.style.width = "100%";
-	textarea.style.height = "calc(100% - 100px)";
+	textarea.style.height = "100%";
 
 	aboutSection.replaceChild(textarea, aboutSection.querySelector("p"));
 
@@ -51,7 +69,7 @@ function editAbout() {
 		cancelEditAbout(aboutSection, textarea);
 	};
 
-	var buttonContainer = document.getElementById("button-container");
+	var buttonContainer = document.getElementById("button-container1");
 	buttonContainer.innerHTML = "";
 	buttonContainer.appendChild(saveButton);
 	buttonContainer.appendChild(cancelButton);
@@ -67,7 +85,7 @@ function saveAbout(aboutSection, textarea) {
 	editButton.onclick = function () {
 		editAbout();
 	};
-	var buttonContainer = document.getElementById("button-container");
+	var buttonContainer = document.getElementById("button-container1");
 	buttonContainer.innerHTML = "";
 	buttonContainer.appendChild(editButton);
 }
@@ -80,8 +98,8 @@ function cancelEditAbout(aboutSection, textarea) {
 	editButton.onclick = function () {
 		editAbout();
 	};
-	var buttonContainer = document.getElementById("button-container");
-	buttonContainer.innerHTML = ""; //
+	var buttonContainer = document.getElementById("button-container1");
+	buttonContainer.innerHTML = "";
 	buttonContainer.appendChild(editButton);
 }
 
@@ -135,9 +153,5 @@ function addCert() {
 }
 function checkAdmin() {
 	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-	if (currentUser.userType == "admin") {
-		return true;
-	} else {
-		return false;
-	}
+	return currentUser.userType === "admin";
 }
