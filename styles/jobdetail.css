@@ -33,7 +33,7 @@ header {
 	align-items: center;
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: var(--padding);
+	padding: 20px;
 }
 
 header figure img {
@@ -46,14 +46,14 @@ header figure img {
 header a {
 	color: var(--light-gray);
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 24px;
 }
 
 header nav a {
 	color: var(--light-gray);
 	text-decoration: none;
-	margin-right: var(--padding);
-	font-size: 1.125rem;
+	margin-right: 20px;
+	font-size: 18px;
 }
 
 .header1,
@@ -72,6 +72,10 @@ header nav a {
 
 .header2 {
 	margin-right: 25px;
+}
+
+.above {
+	height: 100%;
 }
 /* Main Styling */
 main {

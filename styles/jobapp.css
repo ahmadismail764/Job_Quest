@@ -25,7 +25,6 @@ body {
 }
 
 /* Header Styling */
-
 header {
 	display: flex;
 	flex-direction: row;
@@ -33,7 +32,7 @@ header {
 	align-items: center;
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: var(--padding);
+	padding: 20px;
 }
 
 header figure img {
@@ -46,14 +45,14 @@ header figure img {
 header a {
 	color: var(--light-gray);
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 24px;
 }
 
 header nav a {
 	color: var(--light-gray);
 	text-decoration: none;
-	margin-right: var(--padding);
-	font-size: 1.125rem;
+	margin-right: 20px;
+	font-size: 18px;
 }
 
 .header1,
@@ -73,6 +72,10 @@ header nav a {
 .header2 {
 	margin-right: 25px;
 }
+
+.above {
+	height: 100%;
+}
 /* Main Styling */
 main {
 	padding: var(--padding);
@@ -82,8 +85,8 @@ form {
 	width: 50%;
 	margin: 0 auto;
 	background-color: #fff;
-	padding: 1.75rem;
-	border-radius: var(--small-padding);
+	padding: 30px;
+	border-radius: 25px;
 	box-shadow: 0 0 var(--padding) rgba(0, 0, 0, 0.1);
 }
 

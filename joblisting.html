@@ -2,12 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-    <link rel="icon" href="img/icon.png" />
+		<link rel="icon" href="img/icon.png" />
 		<meta name="author" content="Belal Ahmad" />
 		<meta name="description" content="The job listings page for Job Quest" />
 		<link rel="stylesheet" href="styles/joblisting.css" />
 		<!-- Load icon library -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<script src="scripts/joblisting.js"></script>
 		<title>Job Quest-Listing</title>
 	</head>
@@ -19,66 +21,69 @@
 					<figcaption>Job Quest</figcaption>
 				</figure>
 			</a>
-      <article class="uppernav">
-			<nav>
-				<a href="homepage.html">Homepage</a>&nbsp;
-				<a href="admindashboard.html">Dashboard</a> &nbsp;
-				<a href="jobpost.html">Jobpost</a>
-			</nav>
-      </article>
+			<article class="above">
+				<nav>
+					<a class="dashboard-link">Dashboard</a> &nbsp;
+					<a class="browse-post">Browse Jobs/Post Job</a>
+					<a href="contact.html">Contact Us</a>
+					<a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+				</nav>
+			</article>
 			<a href="" id="add-info">
 				<figure class="header2">
 					<img src="img/profile.png" alt="Insert Profile Pic here" />
-					<figcaption>User Name</figcaption>
+					<figcaption id="user-name"></figcaption>
 				</figure>
 			</a>
-    </header>
 		</header>
 		<main>
-			<article class = "page-content">
-			<h2>Job Listing</h2>
-			<form id="SearchBar" onsubmit="search(event)" method="get">
-				<input
-				  type="text"
-				  id="keyword"
-				  name="keyword"
-				  placeholder="Search for a Job..."
-				/>
-				<input
-				  type="number"
-				  id="experience"
-				  name="experience"
-				  placeholder="Years of Experience"
-					min="1"
-				/>
-				<button type="submit"><i class="fa fa-search"></i></button>
-			  </form>
-			<section id="job-list">
-			<div class="job">
-				<div class="job-content">
-				  <h3 class="job-title"> Senior Software Engineer (Android/IOS)</h3>
-				  <p class="company-name"> Triple-Z Tech Inc. &copy;</p>
-				  <p class="job-description"></p>
-				</div>
-				<div class="details"><a href="jobdetail.html" class="job-link" ><span title="See Full Description">&rarr;</span></a></div>
-			</div>
-			</section>
+			<article class="page-content">
+				<h2>Job Listing</h2>
+				<form id="SearchBar" onsubmit="search(event)" method="get">
+					<input
+						type="text"
+						id="keyword"
+						name="keyword"
+						placeholder="Search for a Job..." />
+					<input
+						type="number"
+						id="experience"
+						name="experience"
+						placeholder="Years of Experience"
+						min="1" />
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+				<section id="job-list">
+					<div class="job">
+						<div class="job-content">
+							<h3 class="job-title">Senior Software Engineer (Android/IOS)</h3>
+							<p class="company-name">Triple-Z Tech Inc. &copy;</p>
+							<p class="job-description"></p>
+						</div>
+						<div class="details">
+							<a href="jobdetail.html" class="job-link"
+								><span title="See Full Description">&rarr;</span></a
+							>
+						</div>
+					</div>
+				</section>
 			</article>
 		</main>
-    <footer>
-      <h3><a href="contact.html">Contact Us</a></h3>
-      <nav>
-        <ul>
-			<p>Check out our socials</p>
-          <li><a href="#" target="_blank">Facebook</a></li>
-          <li><a href="#" target="_blank">Instagram</a></li>
-          <li><a href="#" target="_blank">Twitter</a></li>
-        </ul>
-      </nav>
-      <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
-    </footer>
-    <script>
-      // checkAuthentication();
-    </script>
+		<footer>
+			<h3><a href="contact.html">Contact Us</a></h3>
+			<nav>
+				<ul>
+					<p>Check out our socials</p>
+					<li><a href="#" target="_blank">Facebook</a></li>
+					<li><a href="#" target="_blank">Instagram</a></li>
+					<li><a href="#" target="_blank">Twitter</a></li>
+				</ul>
+				<a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+			</nav>
+			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+		</footer>
+		<script>
+			// checkAuthentication();
+		</script>
 	</body>
 </html>

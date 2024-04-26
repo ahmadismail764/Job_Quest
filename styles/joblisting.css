@@ -34,7 +34,7 @@ header {
 	align-items: center;
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: var(--padding);
+	padding: 20px;
 }
 
 header figure img {
@@ -47,30 +47,36 @@ header figure img {
 header a {
 	color: var(--light-gray);
 	text-decoration: none;
-	font-size: var(--big-padding);
+	font-size: 24px;
 }
 
 header nav a {
 	color: var(--light-gray);
 	text-decoration: none;
-	margin-right: var(--padding);
-	font-size: var(--padding);
+	margin-right: 20px;
+	font-size: 18px;
 }
 
 .header1,
 .header2,
-.uppernav {
+.above {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	margin: auto;
 	align-items: center;
 }
+
 .header1 {
-	margin-left: var(--big-padding);
+	margin-left: 25px;
 }
+
 .header2 {
-	margin-right: var(--big-padding);
+	margin-right: 25px;
+}
+
+.above {
+	height: 100%;
 }
 /* Main Styling */
 main {
@@ -92,7 +98,7 @@ h2 {
 #keyword {
 	width: 200px;
 	padding: var(--small-padding);
-	padding-left: 1.5rem;
+	padding-left: 20px;
 	margin-top: 0px;
 	margin-bottom: var(--padding);
 	border: 2px solid var(--good-blue);
@@ -103,8 +109,8 @@ h2 {
 	text-align: center;
 }
 
-#salary {
-	width: 90px;
+#experience {
+	width: 160px;
 	padding: var(--small-padding);
 	padding-left: var(--padding);
 	margin-top: 0px;
@@ -117,10 +123,23 @@ h2 {
 	text-align: center;
 }
 
-#keyword:hover,
 #keyword:focus,
 #keyword:not(:placeholder-shown) {
 	width: 400px;
+}
+
+#experience:not(:placeholder-shown) {
+	width: 60px;
+	padding: var(--small-padding);
+	padding-left: var(--padding);
+	margin-top: 0px;
+	margin-bottom: var(--padding);
+	border: 2px solid var(--good-blue);
+	border-radius: var(--padding);
+	outline: none;
+	background-color: white;
+	transition: width 0.4s ease-in-out;
+	text-align: center;
 }
 
 button[type="submit"] {

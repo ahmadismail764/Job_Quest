@@ -2,13 +2,13 @@
 
 /* PRE-STYLES */
 :root {
-	--PAD: 1.25rem;
-	--SM-PAD: 0.75rem;
-	--LGT-GRAY: #eaebfe;
-	--BIT-DARK: #b0b8ce;
-	--GO-TO-BLUE: #505a74;
-	--GOOD-BLUE: #354c7c;
-	--FIN-BLUE: #022954;
+	--padding: 1.25rem;
+	--small-padding: 0.75rem;
+	--light-gray: #eaebfe;
+	--bit-dark: #b0b8ce;
+	--go-to-blue: #505a74;
+	--good-blue: #354c7c;
+	--fin-blue: #022954;
 }
 
 * {
@@ -19,13 +19,13 @@
 /* PRE-STYLES */
 .contact h1,
 h2 {
-	color: var(--GOOD-BLUE);
+	color: var(--good-blue);
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	background-color: var(--BIT-DARK);
+	background-color: var(--bit-dark);
 }
 
 /* Header Styling */
@@ -35,8 +35,8 @@ header {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	background-color: var(--GOOD-BLUE);
-	color: var(--LGT-GRAY);
+	background-color: var(--good-blue);
+	color: var(--light-gray);
 	padding: 20px;
 }
 
@@ -48,13 +48,13 @@ header figure img {
 }
 
 header a {
-	color: var(--LGT-GRAY);
+	color: var(--light-gray);
 	text-decoration: none;
 	font-size: 24px;
 }
 
 header nav a {
-	color: var(--LGT-GRAY);
+	color: var(--light-gray);
 	text-decoration: none;
 	margin-right: 20px;
 	font-size: 18px;
@@ -96,7 +96,7 @@ main {
 }
 
 fieldset {
-	border-color: var(--FIN-BLUE);
+	border-color: var(--fin-blue);
 }
 
 form p {
@@ -106,7 +106,7 @@ form p {
 label,
 legend {
 	font-weight: bold;
-	color: var(--GOOD-BLUE);
+	color: var(--good-blue);
 }
 
 textarea,
@@ -117,14 +117,14 @@ button {
 
 /* Footer Styling */
 footer {
-	background-color: var(--GOOD-BLUE);
-	color: var(--LGT-GRAY);
+	background-color: var(--good-blue);
+	color: var(--light-gray);
 	padding: 20px;
 	text-align: center;
 }
 
 footer a {
-	color: var(--LGT-GRAY);
+	color: var(--light-gray);
 	text-decoration: none;
 }
 

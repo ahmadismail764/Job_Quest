@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const urlParams = new URLSearchParams(window.location.search);
-	const id = parseInt(urlParams.get("id"));
+	checkAuthentication();
+	document.getElementById("user-name").textContent = JSON.parse(
+		sessionStorage.getItem("currentUser")
+	).username;
+	if (checkAdmin()) {
+		document.querySelector(".dashboard-link").href = "admindashboard.html";
+		document.querySelector(".browse-post").href = "jobpost.html";
+		document.querySelector(".browse-post").innerHTML = "Post Job";
+	} else {
+		document.querySelector(".dashboard-link").href = "userdashboard.html";
+		document.querySelector(".browse-post").href = "joblisting.html";
+		document.querySelector(".browse-post").innerHTML = "Browse Jobs";
+	}
 });
 
 function saveApp(event) {
@@ -32,30 +43,31 @@ function saveApp(event) {
 
 	const appUser = {
 		application: appFormData,
-		account: currentUser
+		account: currentUser,
 	};
 
-	var wanted;
 	users.forEach(function (user) {
-		user.postedJobs.forEach(function (job) {
-			if (job.id === id) {
-				user.applliedUsers.push(appUser);
-				localStorage.setItem("users", JSON.stringify(users));
-			}
-		})
-
+		if ((user.email === currentUser.email && !checkAdmin())) {
+			user.applliedJobs.push(thisJob);
+			localStorage.setItem("users", JSON.stringify(users));
+			sessionStorage.setItem("currentUser", JSON.stringify(user));
+		}
 	});
 
 	users.forEach(function (user) {
-		if (user.email === currentUser.email) {
-			user.applliedJobs.push(thisJob);
-			localStorage.setItem("users", JSON.stringify(users));
-			sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+		user.postedJobs.forEach(function (job) {
+			if (job.id === id) {
+				job.applliedUsers.push(appUser);
+				localStorage.setItem("users", JSON.stringify(users));
+			}
+		});
+	});
+
+	users.forEach(function (user) {
+		if ((user.email === currentUser.email) && checkAdmin()) {
+			sessionStorage.setItem("currentUser", JSON.stringify(user));
 		}
-	})
-	// wanted.applliedUsers
-	// 	.push(appUser);
-	// console.log(wanted);
+	});
 
 	//Clear form fields after submission
 	document.getElementById("fullname").value = "";
@@ -70,13 +82,22 @@ function saveApp(event) {
 }
 
 function logout() {
-	sessionStorage.removeItem('currentUser');
-	window.location.href = 'login.html';
+	sessionStorage.removeItem("currentUser");
+	window.location.href = "login.html";
 }
 
 function checkAuthentication() {
-	var currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 	if (!currentUser) {
-		window.location.href = 'login.html';
+		window.location.href = "login.html";
+	}
+}
+
+function checkAdmin() {
+	var currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+	if (currentUser.userType == "admin") {
+		return true;
+	} else {
+		return false;
 	}
 }

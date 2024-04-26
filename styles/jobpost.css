@@ -54,7 +54,7 @@ header nav a {
 	color: var(--light-gray);
 	text-decoration: none;
 	margin-right: 20px;
-	font-size: 1rem;
+	font-size: 18px;
 }
 
 .header1,
@@ -75,22 +75,24 @@ header nav a {
 	margin-right: 25px;
 }
 
+.above {
+	height: 100%;
+}
+
 /* Main Styling */
 main {
-	padding: var(--padding);
+	padding: 20px;
 }
+
 form {
 	width: 50%;
 	margin: 0 auto;
 	background-color: #fff;
-	padding: var(--big-padding);
-	border-radius: var(--padding);
-	box-shadow: 0 0 var(--padding) rgba(0, 0, 0, 0.1);
+	padding: 30px;
+	border-radius: 25px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-form :hover {
-	transition: transform 0.3s ease-in-out;
-	transform: scale(1.04);
-}
+
 .form-group {
 	margin-bottom: 20px;
 }
@@ -106,31 +108,31 @@ input[type="url"],
 select,
 textarea {
 	width: 100%;
-	padding: 0.5rem;
+	padding: 8px;
 	border: 1px solid #ccc;
-	border-radius: 0.25rem;
+	border-radius: 5px;
 	box-sizing: border-box;
 	resize: none;
 }
 
 input[type="file"] {
-	padding: 0.5rem 0;
+	padding: 8px 0;
 }
 
 input[type="submit"] {
 	background-color: var(--good-blue);
 	color: var(--light-gray);
-	padding: 1rem 1.75rem;
+	padding: 15px 30px;
 	text-decoration: none;
-	border-radius: 1.5rem;
-	font-size: 1.125rem;
+	border-radius: 25px;
+	font-size: 18px;
 	transition: background-color 0.3s;
 	cursor: pointer;
 	border: 0px;
 }
 
 input[type="submit"]:hover {
-	background-color: var(--FIN-BLUE);
+	background-color: var(--fin-blue);
 }
 
 /* Footer Styling */
