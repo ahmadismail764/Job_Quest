@@ -26,7 +26,7 @@ section {
 	padding: 100px 50px;
 }
 .main {
-	/* background: url("../img/home1jpg.jpg") no-repeat; */
+	background: url("../img/home1jpg.jpg") no-repeat;
 	background-size: cover;
 	background-position: center;
 	min-height: 99vh;
