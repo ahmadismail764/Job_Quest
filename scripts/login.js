@@ -21,10 +21,10 @@ function login() {
 			return true;
 		} else {
 			alert("Invalid password");
-			return false; // do not allow to submit
+			return false; 
 		}
 	} else {
 		alert("User not found");
-		return false; // do not allow to submit
+		return false; 
 	}
 }

@@ -22,20 +22,20 @@ function signUp() {
 	// check confirming password
 	if (password !== confirmPassword) {
 		alert("Passwords do not match");
-		return false; // do not allow to submit
+		return false; 
 	}
 
 	// check validation of email must have (.) and one of ['net', 'org', 'edu', 'gov', 'com']
 	if (email.indexOf(".") === -1) {
 		alert("Invalid email address please enter a valid email.");
-		return false; // do not allow to submit
+		return false; 
 	}
 
 	var domain = email.split(".")[1];
 	var validDomains = ["net", "org", "edu", "gov", "com"];
 	if (validDomains.indexOf(domain) == -1) {
 		alert("Invalid email address. Please enter a valid email.");
-		return false; // do not allow to submit
+		return false; 
 	}
 
 	var users = JSON.parse(localStorage.getItem("users")) || [];
@@ -45,7 +45,7 @@ function signUp() {
 
 	if (existingUser) {
 		alert("Email already exists");
-		return false; // do not allow to submit
+		return false; 
 	}
 
 	if (userType === "admin") {
