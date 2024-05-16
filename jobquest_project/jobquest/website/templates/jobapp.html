@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="img/icon.png" />
+    <meta name="author" content="Mohammad Zeinhom" />
+    <meta name="description" content="The job application page for Job Quest" />
+    <link rel="stylesheet" href="styles/jobapp.css" />
+    <script src="scripts/jobapp.js"></script>
+    <title>Job Application Form</title>
+  </head>
+  <body>
+    <header>
+      <a href="homepage.html">
+        <figure class="header1">
+          <img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
+          <figcaption>Job Quest</figcaption>
+        </figure>
+      </a>
+      <article class="above">
+        <nav>
+          <a class="dashboard-link">Dashboard</a> &nbsp;
+          <a class="browse-post">Browse Jobs/Post Job</a>
+          <a href="contact.html">Contact Us</a>
+          <a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+        </nav>
+      </article>
+      <a href="" id="add-info">
+        <figure class="header2">
+          <img src="img/profile.png" alt="Insert Profile Pic here" />
+          <figcaption id="user-name"></figcaption>
+        </figure>
+      </a>
+    </header>
+    <main>
+    <main>
+      <div id="job_application_form">
+        <form
+          onsubmit="saveApp(event)"
+          method="post"
+          enctype="multipart/form-data"
+          class="form"
+        >
+          <div class="form-group">
+            <label for="fullname">Full Name:</label><br />
+            <input type="text" id="fullname" name="fullname" required /><br />
+          </div>
+
+					<div class="form-group">
+						<label for="email">Email:</label><br />
+						<input type="email" id="email" name="email" required /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="phone">Phone Number:</label><br />
+						<input type="tel" id="phone" name="phone" required /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="resume">Upload Resume (PDF, DOC, DOCX):</label><br />
+						<input
+							type="file"
+							id="resume"
+							name="resume"
+							accept=".pdf,.doc,.docx"
+							required /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="coverletter"
+							>Upload Cover Letter (PDF, DOC, DOCX):</label
+						><br />
+						<input
+							type="file"
+							id="coverletter"
+							name="coverletter"
+							accept=".pdf,.doc,.docx" /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="education">Highest Level of Education:</label><br />
+						<select id="education" name="education" required>
+							<option value="">Select</option>
+							<option value="high_school">High School</option>
+							<option value="bachelors">Bachelor's Degree</option>
+							<option value="masters">Master's Degree</option>
+							<option value="phd">PhD</option>
+							<option value="other">Other</option></select
+						><br />
+					</div>
+
+					<div class="form-group">
+						<label for="experience">Years of Experience:</label><br />
+						<input
+							type="number"
+							id="experience"
+							name="experience"
+							min="0"
+							required /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="linkedin">LinkedIn Profile (optional):</label><br />
+						<input type="url" id="linkedin" name="linkedin" /><br />
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Additional Comments:</label><br />
+						<textarea
+							id="comments"
+							name="comments"
+							rows="4"
+							cols="50"></textarea
+						><br />
+					</div>
+
+					<div class="form-group">
+						<input type="submit" value="Apply" /><br />
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<h3><a href="contact.html">Contact Us</a></h3>
+			<nav>
+				<div>Check out our socials</div>
+				<ul>
+					<li><a href="#" target="_blank">Facebook</a></li>
+					<li><a href="#" target="_blank">Instagram</a></li>
+					<li><a href="#" target="_blank">Twitter</a></li>
+				</ul>
+				<a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+			</nav>
+			<p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+		</footer>
+		<script>
+			checkAuthentication();
+		</script>
+	</body>
+</html>
