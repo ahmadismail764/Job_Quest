@@ -5,8 +5,9 @@ from django.contrib.auth import logout as auth_logout
 from .forms import UserRegistrationForm
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
-
-def login(request):
+from django.views.decorators.csrf import csrf_protect
+@csrf_protect
+def login_user(request):
     error_message = None 
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -15,7 +16,7 @@ def login(request):
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
             if user is not None:
-                # login(request, user)
+                login(request, user)
                 if user.is_staff:
                     return redirect('admindashboard')
                 else:
@@ -69,10 +70,10 @@ def logout_view(request):
 def home(request):
     return render(request , 'homepage.html')
 
-# @login_required(login_url='login')
+@login_required
 def admindashboard(request):
     return render(request , 'admindashboard.html')
-# @login_required(login_url='login')
+@login_required
 def userdashboard(request):
     return render(request , 'userdashboard.html')
 
