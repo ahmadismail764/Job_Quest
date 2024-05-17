@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,7 +10,7 @@
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-		<link rel="stylesheet" href="styles/homepage.css" />
+		<link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
 	</head>
 	<body>
 		<section class="main">
@@ -24,8 +25,8 @@
 					job site.
 				</h3>
 				<h2>Now you can join us</h2>
-				<a href="login.html" class="btn">Login</a>
-				<a href="signup.html" class="btn">Sign up</a>
+				<a href="login" class="btn">Login</a>
+				<a href="signup" class="btn">Sign up</a>
 			</div>
 		</section>
 		<footer>
