@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import ApplicationForm
+from .models import Application
+from .models import Job
 
 # Create your views here.
 
@@ -9,7 +11,13 @@ def application(request):
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponse('Application submitted successfully')
+            # return HttpResponse('Application submitted successfully')
     else:
         form = ApplicationForm()
-    return render(request, 'jobs/application.html', {'form': form})
+    return render(request, 'jobapp.html', {'form': form})
+
+def displayJob(request):
+    return render(request, 'jobdetails.html')
+
+def listJobs(request):
+    return render(request, 'joblisting.html', {'jobs': Job.objects.all()})   
