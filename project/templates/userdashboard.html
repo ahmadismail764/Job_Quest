@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <link rel="icon" href="img/icon.png" />
     <meta name="author" content="Ahmad Ismail" />
     <meta name="description" content="The user dashboard for Job Quest" />
-    <link rel="stylesheet" href="styles/userdashboard.css" />
+    <link rel="stylesheet" href={%static 'css/userdashboard.css' %} />
     <script src="scripts/userdashboard.js"></script>
     <title>User Dashboard</title>
   </head>
@@ -105,7 +106,7 @@
         </article>
         <hr />
         <article class="inner" id="certs">
-          <h2>Licenses & Certs</h2>
+          <h2>Licenses and Certs</h2>
           <p>See your professional certifications and licenses.</p>
           <section class="list-holder">
             <dl class="list-for-addition">
@@ -157,5 +158,6 @@
     <script>
       checkAuthentication();
     </script>
+    <script src={%static 'js/userdashboard.js'%}></script>
   </body>
 </html>

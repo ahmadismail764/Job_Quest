@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,8 +6,7 @@
     <link rel="icon" href="img/icon.png" />
     <meta name="author" content="Ahmad Ismail" />
     <meta name="description" content="The admin dashboard for Job Quest" />
-    <link rel="stylesheet" href="styles/admindashboard.css" />
-    <script src="scripts/admindashboard.js"></script>
+    <link rel="stylesheet" href={% static 'css/admindashboard.css' %} />
     <title>Admin Dashboard</title>
   </head>
   <body>
@@ -125,5 +125,6 @@
     <script>
       checkAuthentication();
     </script>
+    <script src={%static 'js/admindashboard.js'%}></script>
   </body>
 </html>
