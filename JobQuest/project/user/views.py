@@ -53,7 +53,7 @@ def signup(request):
                 user.is_staff = True
                 user.save()
             
-            # login(request, user)
+            login(request, user)
             return redirect('login')  # Redirect to the login URL
             
     else:
