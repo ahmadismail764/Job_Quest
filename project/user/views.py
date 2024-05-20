@@ -54,7 +54,7 @@ def signup(request):
                 # Create Company Admin user
                 user.is_staff = True
                 user.save()
-            
+
             return redirect('login')  # Redirect to the login URL
 
     else:
