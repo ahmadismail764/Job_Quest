@@ -14,12 +14,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='UserAccount',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('email', models.EmailField(max_length=254)),
                 ('password', models.CharField(max_length=128)),
                 ('username', models.CharField(max_length=150)),
-                ('user_type', models.CharField(choices=[('user', 'User'), ('admin', 'Admin')], max_length=50)),
-                ('company_name', models.CharField(blank=True, max_length=150, null=True)),
+                ('user_type', models.CharField(choices=[
+                 ('user', 'User'), ('admin', 'Admin')], max_length=50)),
+                ('company_name', models.CharField(
+                    blank=True, max_length=150, null=True)),
             ],
         ),
     ]
