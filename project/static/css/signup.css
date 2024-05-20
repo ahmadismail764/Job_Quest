@@ -2,90 +2,90 @@
 
 /* PRE-STYLES */
 :root {
-  --padding: 1.25rem;
-  --small-padding: 0.75rem;
-  --big-padding: 2rem;
-  --light-gray: #eaebfe;
-  --bit-dark: #b0b8ce;
-  --go-to-blue: #505a74;
-  --good-blue: #354c7c;
-  --fin-blue: #022954;
+	--padding: 1.25rem;
+	--small-padding: 0.75rem;
+	--big-padding: 2rem;
+	--light-gray: #eaebfe;
+	--bit-dark: #b0b8ce;
+	--go-to-blue: #505a74;
+	--good-blue: #354c7c;
+	--fin-blue: #022954;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+	box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url("../img/lo'si.jpg");
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/lo'si.jpg");
 }
 
 section {
-  background-color: rgba(255, 255, 255, 0.7);
-  width: 500px;
-  margin: 90px auto;
-  padding: var(--padding);
-  border-radius: 0.25rem;
-  box-shadow: 0 0 var(--small-padding) rgba(0, 0, 0, 0.3);
+	background-color: rgba(255, 255, 255, 0.7);
+	width: 500px;
+	margin: 90px auto;
+	padding: var(--padding);
+	border-radius: 0.25rem;
+	box-shadow: 0 0 var(--small-padding) rgba(0, 0, 0, 0.3);
 }
 
 h3 {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 .login {
-  margin-top: var(--padding);
+	margin-top: var(--padding);
 }
 
 label {
-  display: inline;
-  margin-bottom: 0.25rem;
+	display: inline;
+	margin-bottom: 0.25rem;
 }
 input[type="radio"] {
-  display: inline;
-  margin-bottom: 0.25rem;
+	display: inline;
+	margin-bottom: 0.25rem;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: var(--small-padding);
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
+	width: 100%;
+	padding: 0.5rem;
+	margin-bottom: var(--small-padding);
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
 }
 
 input[type="submit"] {
-  width: 100%;
-  padding: var(--small-padding);
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+	width: 100%;
+	padding: var(--small-padding);
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 a {
-  text-decoration: none;
-  color: #007bff;
+	text-decoration: none;
+	color: #007bff;
 }
 
 a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 footer {
-  text-align: center;
-  margin-top: var(--big-padding);
-  font-weight: bolder;
-  font-size: larger;
+	text-align: center;
+	margin-top: var(--big-padding);
+	font-weight: bolder;
+	font-size: larger;
 }
