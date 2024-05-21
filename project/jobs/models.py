@@ -6,7 +6,7 @@ class Job(models.Model):
     class Meta:
         verbose_name_plural = 'PostedJobs'
     title = models.CharField(max_length=100, null=False, blank=False)
-    comany = models.CharField(max_length=100, null=False, blank=False)
+    company = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField(null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
     requirements = models.TextField(null=False, blank=False)
