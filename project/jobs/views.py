@@ -22,7 +22,7 @@ def apply_for_job(request, job_id):
             application = form.save(commit=False)
             application.job = job
             application.user = request.user
-            assert application.user in job.applied_users
+            # assert request.user in job.applied_users
             application.save()
             return redirect('job_detail', job_id=job.id)
     else:
