@@ -55,20 +55,19 @@ def signup(request):
                 # Create Company Admin user
                 user.is_staff = True
                 UserAccount.objects.create(
-                user=user,
-                type_job=user_type,
-                company_name=company_name,
-                email=email
+                    user=user,
+                    type_job=user_type,
+                    company_name=company_name,
+                    email=email
                 )
                 user.save()
             else:
                 UserAccount.objects.create(
-                user=user,
-                type_job=user_type,
-                email=email
-            )
-            
-            
+                    user=user,
+                    type_job=user_type,
+                    email=email
+                )
+
             return redirect('login')  # Redirect to the login URL
 
     else:
