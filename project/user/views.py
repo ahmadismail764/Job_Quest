@@ -6,6 +6,7 @@ from .forms import UserRegistrationForm
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+from .models import UserAccount
 
 
 @csrf_protect
@@ -53,7 +54,20 @@ def signup(request):
             if user_type == 'admin':
                 # Create Company Admin user
                 user.is_staff = True
+                UserAccount.objects.create(
+                user=user,
+                type_job=user_type,
+                company_name=company_name,
+                email=email
+                )
                 user.save()
+            else:
+                UserAccount.objects.create(
+                user=user,
+                type_job=user_type,
+                email=email
+            )
+            
             
             return redirect('login')  # Redirect to the login URL
 

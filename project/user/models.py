@@ -1,13 +1,11 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-
 class UserAccount(models.Model):
-    email = models.EmailField()
-    password = models.CharField(max_length=128)
-    username = models.CharField(max_length=150)
-    user_type = models.CharField(max_length=50, choices=[
-                                 ('user', 'User'), ('admin', 'Admin')])
-    company_name = models.CharField(max_length=150, blank=True, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    type_job = models.CharField(max_length=50,default='user')
+    company_name = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(default='default@default.com')
 
     def __str__(self):
-        return self.email
+        return self.user.username
