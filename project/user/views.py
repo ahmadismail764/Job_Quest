@@ -72,11 +72,11 @@ def home(request):
     return render(request, 'homepage.html')
 
 
-@login_required
+# @login_required
 def admindashboard(request):
     return render(request, 'admindashboard.html')
 
 
-@login_required
+# @login_required
 def userdashboard(request):
     return render(request, 'userdashboard.html')

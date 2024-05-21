@@ -17,7 +17,7 @@ def application(request):
     return render(request, 'jobapp.html', {'form': form})
 
 def displayJob(request):
-    return render(request, 'jobdetails.html')
+    return render(request, 'jobdetail.html')
 
 def listJobs(request):
     return render(request, 'joblisting.html', {'jobs': Job.objects.all()})   
