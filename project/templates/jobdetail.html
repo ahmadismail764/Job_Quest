@@ -53,7 +53,7 @@
           <p id="overview">{{job.company_link}}</p>
         </section>
         <section class="apply-button-container">
-          <a href= 'job/application' class="apply-button">Apply Now</a>
+          <a href= "{% url 'apply_for_job' job.id %}" class="apply-button">Apply Now</a>
         </section>
       </article>
     </main>
