@@ -20,4 +20,6 @@ def displayJob(request):
     return render(request, 'jobdetail.html')
 
 def listJobs(request):
-    return render(request, 'joblisting.html', {'jobs': Job.objects.all()})   
+    return render(request, 'joblisting.html', {'jobs': Job.objects.all()})
+def getJob(request, id): 
+    return render(request, 'jobdetail.html', {'job': Job.objects.get(pk=id)})
