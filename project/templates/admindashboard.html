@@ -13,13 +13,12 @@
     <header>
       <a href="homepage.html">
         <figure class="header1">
-          <img src="img/logo.jpg" alt="Sitelogo" , height="20" , width="20" />
+          <img src="{% static 'img/logo.jpg' %}" alt="Sitelogo" , height="20" , width="20" />
           <figcaption>Job Quest</figcaption>
         </figure>
       </a>
       <article class="above">
         <nav>
-          <a class="dashboard-link">Dashboard</a> &nbsp;
           <a class="browse-post">Browse Jobs/Post Job</a>
           <a href="contact.html">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
@@ -32,7 +31,6 @@
         </figure>
       </a>
     </header>
-    <main>
     <main>
       <article class="dashboard">
         <article id="suggest">
@@ -50,22 +48,26 @@
           </p>
         </article>
         <hr />
+
+
         <article id="about-comp">
-          <section class="about">
+          <section class="accepts-addition">
             <h2>About your company</h2>
             <p>Learn more about your company's mission, vision, and values.</p>
             <p id="button-container1" class="button-container">
             <button onclick="editAbout()">Edit</button></p>
           </section>
           <hr />
-          <section class="postedjobs">
+          <section class="accepts-addition">
             <h2>Posted Jobs</h2>
             <section id="jobholder"></section>
             <p class="button-container">
-            <button onclick="redirectTo('jobpost.html')">Post New Job</button></p>
+              <a href="{% url 'jobpost.html' %}"><button>Post New Job</button></a>
           </section>
         </article>
         <hr />
+
+  
         <article id="history">
           <h2>Company History</h2>
           <p>
@@ -82,21 +84,35 @@
           </p>
         </article>
         <hr />
+
         <article id="certs">
-          <section class="about">
+          <section class="accepts-addition">
             <h2>Awards</h2>
             <section class="awards">
-              <dl class="list-for-addition"></dl>
+              <dl class="list-for-addition">
+                {% for award in awards %}
+                            <dt>{{ award.name }}</dt>
+                            <dd>{{ award.purpose }}</dd>
+                            <dd>{{ award.provider }}</dd>
+                            <dd>{{ award.date }}</dd>
+                        {% endfor %}
+              </dl>
             </section>
             <p class="button-container">
-            <button onclick="addAward()">Add Award</button></p>
+              <a href="{% url 'add_award.html' %}"><button>Add Award</button></a>
           </section>
           <hr />
-          <section class="about">
+          <section class="accepts-addition">
             <h2>Certifications</h2>
-            <dl class="list-for-addition"></dl>
+            <dl class="list-for-addition">
+              {% for cert in certifications %}
+              <dt>{{ cert.title }}</dt>
+              <dd>{{ cert.where }}</dd>
+              <dd>{{ cert.start }} - {{ cert.end }}</dd>
+              {% endfor %}
+            </dl>
             <p class="button-container">
-            <button onclick="addCert()">Add Certificate</button></p>
+              <a href="{% url 'add_cert.html' %}"><button>Add Certification</button></a>
           </section>
         </article>
         <hr />
@@ -125,6 +141,6 @@
     <script>
       checkAuthentication();
     </script>
-    <!-- <script src={%static 'js/admindashboard.js'%}></script> -->
+    {% comment %} <script src={%static 'js/admindashboard.js'%}></script> {% endcomment %}
   </body>
 </html>
