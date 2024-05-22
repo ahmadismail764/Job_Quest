@@ -1,5 +1,5 @@
 from django import forms
-from .models import Job, Application
+from user.models import Job, Application
 
 # class JobForm(forms.ModelForm):
 #     class Meta:
