@@ -2,8 +2,6 @@ from django.db import models
 from user.models import UserAccount
 # Create your models here.
 
-<< << << < HEAD
-
 
 class Job(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)

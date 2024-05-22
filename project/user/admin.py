@@ -5,4 +5,3 @@ admin.site.register(Award)
 admin.site.register(Certification)
 admin.site.register(Company)
 admin.site.register(UserAccount)
-
