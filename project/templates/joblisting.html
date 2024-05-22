@@ -66,7 +66,7 @@
               <p class="job-description">{{job.description}}</p>
             </div>
             <div class="details">
-              <a href="/jobs/{{job.id}}" class="job-link"
+              <a href="{% url 'job_detail' job.id %}" class="job-link"
                 ><span title="See Full Description">&rarr;</span></a
               >
             </div>

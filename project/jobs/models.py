@@ -1,7 +1,7 @@
 from django.db import models
-from datetime import datetime
 # Create your models here.
 
+<<<<<<< HEAD
 
 class Job(models.Model):
     class Meta:
@@ -40,3 +40,6 @@ class Application(models.Model):
 
     def __str__(self):
         return self.full_name
+=======
+# models.py
+>>>>>>> 044f8954cd38dc0ffd19569d4db0f3996e0d75cc
