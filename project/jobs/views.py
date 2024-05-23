@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from .models import Job, Application
 from user.models import UserAccount
 
-from .forms import ApplicationForm
+from .forms import ApplicationForm, JobForm
 
 # Create your views here.
 
@@ -35,4 +35,17 @@ def apply_for_job(request, job_id):
             return redirect('job_detail', job_id=job.id)
     else:
         form = ApplicationForm()
-    return render(request, 'jobapp.html', {'form': form, 'job': job})
+    return render(request, 'jobapp.html', {'form': form})
+
+def post_job(request):
+    if request.method == 'POST':
+        form = JobForm(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            job = form.save(commit=False)
+            job.posted_user = current_user
+            job.save()
+            return redirect('job_detail', job_id=job.id)  # going to the JobDetails page
+    else:
+        form = JobForm()
+    return render(request, 'jobpost.html', {'form': form})
