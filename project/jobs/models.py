@@ -12,10 +12,10 @@ class Job(models.Model):
     salary = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, blank=False)
     years_of_experience = models.IntegerField(null=False, blank=False)
-    posted_by_id = models.ForeignKey(
+    posted_by = models.ForeignKey(
         UserAccount, on_delete=models.CASCADE, null=False, blank=False, default=0)
-    applied_users = models.ManyToManyField(
-        UserAccount, related_name='applied_jobs')
+    applied_by = models.ManyToManyField(
+        UserAccount, related_name='applied_jobs', null=True, blank=True)
     company_url = models.URLField(null=True, blank=True)
     
     def __str__(self):

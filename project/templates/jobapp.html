@@ -40,55 +40,57 @@
 				<form method="post" enctype="multipart/form-data" class="form">
 					{% csrf_token %}
 					<div class="form-group">
-						<div class="form-group">
-							<label for="fullname">Full Name:</label><br />
-							<input type="text" id="full_name" name="fullname" required /><br />
-						</div>
+						<label for="fullname">Full Name:</label><br />
+						{{ form.full_name }}
+						<br />
+					</div>
 
-						<div class="form-group">
-							<label for="email">Email:</label><br />
-							<input type="email" id="email" name="email" required /><br />
-						</div>
+					<div class="form-group">
+						<label for="email">Email:</label><br />
+						{{ form.email }}
+						<br />
+					</div>
 
-						<div class="form-group">
-							<label for="phone">Phone Number:</label><br />
-							<input type="tel" id="phone" name="phone" required /><br />
-						</div>
+					<div class="form-group">
+						<label for="phone">Phone Number:</label><br />
+						{{ form.phone }}
+						<br />
+					</div>
 
-						<div class="form-group">
-							<label for="resume">Upload Resume (PDF, DOC, DOCX):</label><br />
-							<input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required /><br />
-						</div>
+					<div class="form-group">
+						<label for="resume">Upload Resume (PDF, DOC, DOCX):</label><br />
+						{{ form.resume }}<br />
+					</div>
 
-						<div class="form-group">
-							<label for="coverletter">Upload Cover Letter (PDF, DOC, DOCX):</label><br />
-							<input type="file" id="coverletter" name="cover_letter" accept=".pdf,.doc,.docx" /><br />
-						</div>
+					<div class="form-group">
+						<label for="coverletter">Upload Cover Letter (PDF, DOC, DOCX):</label><br />
+						{{ form.cover_letter }}<br />
+					</div>
 
-						<div class="form-group">
-							<label for="education">Highest Level of Education:</label><br />
-							{{form.education}}
-							<br />
-						</div>
+					<div class="form-group">
+						<label for="education">Highest Level of Education:</label><br />
+						{{ form.education }}
+						<br />
+					</div>
 
-						<div class="form-group">
-							<label for="experience">Years of Experience:</label><br />
-							<input type="number" id="experience" name="experience" min="0" required /><br />
-						</div>
+					<div class="form-group">
+						<label for="experience">Years of Experience:</label><br />
+						{{ form.experience }}<br />
+					</div>
 
-						<div class="form-group">
-							<label for="linkedin">LinkedIn Profile (optional):</label><br />
-							<input type="url" id="linkedin" name="linkedin" /><br />
-						</div>
+					<div class="form-group">
+						<label for="linkedin">LinkedIn Profile (optional):</label><br />
+						{{ form.linkedin }}<br />
+					</div>
 
-						<div class="form-group">
-							<label for="comments">Additional Comments:</label><br />
-							<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br />
-						</div>
+					<div class="form-group">
+						<label for="comments">Additional Comments:</label><br />
+						{{ form.comments }}<br />
+					</div>
 
-						<div class="form-group">
-							<input type="submit" value="Apply" /><br />
-						</div>
+					<div class="form-group">
+						<input type="submit" value="Apply" /><br />
+					</div>
 				</form>
 			</div>
 		</main>
