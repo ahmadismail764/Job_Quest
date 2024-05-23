@@ -94,4 +94,6 @@ def admindashboard(request):
 
 # @login_required
 def userdashboard(request):
-    return render(request, 'userdashboard.html')
+    current_user = UserAccount.objects.get(user=request.user)
+    cert = Cert.objects.filter(user_account=current_user)
+    return render(request, 'userdashboard.html', {'mycerts': cert, })

@@ -14,8 +14,8 @@ class Job(models.Model):
     posted_by_id = models.ForeignKey(
         UserAccount, on_delete=models.CASCADE, null=False, blank=False, default=0)
     applied_users = models.ManyToManyField(
-        UserAccount, related_name='applied_jobs') 
-    
+        UserAccount, related_name='applied_jobs')
+
     def __str__(self):
         return self.title
 

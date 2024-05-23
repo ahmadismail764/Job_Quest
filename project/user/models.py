@@ -11,3 +11,15 @@ class UserAccount(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Cert(models.Model):
+    user_account = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    where = models.CharField(max_length=100)
+    start = models.DateField()
+    end = models.DateField()
+
+
+class Award(models.Model):
+    user_account = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
