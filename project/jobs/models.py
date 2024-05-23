@@ -1,6 +1,5 @@
 from django.db import models
 from user.models import UserAccount
-from django.utils import timezone
 
 
 class Job(models.Model):

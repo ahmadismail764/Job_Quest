@@ -18,7 +18,7 @@ class UserAccount(models.Model):
 class Exper(models.Model):
     user_account = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
     company = models.CharField(max_length=100)
-    start = models.DateField(null=True)
+    start = models.DateField(default=timezone.now, null=True)
     end = models.DateField(default=timezone.now, null=True)
 
 
