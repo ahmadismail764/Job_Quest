@@ -94,7 +94,7 @@ ul {
   background-color: #fff;
   padding: 1.75rem;
   border-radius: var(--small-padding);
-  box-shadow: 0 0 var(--padding) rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .detail h3,
@@ -151,4 +151,8 @@ footer nav ul {
 footer nav ul li {
   display: inline;
   margin-right: var(--small-padding);
+}
+footer a {
+  text-decoration: none;
+  color: var(--light-gray);
 }

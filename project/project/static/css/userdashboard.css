@@ -85,6 +85,8 @@ main {
   background-color: #fff;
   padding: var(--big-padding);
   border-radius: var(--small-padding);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
 }
 h2 {
   color: var(--good-blue);
@@ -158,5 +160,9 @@ footer nav ul {
 footer nav ul li {
   display: inline;
   margin-right: var(--small-padding);
+}
+foote a {
+  text-decoration: none;
+  color: var(--light-gray);
 }
 /* Footer Styles */

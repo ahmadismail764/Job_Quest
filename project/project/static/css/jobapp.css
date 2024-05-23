@@ -82,12 +82,13 @@ main {
 }
 
 form {
+
   width: 50%;
   margin: 0 auto;
   background-color: #fff;
   padding: 30px;
   border-radius: 25px;
-  box-shadow: 0 0 var(--padding) rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
