@@ -5,10 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Job, Application
 from user.models import UserAccount
-
 from .forms import ApplicationForm, JobForm
-
-# Create your views here.
 
 
 def listJobs(request):
@@ -29,13 +26,12 @@ def apply_for_job(request, job_id):
             application = form.save(commit=False)
             application.job = job
             application.user = current_user
-            # job.applied_users.add(current_user)
-            current_user.applied_jobs.add(job)
             application.save()
             return redirect('job_detail', job_id=job.id)
     else:
         form = ApplicationForm()
     return render(request, 'jobapp.html', {'form': form})
+
 
 def post_job(request):
     if request.method == 'POST':
@@ -45,7 +41,8 @@ def post_job(request):
             job = form.save(commit=False)
             job.posted_user = current_user
             job.save()
-            return redirect('job_detail', job_id=job.id)  # going to the JobDetails page
+            # going to the JobDetails page
+            return redirect('job_detail', job_id=job.id)
     else:
         form = JobForm()
     return render(request, 'jobpost.html', {'form': form})

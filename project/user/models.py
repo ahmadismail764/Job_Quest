@@ -11,22 +11,3 @@ class UserAccount(models.Model):
 
     def __str__(self):
         return self.user.username
-
-
-class Company(models.Model):
-    name = models.CharField(max_length=100)
-    mission = models.TextField()
-    vision = models.TextField()
-
-
-class Award(models.Model):
-    name = models.CharField(max_length=100)
-    provider = models.CharField(max_length=50)
-    date = models.CharField(max_length=100)
-
-
-class Certification(models.Model):
-    title = models.CharField(max_length=100)
-    where = models.CharField(max_length=100)
-    start = models.DateField()
-    end = models.DateField()

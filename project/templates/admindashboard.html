@@ -90,12 +90,12 @@
             <h2>Awards</h2>
             <section class="awards">
               <dl class="list-for-addition">
-                {% for award in awards %}
+                {% comment %} {% for award in awards %}
                             <dt>{{ award.name }}</dt>
                             <dd>{{ award.purpose }}</dd>
                             <dd>{{ award.provider }}</dd>
                             <dd>{{ award.date }}</dd>
-                        {% endfor %}
+                        {% endfor %} {% endcomment %}
               </dl>
             </section>
             <p class="button-container">
@@ -105,11 +105,11 @@
           <section class="accepts-addition">
             <h2>Certifications</h2>
             <dl class="list-for-addition">
-              {% for cert in certifications %}
+              {% comment %} {% for cert in certifications %}
               <dt>{{ cert.title }}</dt>
               <dd>{{ cert.where }}</dd>
               <dd>{{ cert.start }} - {{ cert.end }}</dd>
-              {% endfor %}
+              {% endfor %} {% endcomment %}
             </dl>
             <p class="button-container">
               <a href="{% url 'add_cert.html' %}"><button>Add Certification</button></a>
