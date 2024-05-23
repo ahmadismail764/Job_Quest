@@ -30,7 +30,7 @@ class Application(models.Model):
     # cover_letter = models.FileField(upload_to='cover_letters/%Y/%m/%d/', null=False, blank=False)
     linkedin = models.URLField(null=True, blank=True)
     comments = models.TextField(null=True, blank=True)
-    application_date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user.user.username} applied for {self.job.title}"
