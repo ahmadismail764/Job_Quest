@@ -41,3 +41,6 @@ def post_job(request):
         # going to the JobDetails page
         return redirect('job_detail', job_id=job.id)
     return render(request, 'jobpost.html', {'form': form})
+
+def contact(request):
+    return render(request, 'contact.html')

@@ -123,9 +123,15 @@ footer {
   text-align: center;
 }
 
-footer a {
+footer {
+  background-color: var(--good-blue);
   color: var(--light-gray);
-  text-decoration: none;
+  padding: var(--small-padding);
+  text-align: center;
+}
+
+footer h3 {
+  margin: 0.3rem 0;
 }
 
 footer nav ul {
@@ -134,13 +140,7 @@ footer nav ul {
   margin: 0;
 }
 
-footer h3 {
-  margin: 5px 0;
-}
-footer div {
-  margin-bottom: 5px;
-}
 footer nav ul li {
   display: inline;
-  margin-right: 10px;
+  margin-right: var(--small-padding);
 }

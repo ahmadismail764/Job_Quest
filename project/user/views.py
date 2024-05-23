@@ -91,10 +91,11 @@ def home(request):
 # @login_required
 def admindashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
-    posted_jobs = Job.objects.filter(user_account=current_user)
+    posted_jobs = Job.objects.filter(posted_by=current_user)
     award = Award.objects.filter(user_account=current_user)
     cert = Cert.objects.filter(user_account=current_user)
     context = {
+        'user': current_user,
         'posted_jobs': posted_jobs,
         'award': award,
         'cert': cert,
@@ -105,7 +106,7 @@ def admindashboard(request):
 # @login_required
 def userdashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
-    applied_jobs = Job.objects.filter(applied_by=current_user)
+    applied_jobs = Job.objects.filter(posted_by=current_user)
     exper = Exper.objects.filter(user_account=current_user)
     project = Project.objects.filter(user_account=current_user)
     lics = License.objects.filter(user_account=current_user)
@@ -113,6 +114,7 @@ def userdashboard(request):
     interests = Interest.objects.filter(user_account=current_user)
     skills = Skill.objects.filter(user_account=current_user)
     context = {
+        'user': current_user,
         'applied_jobs': applied_jobs,
         'exper': exper,
         'project': project,
