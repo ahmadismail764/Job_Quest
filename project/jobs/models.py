@@ -5,6 +5,7 @@ from django.utils import timezone
 
 class Job(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
+    company_name = models.CharField(max_length=100, null=False, blank=False, default=0)
     description = models.TextField(null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
     requirements = models.TextField(null=False, blank=False)
@@ -15,7 +16,8 @@ class Job(models.Model):
         UserAccount, on_delete=models.CASCADE, null=False, blank=False, default=0)
     applied_users = models.ManyToManyField(
         UserAccount, related_name='applied_jobs')
-
+    company_url = models.URLField(null=True, blank=True)
+    
     def __str__(self):
         return self.title
 
