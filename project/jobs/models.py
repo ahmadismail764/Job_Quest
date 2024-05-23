@@ -4,8 +4,8 @@ from user.models import UserAccount
 
 class Job(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
-    company = models.ForeignKey(
-        UserAccount, on_delete=models.CASCADE, related_name='jobs', to_field='company_name')
+    posted_by = models.ForeignKey(
+        UserAccount, on_delete=models.CASCADE, related_name='jobs')
     description = models.TextField(null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
     requirements = models.TextField(null=False, blank=False)
