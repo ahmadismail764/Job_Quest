@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="img/icon.png" />
+    <meta name="author" content="Belal Ahmad" />
+    <meta name="description" content="The job listings page for Job Quest" />
+    <link rel="stylesheet" href="{%static 'css/joblisting.css'%}" />
+    <!-- Load icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="scripts/joblisting.js"></script>
+    <title>Job Quest-Listing</title>
+  </head>
+  <body>
+    <header>
+      <a href="homepage.html">
+        <figure class="header1">
+          <img src="" alt="Sitelogo" , height="20" , width="20" />
+          <figcaption>Job Quest</figcaption>
+        </figure>
+      </a>
+      <article class="above">
+        <nav>
+          <a class="dashboard-link">Dashboard</a> &nbsp;
+          <a class="browse-post">Browse Jobs/Post Job</a>
+          <a href="contact.html">Contact Us</a>
+          <a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+        </nav>
+      </article>
+      <a href="" id="add-info">
+        <figure class="header2">
+          <img src="" alt="Insert Profile Pic here" />
+          <figcaption id="user-name"></figcaption>
+        </figure>
+      </a>
+    </header>
+    <main>
+      <article class="page-content">
+        <h2>Job Listing</h2>
+        <form id="SearchBar" onsubmit="search(event)" method="post">
+          <input
+            type="text"
+            id="keyword"
+            name="keyword"
+            placeholder="Search for a Job..."
+          />
+          <input
+            type="number"
+            id="experience"
+            name="experience"
+            placeholder="Years of Experience"
+            min="1"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <section id="job-list">
+          {% for job in jobs %}
+          <div class="job">
+            <div class="job-content">
+              <h3 class="job-title">{{job.title}}</h3>
+              <p class="company-name">{{job.company_name}}</p>
+              <p class="job-description">{{job.description}}</p>
+            </div>
+            <div class="details">
+              <a href="{% url 'job_detail' job.id %}" class="job-link"
+                ><span title="See Full Description">&rarr;</span></a
+              >
+            </div>
+          </div>
+          {% endfor %}
+        </section>
+      </article>
+    </main>
+    <footer>
+      <h3><a href="contact.html">Contact Us</a></h3>
+      <nav>
+        <ul>
+          <p>Check out our socials</p>
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
+        </ul>
+        <a style="cursor: pointer" onclick="logout()">Logout</a>&nbsp;
+      </nav>
+      <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
+    </footer>
+    <script>
+      checkAuthentication();
+    </script>
+  </body>
+</html>
