@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as auth_logout
@@ -6,10 +6,11 @@ from .forms import UserRegistrationForm
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+
 from .models import *
 from .forms import *
 from jobs.models import Job
-# from jobs.views import post_job
+# from jobs.views import post-job
 
 
 @csrf_protect
@@ -124,3 +125,8 @@ def userdashboard(request):
         'skills': skills,
     }
     return render(request, 'userdashboard.html', context)
+
+def delete_job(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+    job.delete()
+    return redirect('/admindashboard')

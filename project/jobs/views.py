@@ -8,7 +8,7 @@ from user.models import UserAccount
 from .forms import ApplicationForm, JobForm
 
 
-def listJobs(request):
+def job_list(request):
     return render(request, 'joblisting.html', {'jobs': Job.objects.all()})
 
 
@@ -27,7 +27,7 @@ def apply_for_job(request, job_id):
         application.applied_by = current_user
         job.applied_by.add(current_user)
         application.save()
-        return redirect('job_detail', job_id=job.id)
+        return redirect('job-detail', job_id=job.id)
     return render(request, 'jobapp.html', {'form': form})
 
 
@@ -39,8 +39,9 @@ def post_job(request):
         job.posted_by = current_user
         job.save()
         # going to the JobDetails page
-        return redirect('job_detail', job_id=job.id)
+        return redirect('job-detail', job_id=job.id)
     return render(request, 'jobpost.html', {'form': form})
 
 def contact(request):
     return render(request, 'contact.html')
+

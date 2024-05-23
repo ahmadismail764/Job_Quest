@@ -90,7 +90,7 @@ ul {
   margin-top: 0px;
 }
 
-#job_details {
+#job-details {
   background-color: #fff;
   padding: 1.75rem;
   border-radius: var(--small-padding);

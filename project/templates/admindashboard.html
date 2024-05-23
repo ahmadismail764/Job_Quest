@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <a href="{% url 'job_list' %}">
+      <a href="{% url 'job-list' %}">
         <figure class="header1">
           <img
             src="{% static 'img/logo.jpg' %}"
@@ -26,7 +26,7 @@
       </a>
       <article class="above">
         <nav>
-          <a href="{% url 'job_list' %}" class="browse-post">Browse Jobs</a>
+          <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
         </nav>
@@ -79,15 +79,15 @@
                   Location: {{jobs.location}}<br />
                   Years of Experience: {{jobs.years_of_experience}} <br />
                 </p>
-                {%endfor%}
                 <button>Edit</button>
-                <button data-index="0">Delete</button>
+                <a href="/delete/{{jobs.id}}"><button>Delete</button></a>
+                {%endfor%}
+                <hr />
+                <p class="button-container">
+                  <a href="{% url 'post-job' %}"><button>Post New Job</button></a>
+                </p>
               </section>
-              <hr />
             </section>
-            <p class="button-container">
-              <a href="{% url 'post_job' %}"><button>Post New Job</button></a>
-            </p>
           </section>
         </article>
         <hr />

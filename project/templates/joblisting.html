@@ -17,7 +17,7 @@
   </head>
   <body>
     <header>
-      <a href="{% url 'job_list' %}">
+      <a href="{% url 'job-list' %}">
         <figure class="header1">
           <img
             src="{% static 'img/logo.jpg' %}"
@@ -32,7 +32,7 @@
       </a>
       <article class="above">
         <nav>
-          <a href="{% url 'job_list' %}" class="browse-post">Browse Jobs</a>
+          <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
         </nav>
@@ -75,7 +75,7 @@
               <p class="job-description">{{job.description}}</p>
             </div>
             <div class="details">
-              <a href="{% url 'job_detail' job.id %}" class="job-link"
+              <a href="{% url 'job-detail' job.id %}" class="job-link"
                 ><span title="See Full Description">&rarr;</span></a
               >
             </div>
