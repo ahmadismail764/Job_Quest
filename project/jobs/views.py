@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Job, Application
+from .models import Job
 from user.models import UserAccount
 from .forms import ApplicationForm, JobForm
 

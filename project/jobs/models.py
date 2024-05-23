@@ -6,7 +6,7 @@ from django.utils import timezone
 class Job(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     posted_by = models.ForeignKey(
-        UserAccount, on_delete=models.CASCADE, related_name='jobs')
+        UserAccount, on_delete=models.CASCADE, related_name='jobs', default='wezza')
     description = models.TextField(null=False, blank=False)
     location = models.CharField(max_length=100, null=False, blank=False)
     requirements = models.TextField(null=False, blank=False)
@@ -31,7 +31,6 @@ class Application(models.Model):
     # cover_letter = models.FileField(upload_to='cover_letters/%Y/%m/%d/', null=False, blank=False)
     linkedin = models.URLField(null=True, blank=True)
     comments = models.TextField(null=True, blank=True)
-    date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"{self.user.user.username} applied for {self.job.title}"

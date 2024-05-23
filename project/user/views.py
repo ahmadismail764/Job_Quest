@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from .models import *
 from .forms import *
-from jobs.models import Job
+from jobs.views import post_job
 
 
 @csrf_protect
@@ -86,9 +86,8 @@ def logout_view(request):
 def home(request):
     return render(request, 'homepage.html')
 
+
 # @login_required
-
-
 def admindashboard(request):
     return render(request, 'admindashboard.html')
 
