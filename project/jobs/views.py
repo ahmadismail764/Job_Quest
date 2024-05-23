@@ -25,7 +25,8 @@ def apply_for_job(request, job_id):
             current_user = UserAccount.objects.get(user=request.user)
             application = form.save(commit=False)
             application.job = job
-            application.user = current_user
+            application.applied_by = current_user
+            job.applied_users.add(current_user)
             application.save()
             return redirect('job_detail', job_id=job.id)
     else:
@@ -39,7 +40,7 @@ def post_job(request):
         if form.is_valid():
             current_user = UserAccount.objects.get(user=request.user)
             job = form.save(commit=False)
-            job.posted_user = current_user
+            job.posted_by_id = current_user
             job.save()
             # going to the JobDetails page
             return redirect('job_detail', job_id=job.id)

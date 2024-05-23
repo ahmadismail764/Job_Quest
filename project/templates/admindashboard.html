@@ -6,7 +6,7 @@
     <link rel="icon" href="img/icon.png" />
     <meta name="author" content="Ahmad Ismail" />
     <meta name="description" content="The admin dashboard for Job Quest" />
-    <link rel="stylesheet" href={% static 'css/admindashboard.css' %} />
+    <link rel="stylesheet" href="{%static 'css/admindashboard.css'%}" />
     <title>Admin Dashboard</title>
   </head>
   <body>
@@ -62,7 +62,7 @@
             <h2>Posted Jobs</h2>
             <section id="jobholder"></section>
             <p class="button-container">
-              <a href="{% url 'jobpost.html' %}"><button>Post New Job</button></a>
+              <a href="{% url 'post_job' %}"><button>Post New Job</button></a>
           </section>
         </article>
         <hr />
@@ -99,7 +99,7 @@
               </dl>
             </section>
             <p class="button-container">
-              <a href="{% url 'add_award.html' %}"><button>Add Award</button></a>
+              <a href=""><button>Add Award</button></a>
           </section>
           <hr />
           <section class="accepts-addition">
@@ -112,7 +112,7 @@
               {% endfor %} {% endcomment %}
             </dl>
             <p class="button-container">
-              <a href="{% url 'add_cert.html' %}"><button>Add Certification</button></a>
+              <a href=""><button>Add Certification</button></a>
           </section>
         </article>
         <hr />
@@ -141,6 +141,6 @@
     <script>
       checkAuthentication();
     </script>
-    {% comment %} <script src={%static 'js/admindashboard.js'%}></script> {% endcomment %}
+    {% comment %} <script src="{%static 'js/admindashboard.js'%}"></script> {% endcomment %}
   </body>
 </html>
