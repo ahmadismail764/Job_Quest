@@ -50,23 +50,28 @@
     <main>
       <article class="page-content">
         <h2>Job Listing</h2>
-        <form id="SearchBar" onsubmit="search(event)" method="post">
+        <form id="SearchBar" method="get" action="{% url 'job_search' %}">
+          {% csrf_token %}
           <input
             type="text"
             id="keyword"
             name="keyword"
             placeholder="Search for a Job..."
+            value="{{ form.keyword.value|default_if_none:'' }}"
           />
           <input
             type="number"
             id="experience"
             name="experience"
             placeholder="Years of Experience"
-            min="1"
+            min="0"
+            max="60"
+            value="{{ form.experience.value|default_if_none:'' }}"
           />
           <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
+        </form>        
         <section id="job-list">
+          {% if jobs %}
           {% for job in jobs %}
           <div class="job">
             <div class="job-content">
@@ -81,6 +86,9 @@
             </div>
           </div>
           {% endfor %}
+          {% else %}
+            <h1>No jobs found</h1>
+          {% endif %}
         </section>
       </article>
     </main>

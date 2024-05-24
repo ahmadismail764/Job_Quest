@@ -62,7 +62,7 @@
           <p id="overview">{{job.company_url}}</p>
           {%endif%}
         </section>
-        {%if user.type_job == user %}
+        {%if user.type_job == 'user' %}
         <section class="apply-button-container">
           <a  href= "{% url 'apply-for-job' job.id %}" class="apply-button">Apply Now</a>
         </section>

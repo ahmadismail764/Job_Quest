@@ -14,3 +14,7 @@ class ApplicationForm(forms.ModelForm):
         model = Application
         fields = ['full_name', 'email', 'phone', 'education',
                   'experience', 'linkedin', 'comments']
+                  
+class SearchForm(forms.Form):
+    keyword= forms.CharField(max_length=100,required=True)
+    experience=forms.IntegerField(max_value=60,min_value=0,required=True)
