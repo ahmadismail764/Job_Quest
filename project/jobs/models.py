@@ -35,7 +35,8 @@ class Application(models.Model):
     phone = models.CharField(max_length=20, null=False, blank=False)
     education = models.CharField(max_length=20, null=False, blank=False, choices=(
         ('high_school', 'High School'), ('bachelor', 'Bachelor'), ('master', 'Master'), ('doctorate', 'Doctorate')))
-    experience = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(0), MaxValueValidator(60)])
+    experience = models.IntegerField(null=False, blank=False, validators=[
+                                     MinValueValidator(0), MaxValueValidator(60)])
     # resume = models.FileField(upload_to='resumes/%Y/%m/%d/', null=False, blank=False)
     # cover_letter = models.FileField(upload_to='cover_letters/%Y/%m/%d/', null=False, blank=False)
     linkedin = models.URLField(null=True, blank=True)

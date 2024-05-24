@@ -126,6 +126,7 @@ def userdashboard(request):
     }
     return render(request, 'userdashboard.html', context)
 
+
 def delete_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     job.delete()
