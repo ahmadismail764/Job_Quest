@@ -78,11 +78,21 @@
             </p>
             <aside id="top-skills">
               <strong>Top Skills</strong>
+              {% for s in skills|slice:":3" %}
+              <p>{{s.title}}</p>
+              {% endfor %}
             </aside>
           </article>
           <hr class="special_line" />
           <article id="appliedjobs">
             <h2>Jobs You've Applied For</h2>
+            {% for a in applied_jobs %}
+            <dt>{{e.title}}</dt>
+                <dd>At {{e.company_name}}</dd>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+            {% endfor %}
           </article>
         </article>
         <hr />
@@ -93,10 +103,20 @@
           <section class="list-holder">
             <dl class="list-for-addition">
               <h4>Experience</h4>
+              {% for e in experience %}
+                <dt>{{e.title}}</dt>
+                <dd>At {{e.company}}<br>From {{e.start}} - {{e.end}}</dd>
+              {% if not forloop.last %}
+              <hr> {% endif %}
+            {% endfor %}
             </dl>
             <hr />
             <dl class="list-for-addition">
               <h4>Projects</h4>
+              {% for e in project %}
+                <dt>{{e.title}}</dt>
+                <dd>For {{e.purpose}}<br>Finalized on: {{e.date}}</dd>
+              {% endfor %}
             </dl>
           </section>
           <section class="button-holder">
@@ -109,9 +129,18 @@
         <article class="inner" id="edu">
           <h2>Education</h2>
           <p>View your educational background and qualifications.</p>
-          <dl class="list-for-addition"></dl>
+          <dl class="list-for-addition">
+            {% for e in edu %}
+            <dt>{{e.institute}}</dt>
+            <dd>{{e.type}}, {{e.start}} - {{e.end}}</dd>
+            {% if not forloop.last %}
+             <hr>
+            {% endif %}
+            {% endfor %}
+          </dl>
           <section class="button-holder">
             <button onclick="addEdu()">Add Education</button>
+
           </section>
         </article>
         <hr />
@@ -122,6 +151,17 @@
           <section class="list-holder">
             <dl class="list-for-addition">
               <h4>Licenses</h4>
+              {% for lic in lics %}
+              <dt>Title: </dt>
+              <dd>{{lic.title}} </dd> &nbsp;
+              <dt>Issued By: </dt>
+              <dd>{{lic.where}}</dd> &nbsp;
+              <dt>On:</dt>
+              <dd>{{lic.when}}</dd>
+              {% if not forloop.last %}
+                  <hr>
+              {% endif %}
+              {% endfor %}
             </dl>
             <hr />
             <dl class="list-for-addition">
@@ -133,7 +173,9 @@
               <dd>{{cert.where}}</dd> &nbsp;
               <dt>Since:</dt>
               <dd>{{cert.start}} - {{cert.end}}</dd>
-              <hr>
+              {% if not forloop.last %}
+                <hr>
+              {% endif %}
               {% endfor %}
             </dl>
           </section>
@@ -147,7 +189,15 @@
         <article class="inner" id="skill">
           <h2>Skills</h2>
           <p>Showcase your skills.</p>
-          <dl class="list-for-addition"></dl>
+          <dl class="list-for-addition">
+            {% for s in skills %}
+            <dt>{{s.title}}</dt>
+            <dd>Learned at: {{s.howAcquired}}<br>Level: {{s.level}}</dd> 
+            {% if not forloop.last %}
+                <hr>
+            {% endif %} 
+            {% endfor %}
+          </dl>
           <section class="button-holder">
             <button onclick="addSkill()">Add Skill</button>
           </section>
@@ -157,7 +207,11 @@
         <article class="inner" id="interest">
           <h2>Interests</h2>
           <p>Explore your interests and hobbies.</p>
-          <ul class="list-for-addition"></ul>
+          <ul class="list-for-addition">
+            {% for i in interests %}
+            <li>{{i.title}}, since: {{i.since}}</li>
+            {% endfor %}
+          </ul>
           <section class="button-holder">
             <button onclick="addInterest()">Add Interest</button>
           </section>
