@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 from user.models import UserAccount
 
 
@@ -10,8 +11,13 @@ class Job(models.Model):
     location = models.CharField(max_length=100, null=False, blank=False)
     requirements = models.TextField(null=False, blank=False)
     salary = models.DecimalField(
-        max_digits=10, decimal_places=2, null=False, blank=False)
-    years_of_experience = models.IntegerField(null=False, blank=False)
+        max_digits=10, decimal_places=2, null=False, blank=False,
+        validators=[MinValueValidator(0), MaxValueValidator(999999999.99)]
+    )
+    years_of_experience = models.IntegerField(
+        null=False, blank=False,
+        validators=[MinValueValidator(0), MaxValueValidator(60)]
+    )
     posted_by = models.ForeignKey(
         UserAccount, on_delete=models.CASCADE, null=False, blank=False, default=0)
     applied_by = models.ManyToManyField(
@@ -29,7 +35,7 @@ class Application(models.Model):
     phone = models.CharField(max_length=20, null=False, blank=False)
     education = models.CharField(max_length=20, null=False, blank=False, choices=(
         ('high_school', 'High School'), ('bachelor', 'Bachelor'), ('master', 'Master'), ('doctorate', 'Doctorate')))
-    experience = models.IntegerField(null=False, blank=False)
+    experience = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(0), MaxValueValidator(60)])
     # resume = models.FileField(upload_to='resumes/%Y/%m/%d/', null=False, blank=False)
     # cover_letter = models.FileField(upload_to='cover_letters/%Y/%m/%d/', null=False, blank=False)
     linkedin = models.URLField(null=True, blank=True)
