@@ -2,8 +2,8 @@
 
 /* PRE-STYLES */
 :root {
-  --padding: 1rem;
-  --small-padding: 0.5rem;
+  --padding: 1.25rem;
+  --small-padding: 0.75rem;
   --big-padding: 1.5rem;
   --light-gray: #eaebfe;
   --bit-dark: #b0b8ce;
@@ -80,13 +80,15 @@ header nav a {
 }
 /* Main Styling */
 main {
-  padding: var(--padding);
+  padding: 20px;
   min-height: calc(100vh - (var(--padding) * 2 + 1px));
 }
 .page-content {
   background-color: #fff;
-  padding: var(--big-padding);
+  padding: 1.75rem;
   border-radius: var(--small-padding);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
 }
 h2 {
   color: var(--good-blue);
@@ -129,7 +131,7 @@ h2 {
 }
 
 #experience:not(:placeholder-shown) {
-  width: 60px;
+  width: 70px;
   padding: var(--small-padding);
   padding-left: var(--padding);
   margin-top: 0px;

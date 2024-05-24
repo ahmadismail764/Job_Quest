@@ -4,7 +4,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User
 
-
 class UserRegistrationForm(forms.Form):
     TYPE_CHOICES = [
         ('user', 'User'),
@@ -12,17 +11,17 @@ class UserRegistrationForm(forms.Form):
     ]
 
     type_job = forms.ChoiceField(
-        choices=TYPE_CHOICES, widget=forms.RadioSelect)
+        choices=TYPE_CHOICES, widget=forms.RadioSelect(attrs={'name': 'type_job'}), initial='user')
     username = forms.CharField(label='Username', min_length=6, widget=forms.TextInput(
-        attrs={'placeholder': 'Enter your full name'}))
+        attrs={'placeholder': 'Enter your full name', 'id': 'id_username'}))
     password = forms.CharField(label='Password', min_length=8, widget=forms.PasswordInput(
-        attrs={'placeholder': 'Enter your password'}))
+        attrs={'placeholder': 'Enter your password', 'id': 'id_password'}))
     confirm_password = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(
-        attrs={'placeholder': 'Confirm your password'}))
+        attrs={'placeholder': 'Confirm your password', 'id': 'id_confirm_password'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(
-        attrs={'placeholder': 'Enter your email address'}))
+        attrs={'placeholder': 'Enter your email address', 'id': 'id_email'}))
     company_name = forms.CharField(label='Company Name', required=False, widget=forms.TextInput(
-        attrs={'placeholder': 'Enter your company name'}))
+        attrs={'placeholder': 'Enter your company name', 'id': 'id_company_name'}))
 
     def clean(self):
         cleaned_data = super().clean()

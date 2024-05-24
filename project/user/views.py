@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as auth_logout
@@ -6,10 +6,11 @@ from .forms import UserRegistrationForm
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
+
 from .models import *
 from .forms import *
 from jobs.models import Job
-# from jobs.views import post_job
+# from jobs.views import post-job
 
 
 @csrf_protect
@@ -91,10 +92,11 @@ def home(request):
 # @login_required
 def admindashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
-    posted_jobs = Job.objects.filter(user_account=current_user)
+    posted_jobs = Job.objects.filter(posted_by=current_user)
     award = Award.objects.filter(user_account=current_user)
     cert = Cert.objects.filter(user_account=current_user)
     context = {
+        'user': current_user,
         'posted_jobs': posted_jobs,
         'award': award,
         'cert': cert,
@@ -105,7 +107,7 @@ def admindashboard(request):
 # @login_required
 def userdashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
-    applied_jobs = Job.objects.filter(applied_by=current_user)
+    applied_jobs = Job.objects.filter(posted_by=current_user)
     exper = Exper.objects.filter(user_account=current_user)
     project = Project.objects.filter(user_account=current_user)
     lics = License.objects.filter(user_account=current_user)
@@ -113,6 +115,7 @@ def userdashboard(request):
     interests = Interest.objects.filter(user_account=current_user)
     skills = Skill.objects.filter(user_account=current_user)
     context = {
+        'user': current_user,
         'applied_jobs': applied_jobs,
         'exper': exper,
         'project': project,
@@ -122,3 +125,8 @@ def userdashboard(request):
         'skills': skills,
     }
     return render(request, 'userdashboard.html', context)
+
+def delete_job(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+    job.delete()
+    return redirect('/admindashboard')

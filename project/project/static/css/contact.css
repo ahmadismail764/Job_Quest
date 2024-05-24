@@ -90,10 +90,10 @@ main {
 
 .contact {
   background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
+  padding: 1.75rem;
+  border-radius: var(--small-padding);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
+}     
 
 fieldset {
   border-color: var(--fin-blue);
@@ -119,28 +119,22 @@ button {
 footer {
   background-color: var(--good-blue);
   color: var(--light-gray);
-  padding: 20px;
+  padding: var(--small-padding);
   text-align: center;
 }
-
-footer a {
-  color: var(--light-gray);
-  text-decoration: none;
+footer h3 {
+  margin: 0.3rem 0;
 }
-
 footer nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
-footer h3 {
-  margin: 5px 0;
-}
-footer div {
-  margin-bottom: 5px;
-}
 footer nav ul li {
   display: inline;
-  margin-right: 10px;
+  margin-right: var(--small-padding);
+}
+footer a {
+  text-decoration: none;
+  color: var(--light-gray);
 }

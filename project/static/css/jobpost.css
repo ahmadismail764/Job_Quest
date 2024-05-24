@@ -139,27 +139,18 @@ input[type="submit"]:hover {
 footer {
   background-color: var(--good-blue);
   color: var(--light-gray);
-  padding: var(--padding);
+  padding: var(--small-padding);
   text-align: center;
 }
 
-footer a {
-  color: var(--light-gray);
-  text-decoration: none;
+footer h3 {
+  margin: 0.3rem 0;
 }
 
 footer nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-footer h3 {
-  margin: 0.25rem 0;
-}
-
-footer div {
-  margin-bottom: 0.25rem;
 }
 
 footer nav ul li {
