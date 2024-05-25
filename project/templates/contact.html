@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="img/icon.png" />
+    <link rel="icon" href="{% static 'img/icon.png' %}" />
     <meta name="author" content="Belal Ahmad" />
     <meta name="description" content="Contact Page" />
     <link rel="stylesheet" href="{% static 'css/contact.css' %}" />
@@ -29,6 +29,11 @@
       </a>
       <article class="above">
         <nav>
+          {%if request.user.type_job == 'admin'%}
+          <a href="{% url 'admindashboard' %}" >Dashboard</a>
+          {%else%}
+          <a href="{% url 'userdashboard' %}" >Dashboard</a>
+          {%endif%}
           <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
@@ -89,7 +94,7 @@
                   placeholder="Type your message here."
                 ></textarea>
               </p>
-              <button type="submit">Submit</button>
+              <input type="submit" value="Submit" />
             </fieldset>
           </form>
         </article>
@@ -102,7 +107,7 @@
       </article>
     </main>
     <footer>
-      <h3><a href="contact.html">Contact Us</a></h3>
+      <h3><a href="{% url 'contact' %}">Contact Us</a></h3>
       <nav>
         <ul>
           <p>Check out our socials</p>

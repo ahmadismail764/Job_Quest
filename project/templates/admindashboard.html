@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="img/icon.png" />
+    <link rel="icon" href="{% static 'img/icon.png' %}" />
     <meta name="author" content="Ahmad Ismail" />
     <meta name="description" content="The admin dashboard for Job Quest" />
     <link rel="stylesheet" href="{%static 'css/admindashboard.css'%}" />
@@ -22,6 +22,11 @@
       </a>
       <article class="above">
         <nav>
+          {%if request.user.type_job == 'admin'%}
+          <a href="{% url 'admindashboard' %}" >Dashboard</a>
+          {%else%}
+          <a href="{% url 'userdashboard' %}" >Dashboard</a>
+          {%endif%}
           <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
@@ -77,6 +82,9 @@
                 </p>
                 <button>Edit</button>
                 <a href="/delete/{{jobs.id}}"><button>Delete</button></a>
+                {% if not forloop.last %}
+                <hr>
+                {% endif %}
                 {%endfor%}
                 <hr />
                 <p class="button-container">
@@ -151,7 +159,7 @@
       </article>
     </main>
     <footer>
-      <h3><a href="contact.html">Contact Us</a></h3>
+      <h3><a href="{% url 'contact' %}">Contact Us</a></h3>
       <nav>
         <ul>
           <p>Check out our socials</p>

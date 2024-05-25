@@ -9,9 +9,11 @@ from .forms import ApplicationForm, JobForm, SearchForm
 from django.db.models import Q
 
 
+@login_required(login_url='login')
 def job_list(request):
     return render(request, 'joblisting.html', {'jobs': Job.objects.all()})
 
+@login_required(login_url='login')
 def job_search(request):
     form = SearchForm(request.GET)
     if form.is_valid():
@@ -38,11 +40,13 @@ def job_search(request):
         context = {'jobs': Job.objects.all(), 'form': form}
         return render(request, 'joblisting.html', context)
 
+@login_required(login_url='login')
 def job_detail(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     return render(request, 'jobdetail.html', {'job': job, 'user': UserAccount.objects.get(user=request.user)})
 
 
+@login_required(login_url='login')
 def apply_for_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     form = ApplicationForm(request.POST)
@@ -57,6 +61,7 @@ def apply_for_job(request, job_id):
     return render(request, 'jobapp.html', {'form': form})
 
 
+@login_required(login_url='login')
 def post_job(request):
     form = JobForm(request.POST)
     if form.is_valid():

@@ -9,8 +9,7 @@ from django.views.decorators.csrf import csrf_protect
 
 from .models import *
 from .forms import *
-from jobs.models import Job
-# from jobs.views import post-job
+from jobs.models import Job, Application
 
 
 @csrf_protect
@@ -89,9 +88,11 @@ def home(request):
     return render(request, 'homepage.html')
 
 
-# @login_required
+@login_required(login_url='login')
 def admindashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
+    if current_user.type_job == 'user':
+        return redirect('userdashboard')
     posted_jobs = Job.objects.filter(posted_by=current_user)
     award = Award.objects.filter(user_account=current_user)
     cert = Cert.objects.filter(user_account=current_user)
@@ -104,10 +105,12 @@ def admindashboard(request):
     return render(request, 'admindashboard.html', context)
 
 
-# @login_required
+@login_required(login_url='login')
 def userdashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
-    applied_jobs = Job.objects.filter(posted_by=current_user)
+    if current_user.type_job == 'admin':
+        return redirect('admindashboard')
+    applied_jobs = Application.objects.filter(applied_by=current_user)
     exper = Exper.objects.filter(user_account=current_user)
     project = Project.objects.filter(user_account=current_user)
     lics = License.objects.filter(user_account=current_user)
@@ -126,7 +129,7 @@ def userdashboard(request):
     }
     return render(request, 'userdashboard.html', context)
 
-
+@login_required(login_url='login')
 def delete_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     job.delete()

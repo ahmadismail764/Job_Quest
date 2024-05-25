@@ -142,6 +142,10 @@ footer {
   padding: var(--small-padding);
   text-align: center;
 }
+a{
+  color: var(--light-gray);
+  text-decoration: none;
+}
 
 footer h3 {
   margin: 0.3rem 0;

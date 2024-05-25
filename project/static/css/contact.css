@@ -114,6 +114,21 @@ button {
   font: inherit;
   resize: initial;
 }
+input[type="submit"] {
+  background-color: var(--good-blue);
+  color: var(--light-gray);
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 15px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: 0px;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--fin-blue);
+}
 
 /* Footer Styling */
 footer {

@@ -26,6 +26,11 @@
       </a>
       <article class="above">
         <nav>
+          {%if request.user.type_job == 'admin'%}
+          <a href="{% url 'admindashboard' %}" >Dashboard</a>
+          {%else%}
+          <a href="{% url 'userdashboard' %}" >Dashboard</a>
+          {%endif%}
           <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
@@ -67,23 +72,12 @@
 
           <div class="form-group">
             <label for="experience">Years of Experience:</label><br />
-						<input
-							type="number"
-							id="experience"
-							name="experience"
-							min="0"
-              max="60"
-							required /><br />
+            {{ form.years_of_experience }}<br />
           </div>
 
           <div class="form-group">
             <label for="salary">Salary:</label><br />
-            <input
-							type="number"
-							id="salary"
-							name="salary"
-							min="0"
-							required /><br /><br />
+            {{ form.salary }}<br />
           </div>
 
           <div class="form-group">
@@ -103,7 +97,7 @@
       </div>
     </main>
     <footer>
-      <h3><a href="contact.html">Contact Us</a></h3>
+      <h3><a href="{% url 'contact' %}">Contact Us</a></h3>
       <nav>
         <ul>
           <p>Check out our socials</p>
@@ -115,7 +109,6 @@
       <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
     </footer>
     <script>
-      checkAuthentication();
     </script>
   </body>
 </html>

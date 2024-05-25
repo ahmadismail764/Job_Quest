@@ -20,8 +20,8 @@ class Job(models.Model):
     )
     posted_by = models.ForeignKey(
         UserAccount, on_delete=models.CASCADE, null=False, blank=False, default=0)
-    # applied_by = models.ManyToManyField(
-    #     UserAccount, related_name='applied_jobs', null=True, blank=True)
+    applied_by = models.ManyToManyField(
+        UserAccount, related_name='applied_jobs', null=True, blank=True)
     company_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
