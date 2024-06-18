@@ -140,7 +140,7 @@ button:hover {
   margin-bottom: 0;
 }
 .button-container {
-  display: lex;
+  display: flex;
   justify-content: flex-end;
   margin-top: var(--small-padding);
   margin-bottom: 0;
@@ -175,11 +175,7 @@ footer nav ul li {
   display: inline;
   margin-right: var(--small-padding);
 }
-foote a {
-  text-decoration: none;
-  color: var(--light-gray);
-}
-foote a {
+footer a {
   text-decoration: none;
   color: var(--light-gray);
 }

@@ -24,11 +24,6 @@
       </a>
       <article class="above">
         <nav>
-          {%if request.user.type_job == 'admin'%}
-          <a href="{% url 'admindashboard' %}" >Dashboard</a>
-          {%else%}
-          <a href="{% url 'userdashboard' %}" >Dashboard</a>
-          {%endif%}
           <a href="{% url 'job-list' %}" class="browse-post">Browse Jobs</a>
           <a href="{%url 'contact'%}">Contact Us</a>
           <a href="{% url 'logout' %}">Logout</a>&nbsp;
@@ -102,37 +97,43 @@
           </article>
         </article>
         <hr />
-        
-        <article class="inner" id="experience">
-          <h2>Experience</h2>
-          <p>Explore your work history and past projects</p>
-          <section class="list-holder">
+        <article class="certs">
+          <section class="accepts-addition">
+            <h2>Experience</h2>
+            <section>
+              <dl class="list-for-addition">
+                {% for a in exper %}
+                <dt>{{ a.company }}</dt>
+                <dd>{{ a.start }} - {{ a.end }}</dd>
+                <hr />
+                {% endfor %}
+              </dl>
+            </section>
+            <p class="button-container">
+              <button>Add Award</button>
+            </p>
+          </section>
+
+          <hr />
+          <section class="accepts-addition">
+            <h2>Projects</h2>
             <dl class="list-for-addition">
-              <h4>Experience</h4>
-              {% for e in experience %}
-                <dt>{{e.title}}</dt>
-                <dd>At {{e.company}}<br>From {{e.start}} - {{e.end}}</dd>
-              {% if not forloop.last %}
-              <hr> {% endif %}
-            {% endfor %}
-            </dl>
-            <hr />
-            <dl class="list-for-addition">
-              <h4>Projects</h4>
-              {% for e in project %}
-                <dt>{{e.title}}</dt>
-                <dd>For {{e.purpose}}<br>Finalized on: {{e.date}}</dd>
+              {% for c in project %}
+              <dt>{{ c.title }}</dt>
+              <dd>{{ c.purpose }}</dd>
+              <dd>{{ c.date }}</dd>
+              <hr />
               {% endfor %}
             </dl>
-          </section>
-          <section class="button-holder">
-            <button onclick="addXp()">Add Experience</button>
-            <button onclick="addProject()">Add Project</button>
+            <p class="button-container">
+              <button>Add Project</button>
+            </p>
           </section>
         </article>
-        <hr />
+      
+        <hr>
         
-        <article class="inner" id="edu">
+        <article class="inner" id="edu">  
           <h2>Education</h2>
           <p>View your educational background and qualifications.</p>
           <dl class="list-for-addition">
@@ -150,44 +151,40 @@
           </section>
         </article>
         <hr />
-        
-        <article class="inner" id="certs">
-          <h2>Licenses and Certs</h2>
-          <p>See your professional certifications and licenses.</p>
-          <section class="list-holder">
-            <dl class="list-for-addition">
-              <h4>Licenses</h4>
-              {% for lic in lics %}
-              <dt>Title: </dt>
-              <dd>{{lic.title}} </dd> &nbsp;
-              <dt>Issued By: </dt>
-              <dd>{{lic.where}}</dd> &nbsp;
-              <dt>On:</dt>
-              <dd>{{lic.when}}</dd>
-              {% if not forloop.last %}
-                  <hr>
-              {% endif %}
-              {% endfor %}
-            </dl>
-            <hr />
-            <dl class="list-for-addition">
-              <h4>Certifications</h4>
-              {% for cert in mycerts %}
-              <dt>Title: </dt>
-              <dd>{{cert.title}} </dd> &nbsp;
-              <dt>Certified By: </dt>
-              <dd>{{cert.where}}</dd> &nbsp;
-              <dt>Since:</dt>
-              <dd>{{cert.start}} - {{cert.end}}</dd>
-              {% if not forloop.last %}
-                <hr>
-              {% endif %}
-              {% endfor %}
-            </dl>
+    
+        <article class="certs">
+          <section class="accepts-addition">
+            <h2>Licenses</h2>
+            <section>
+              <dl class="list-for-addition">
+                {% for a in lics%}
+                <dt>{{ a.name }}</dt>
+                <dd>{{ a.purpose }}</dd>
+                <dd>{{ a.provider }}</dd>
+                <dd>{{ a.date }}</dd>
+                <hr />
+                {% endfor %}
+              </dl>
+            </section>
+            <p class="button-container">
+              <button>Add License</button>
+            </p>
           </section>
-          <section class="button-holder">
-            <button onclick="addLicense()">Add License</button>
-            <button onclick="addCert()">Add Certification</button>
+
+          <hr />
+          <section class="accepts-addition">
+            <h2>Certifications</h2>
+            <dl class="list-for-addition">
+              {% for c in cert %}
+              <dt>{{ c.title }}</dt>
+              <dd>{{ c.where }}</dd>
+              <dd>{{ c.start }} - {{ c.end }}</dd>
+              <hr />
+              {% endfor %}
+            </dl>
+            <p class="button-container">
+              <button>Add Certification</button>
+            </p>
           </section>
         </article>
         <hr />
@@ -226,13 +223,13 @@
     </main>
     <hr />
     <footer>
-      <h3 style="color: #eaebfe"><a href="{% url 'contact' %}">Contact Us</a></h3>
+      <h3><a href="{% url 'contact' %}">Contact Us</a></h3>
       <nav>
-        <div>Check out our socials</div>
         <ul>
-          <a href="#" target="_blank"><li>Facebook</li></a>
-          <a href="#" target="_blank"><li>Twitter</li></a>
-          <a href="#" target="_blank"><li>Instagram</li></a>
+          <p>Check out our socials</p>
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Twitter</a></li>
         </ul>
       </nav>
       <p>&copy; 2024 Job Quest. All Rights Reserved.</p>
