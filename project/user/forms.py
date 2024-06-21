@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User
+from .models import *
 
 class UserRegistrationForm(forms.Form):
     TYPE_CHOICES = [
@@ -37,3 +38,23 @@ class LoginForm(forms.Form):
         attrs={'placeholder': 'Enter your username', 'required': True}))
     password = forms.CharField(label='Password', max_length=100, widget=forms.PasswordInput(
         attrs={'placeholder': 'Enter your password', 'minlength': 8, 'required': True}))
+
+class ExperienceForm(forms.ModelForm):
+    class Meta:
+        model = Exper
+        fields = ['company', 'start', 'end', 'description']
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['title', 'purpose', 'date']
+
+class LicenseForm(forms.ModelForm):
+    class Meta:
+        model = License
+        fields = ['name', 'purpose', 'provider', 'date']
+
+class CertForm(forms.ModelForm):
+    class Meta:
+        model = Cert
+        fields = ['title', 'where', 'start', 'end']

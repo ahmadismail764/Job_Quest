@@ -134,3 +134,60 @@ def delete_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     job.delete()
     return redirect('/admindashboard')
+
+@login_required(login_url='login')
+def add_experience(request):
+    if request.method == 'POST':
+        form = ExperienceForm(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            experience = form.save(commit=False)
+            experience.user_account = current_user
+            experience.save()
+            return redirect('userdashboard')
+    else:
+        form = ExperienceForm()
+    return render(request, 'addexperience.html', {'form': form})
+
+
+@login_required(login_url='login')
+def add_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            project = form.save(commit=False)
+            project.user_account = current_user
+            project.save()
+            return redirect('userdashboard')
+    else:
+        form = ProjectForm()
+    return render(request, 'addproject.html', {'form': form})
+
+@login_required(login_url='login')
+def add_license(request):
+    if request.method == 'POST':
+        form = LicenseForm(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            license = form.save(commit=False)
+            license.user_account = current_user
+            license.save()
+            return redirect('userdashboard')
+    else:
+        form = LicenseForm()
+    return render(request, 'addlicense.html', {'form': form})
+
+@login_required(login_url='login')
+def add_cert(request):
+    if request.method == 'POST':
+        form = CertForm(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            cert = form.save(commit=False)
+            cert.user_account = current_user
+            cert.save()
+            return redirect('userdashboard')
+    else:
+        form = CertForm()
+    return render(request, 'addcert.html', {'form': form})
