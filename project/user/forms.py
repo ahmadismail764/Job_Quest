@@ -42,7 +42,7 @@ class LoginForm(forms.Form):
 class ExperienceForm(forms.ModelForm):
     class Meta:
         model = Exper
-        fields = ['company', 'start', 'end', 'description']
+        fields = ['company', 'start', 'end']
 
 class ProjectForm(forms.ModelForm):
     class Meta:
@@ -52,9 +52,14 @@ class ProjectForm(forms.ModelForm):
 class LicenseForm(forms.ModelForm):
     class Meta:
         model = License
-        fields = ['name', 'purpose', 'provider', 'date']
+        fields = ['title', 'where', 'when']
 
 class CertForm(forms.ModelForm):
     class Meta:
         model = Cert
         fields = ['title', 'where', 'start', 'end']
+
+class AwardFrom(forms.ModelForm):
+    class Meta:
+        model = Award
+        fields = ['name', 'purpose', 'provider', 'date']
