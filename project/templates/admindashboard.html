@@ -77,11 +77,10 @@
                 </p>
                 <button>Edit</button>
                 <a href="/delete/{{jobs.id}}"><button>Delete</button></a>
-                {% comment %} {% if not forloop.last %}
+                {% if not forloop.last %}
                   <hr>
-                {% endif %} {% endcomment %}
+                {% endif %} 
               {%endfor%}
-                <hr />
                 <p class="button-container">
                   <a href="{% url 'post-job' %}"><button>Post New Job</button></a>
                 </p>

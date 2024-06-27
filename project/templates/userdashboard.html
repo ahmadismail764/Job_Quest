@@ -99,7 +99,7 @@
         <hr />
         <article class="certs">
           <section class="accepts-addition">
-            <h2>Experience</h2>
+            <h2>Awards</h2>
             <section>
               <dl class="list-for-addition">
                 {% for a in exper %}
@@ -110,7 +110,7 @@
               </dl>
             </section>
             <p class="button-container">
-              <button>Add Award</button>
+              <a href={%url 'add_award'%}><button>Add Award</button></a>
             </p>
           </section>
 
@@ -126,7 +126,7 @@
               {% endfor %}
             </dl>
             <p class="button-container">
-              <button>Add Project</button>
+              <a href={% url 'add_project' %}><button>Add Project</button></a>
             </p>
           </section>
         </article>
@@ -147,7 +147,6 @@
           </dl>
           <section class="button-holder">
             <button>Add Education</button>
-
           </section>
         </article>
         <hr />
@@ -167,7 +166,7 @@
               </dl>
             </section>
             <p class="button-container">
-              <button>Add License</button>
+              <a href={% url 'add_license' %}><button>Add License</button></a>
             </p>
           </section>
 
@@ -183,7 +182,7 @@
               {% endfor %}
             </dl>
             <p class="button-container">
-              <button>Add Certification</button>
+              <a href={% url 'add_cert' %}><button>Add Certification</button></a>
             </p>
           </section>
         </article>
