@@ -1,42 +1,82 @@
-# Job Quest
+# Job_Quest
 
-Welcome to the Job Quest project! This repository is designed to help you in your job search journey by providing useful resources, tips, and tools.
+## Project Overview
 
-## Introduction
-
-Job Quest is a comprehensive guide and toolkit for job seekers. Whether you are a recent graduate or an experienced professional, this project aims to support you in finding your next career opportunity.
+Job Quest is a job application platform designed to help users search for job listings, apply for positions, and manage applications efficiently. The platform provides both job seekers and employers with an intuitive interface to interact with job postings.
 
 ## Features
 
-- Resume and cover letter templates
-- Interview preparation tips
-- Job search strategies
-- Networking advice
-- Resource links
-
-## Technologies Used
-
-Job Quest utilizes a variety of technologies to provide a comprehensive toolkit for job seekers:
-
-- **JavaScript**: Used for interactive elements and enhancing user experience.
-- **Django**: A high-level Python web framework that enables rapid development and clean, pragmatic design.
-- **HTML**: The standard markup language for creating web pages.
-- **CSS**: Used for describing the presentation of a document written in HTML.
+- **User Authentication**: Sign up, log in, and manage profiles.
+- **Job Listings**: View available job postings with detailed descriptions.
+- **Application Management**: Apply for jobs and track application status.
+- **Employer Dashboard**: Employers can post new job listings and review applicants.
+- **Search & Filter**: Users can search for jobs based on criteria such as category, location, and type.
 
 ## Installation
 
-To get started with Job Quest, clone this repository to your local machine using the following command:
+To set up the project locally, follow these steps:
 
-```bash
-git clone https://github.com/your-username/Job_Quest.git
-```
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Python 3
+- Django
+
+### Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-repo/job_quest.git
+   cd job_quest
+   ```
+
+2. Create and activate a virtual environment:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Apply database migrations:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+5. Run the development server:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+6. Access the application at `http://127.0.0.1:8000/`
 
 ## Usage
 
-Explore the different sections of the repository to find the resources you need. Customize the templates and follow the tips to enhance your job search process.
+- **Job Seekers**: Register, search for jobs, and submit applications.
+- **Employers**: Create job listings, manage applications, and interact with candidates.
+- **Admin Panel**: Access Django's admin panel at `/admin/` with superuser credentials.
 
-## Contributing
+## Tech Stack
 
-We welcome contributions from the community! If you have any suggestions or improvements, please create a pull request or open an issue.
+- **Back-end**: Django (Python)
+- **Front-end**: HTML, CSS, JavaScript
+- **Database**: PostgreSQL (or SQLite for development)
+- **Version Control**: Git & GitHub
 
-Happy job hunting!
+## Contributors
+
+- **[Your Name]**
+- **[Team Member 1]**
+- **[Team Member 2]**
+- **[Team Member 3]**
+
+Feel free to update the contributors' section with the actual names and GitHub profiles of your team members!
