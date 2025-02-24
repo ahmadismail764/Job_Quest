@@ -73,10 +73,10 @@ Ensure you have the following installed:
 
 ## Contributors
 
-- **@ahmadismail764**
-- **@abdoahmed100**
-- **@BelalHendi**
-- **@mozidan12**
-- **@zzzeinhom**
+- **[@ahmadismail764](https://github.com/ahmadismail764)**
+- **[@abdoahmed100](https://github.com/abdoahmed100)**
+- **[@BelalHendi](https://github.com/BelalHendi)**
+- **[@mozidan12](https://github.com/mozidan12)**
+- **[@zzzeinhom](https://github.com/zzzeinhom)**
 
 Feel free to update the contributors' section with the actual names and GitHub profiles of your team members!
