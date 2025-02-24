@@ -69,14 +69,14 @@ Ensure you have the following installed:
 
 - **Back-end**: Django (Python)
 - **Front-end**: HTML, CSS, JavaScript
-- **Database**: PostgreSQL (or SQLite for development)
 - **Version Control**: Git & GitHub
 
 ## Contributors
 
-- **[Your Name]**
-- **[Team Member 1]**
-- **[Team Member 2]**
-- **[Team Member 3]**
+- **@ahmadismail764**
+- **@abdoahmed100**
+- **@BelalHendi**
+- **@mozidan12**
+- **@zzzeinhom**
 
 Feel free to update the contributors' section with the actual names and GitHub profiles of your team members!
