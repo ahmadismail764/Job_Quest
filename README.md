@@ -78,5 +78,3 @@ Ensure you have the following installed:
 - **[@BelalHendi](https://github.com/BelalHendi)**
 - **[@mozidan12](https://github.com/mozidan12)**
 - **[@zzzeinhom](https://github.com/zzzeinhom)**
-
-Feel free to update the contributors' section with the actual names and GitHub profiles of your team members!
