@@ -5,3 +5,4 @@ user/migrations/*
 jobs/__pycache__/*
 user/__pycache__/*
 project/__pycache__/*
+.vscode/*
