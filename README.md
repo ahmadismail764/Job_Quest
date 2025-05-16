@@ -83,4 +83,4 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ---
 
-**Made with 💙 by the Job_Quest Team**
+### **Made with 💙 by the Job_Quest Team**
