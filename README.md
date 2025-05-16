@@ -1,7 +1,5 @@
 # 🚀 **Job_Quest**
 
-![Job Quest Logo](project/static/img/logo.jpg#center)
-
 **Your Gateway to Career Success!**  
 *Find your dream job or the perfect candidate with a modern, intuitive platform.*
 
@@ -19,7 +17,7 @@
 - 📋 **Job Listings**: Browse and search for job postings with detailed descriptions and smart filtering.
 - 📨 **Application Management**: Apply for jobs, track your application status, and manage submissions.
 - 🧑‍💼 **Employer Dashboard**: Post new jobs, review applicants, and manage recruitment workflows.
-- 🔎 **Search & Filter**: Advanced search by category, location, and job type.
+- 🔎 **Search & Filter**: Advanced search filters.
 - 🛠️ **Admin Panel**: Full access to Django's admin interface for superuser management.
 
 ---
@@ -85,4 +83,4 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ---
 
-**<div align="center">Made with 💙 by the Job_Quest Team</div>**
+**Made with 💙 by the Job_Quest Team**
