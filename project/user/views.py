@@ -10,6 +10,7 @@ from django.views.decorators.csrf import csrf_protect
 from .models import *
 from .forms import *
 from jobs.models import Job, Application
+from .services import process_experience
 
 
 @csrf_protect
@@ -191,3 +192,28 @@ def add_cert(request):
     else:
         form = CertForm()
     return render(request, 'addcert.html', {'form': form})
+
+
+@login_required(login_url='login')
+def add_award(request):
+    if request.method == 'POST':
+        form = AwardFrom(request.POST)
+        if form.is_valid():
+            current_user = UserAccount.objects.get(user=request.user)
+            award = form.save(commit=False)
+            award.user_account = current_user
+            award.save()
+            return redirect('userdashboard')
+    else:
+        form = AwardFrom()
+    return render(request, 'add_award.html', {'form': form})
+
+@login_required(login_url='login')
+def add_exper(request):
+    if request.method == 'POST':
+        form = ExperienceForm(request.POST)
+        if form.is_valid():
+            process_experience(form.cleaned_data)
+    else:
+        form = ExperienceForm()
+    return render(request, 'add_exper.html', {'form': form})

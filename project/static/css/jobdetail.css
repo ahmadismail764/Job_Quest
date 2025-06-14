@@ -1,0 +1,274 @@
+/* Job Detail Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header1,
+.header2 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header1 img,
+.header2 img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.header1 figcaption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.header2 figcaption {
+  color: #34495e;
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: #34495e;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #3498db;
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+#job-details {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#title {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 2rem;
+  margin: 0;
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.detail {
+  padding: 2rem;
+}
+
+.detail h3 {
+  color: #2c3e50;
+  margin: 1.5rem 0 0.5rem 0;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.detail h3::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #3498db, #1abc9c);
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.detail h3:first-child {
+  margin-top: 0;
+}
+
+.detail p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+#company {
+  color: #3498db;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#description {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+#requirements {
+  background: #fff5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+}
+
+#location {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+#experience {
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+#salary {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#overview {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#overview:hover {
+  text-decoration: underline;
+}
+
+/* Apply Button */
+.apply-button-container {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+.apply-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  color: white;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.apply-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
+  background: linear-gradient(45deg, #229954, #27ae60);
+}
+
+/* Footer */
+footer {
+  background: rgba(44, 62, 80, 0.95);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+footer h3 a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+footer nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+footer nav a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: #3498db;
+}
+
+footer p {
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #title {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+
+  .detail {
+    padding: 1.5rem;
+  }
+
+  .apply-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+}

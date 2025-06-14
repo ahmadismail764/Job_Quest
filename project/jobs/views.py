@@ -7,6 +7,7 @@ from .models import Job
 from user.models import UserAccount
 from .forms import ApplicationForm, JobForm, SearchForm
 from django.db.models import Q
+from .services import process_job, process_application
 
 
 @login_required(login_url='login')
@@ -75,4 +76,14 @@ def post_job(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def add_job(request):
+    if request.method == 'POST':
+        process_job(request.POST)
+    return render(request, 'add_job.html')
+
+def add_application(request):
+    if request.method == 'POST':
+        process_application(request.POST)
+    return render(request, 'add_application.html')
 
