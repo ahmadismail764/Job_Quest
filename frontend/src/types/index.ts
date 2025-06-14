@@ -24,22 +24,29 @@ export interface UserProfile {
 }
 
 export interface Job {
-  id: number;
+  id: string;
   title: string;
   company: string;
   description: string;
-  requirements: string;
+  requirements: string[];
   location: string;
+  salary?: string;
+  type: "Full-time" | "Part-time" | "Contract" | "Freelance" | "Internship";
+  postedDate: string;
+  applicationDeadline: string;
+  isRemote: boolean;
+  tags: string[];
+  // Legacy fields for Django compatibility
   salary_min?: number;
   salary_max?: number;
-  job_type: "full_time" | "part_time" | "contract" | "internship" | "remote";
-  category: string;
-  is_active: boolean;
-  posted_by: User;
-  created_at: string;
-  updated_at: string;
+  job_type?: "full_time" | "part_time" | "contract" | "internship" | "remote";
+  category?: string;
+  is_active?: boolean;
+  posted_by?: User;
+  created_at?: string;
+  updated_at?: string;
   deadline?: string;
-  experience_level: "entry" | "mid" | "senior" | "executive";
+  experience_level?: "entry" | "mid" | "senior" | "executive";
 }
 
 export interface Application {
