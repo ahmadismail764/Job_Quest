@@ -148,17 +148,6 @@ export interface Certificate {
   credential_url?: string;
 }
 
-export interface License {
-  id: number;
-  user_account: number;
-  title: string;
-  issuing_organization: string;
-  issue_date: string;
-  expiration_date?: string;
-  credential_id?: string;
-  credential_url?: string;
-}
-
 export interface Award {
   id: number;
   user_account: number;
@@ -169,26 +158,85 @@ export interface Award {
   url?: string;
 }
 
-export interface Interest {
+export interface Application {
   id: number;
-  user_account: number;
+  job: Job;
+  applicant: User;
+  cover_letter: string;
+  resume?: string;
+  status: "pending" | "reviewed" | "interview" | "accepted" | "rejected";
+  applied_at: string;
+  updated_at: string;
+  notes?: string;
+}
+
+export interface Award {
+  id: number;
+  user: User;
   title: string;
-  since: string;
+  organization: string;
+  date_received: string;
+  description?: string;
+}
+
+export interface Certificate {
+  id: number;
+  user: User;
+  name: string;
+  issuing_organization: string;
+  issue_date: string;
+  expiry_date?: string;
+  credential_id?: string;
+  credential_url?: string;
+}
+
+export interface Experience {
+  id: number;
+  user: User;
+  company: string;
+  position: string;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  description: string;
+  location?: string;
+}
+
+export interface License {
+  id: number;
+  user: User;
+  name: string;
+  issuing_authority: string;
+  license_number: string;
+  issue_date: string;
+  expiry_date?: string;
+}
+
+export interface Project {
+  id: number;
+  user: User;
+  title: string;
+  description: string;
+  technologies_used: string[];
+  start_date: string;
+  end_date?: string;
+  project_url?: string;
+  github_url?: string;
+  is_featured: boolean;
 }
 
 // API Response types
-export interface AuthResponse {
-  access: string;
-  refresh: string;
-  user: User;
-  profile: UserProfile;
+export interface ApiResponse<T> {
+  data: T;
+  message?: string;
+  success: boolean;
 }
 
 export interface PaginatedResponse<T> {
+  results: T[];
   count: number;
   next?: string;
   previous?: string;
-  results: T[];
 }
 
 // Form types
@@ -201,10 +249,10 @@ export interface SignupForm {
   username: string;
   email: string;
   password: string;
-  confirmPassword: string;
+  confirm_password: string;
+  type_job: "job_seeker" | "employer";
   first_name: string;
   last_name: string;
-  type_job: "job_seeker" | "employer";
 }
 
 export interface JobApplicationForm {
@@ -212,22 +260,54 @@ export interface JobApplicationForm {
   resume?: File;
 }
 
-export interface JobSearchParams {
-  search?: string;
-  location?: string;
-  job_type?: string;
-  experience_level?: string;
-  is_remote?: boolean;
-  company?: string;
-  ordering?: string;
-  page?: number;
+export interface JobPostForm {
+  title: string;
+  company: string;
+  description: string;
+  requirements: string;
+  location: string;
+  salary_min?: number;
+  salary_max?: number;
+  job_type: "full_time" | "part_time" | "contract" | "internship" | "remote";
+  category: string;
+  deadline?: string;
+  experience_level: "entry" | "mid" | "senior" | "executive";
 }
 
-export interface CompanySearchParams {
+// Filter types
+export interface JobFilters {
   search?: string;
-  industry?: string;
-  size?: string;
   location?: string;
-  ordering?: string;
-  page?: number;
+  job_type?: string[];
+  category?: string;
+  salary_min?: number;
+  salary_max?: number;
+  experience_level?: string[];
+  company?: string;
+  posted_within?: "day" | "week" | "month";
+}
+
+// State types
+export interface AuthState {
+  user: User | null;
+  profile: UserProfile | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  error: string | null;
+}
+
+export interface JobState {
+  jobs: Job[];
+  currentJob: Job | null;
+  filters: JobFilters;
+  isLoading: boolean;
+  error: string | null;
+  totalCount: number;
+  currentPage: number;
+}
+
+export interface ApplicationState {
+  applications: Application[];
+  isLoading: boolean;
+  error: string | null;
 }

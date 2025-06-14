@@ -39,25 +39,25 @@ class LoginForm(forms.Form):
 
 class ExperienceForm(forms.ModelForm):
     class Meta:
-        model = Exper
-        fields = ['company', 'start', 'end']
+        model = Experience
+        fields = ['company', 'position', 'description', 'start_date', 'end_date', 'is_current']
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['title', 'purpose', 'date']
+        fields = ['title', 'description', 'technologies', 'url', 'github_url', 'start_date', 'end_date']
 
 class LicenseForm(forms.ModelForm):
     class Meta:
         model = License
-        fields = ['title', 'where', 'when']
+        fields = ['title', 'issuing_organization', 'issue_date', 'expiration_date', 'credential_id', 'credential_url']
 
-class CertForm(forms.ModelForm):
+class CertificateForm(forms.ModelForm):
     class Meta:
-        model = Cert
-        fields = ['title', 'where', 'start', 'end']
+        model = Certificate
+        fields = ['title', 'issuing_organization', 'issue_date', 'expiration_date', 'credential_id', 'credential_url']
 
-class AwardFrom(forms.ModelForm):
+class AwardForm(forms.ModelForm):
     class Meta:
         model = Award
-        fields = ['name', 'purpose', 'provider', 'date']
+        fields = ['name', 'description', 'issuing_organization', 'date_received', 'url']

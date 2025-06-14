@@ -96,7 +96,7 @@ def admindashboard(request):
         return redirect('userdashboard')
     posted_jobs = Job.objects.filter(posted_by=current_user)
     award = Award.objects.filter(user_account=current_user)
-    cert = Cert.objects.filter(user_account=current_user)
+    cert = Certificate.objects.filter(user_account=current_user)
     context = {
         'user': current_user,
         'posted_jobs': posted_jobs,
@@ -112,10 +112,10 @@ def userdashboard(request):
     if current_user.type_job == 'admin':
         return redirect('admindashboard')
     applied_jobs = Application.objects.filter(applied_by=current_user)
-    exper = Exper.objects.filter(user_account=current_user)
+    exper = Experience.objects.filter(user_account=current_user)
     project = Project.objects.filter(user_account=current_user)
     lics = License.objects.filter(user_account=current_user)
-    cert = Cert.objects.filter(user_account=current_user)
+    cert = Certificate.objects.filter(user_account=current_user)
     interests = Interest.objects.filter(user_account=current_user)
     skills = Skill.objects.filter(user_account=current_user)
     context = {
@@ -182,7 +182,7 @@ def add_license(request):
 @login_required(login_url='login')
 def add_cert(request):
     if request.method == 'POST':
-        form = CertForm(request.POST)
+        form = CertificateForm(request.POST)
         if form.is_valid():
             current_user = UserAccount.objects.get(user=request.user)
             cert = form.save(commit=False)
@@ -190,22 +190,21 @@ def add_cert(request):
             cert.save()
             return redirect('userdashboard')
     else:
-        form = CertForm()
+        form = CertificateForm()
     return render(request, 'addcert.html', {'form': form})
 
 
 @login_required(login_url='login')
 def add_award(request):
     if request.method == 'POST':
-        form = AwardFrom(request.POST)
+        form = AwardForm(request.POST)
         if form.is_valid():
             current_user = UserAccount.objects.get(user=request.user)
             award = form.save(commit=False)
             award.user_account = current_user
             award.save()
             return redirect('userdashboard')
-    else:
-        form = AwardFrom()
+    else:        form = AwardForm()
     return render(request, 'add_award.html', {'form': form})
 
 @login_required(login_url='login')
