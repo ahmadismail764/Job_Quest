@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   MagnifyingGlassIcon,
@@ -10,135 +10,55 @@ import {
   StarIcon,
   ArrowTopRightOnSquareIcon,
 } from "@heroicons/react/24/outline";
-
-interface Company {
-  id: string;
-  name: string;
-  logo?: string;
-  industry: string;
-  location: string;
-  size: string;
-  description: string;
-  openJobs: number;
-  rating: number;
-  website: string;
-  founded: string;
-  tags: string[];
-}
-
-// Mock company data
-const mockCompanies: Company[] = [
-  {
-    id: "1",
-    name: "TechCorp Inc.",
-    industry: "Technology",
-    location: "San Francisco, CA",
-    size: "500-1000 employees",
-    description:
-      "Leading technology company building innovative software solutions for businesses worldwide.",
-    openJobs: 12,
-    rating: 4.5,
-    website: "https://techcorp.com",
-    founded: "2015",
-    tags: [
-      "Remote Friendly",
-      "Great Benefits",
-      "Innovation",
-      "Work-Life Balance",
-    ],
-  },
-  {
-    id: "2",
-    name: "StartupXYZ",
-    industry: "Financial Technology",
-    location: "New York, NY",
-    size: "50-100 employees",
-    description:
-      "Fast-growing fintech startup revolutionizing digital payments and financial services.",
-    openJobs: 8,
-    rating: 4.2,
-    website: "https://startupxyz.com",
-    founded: "2020",
-    tags: ["Startup", "Equity", "Fast Growth", "Innovation"],
-  },
-  {
-    id: "3",
-    name: "InnovateLabs",
-    industry: "Healthcare Technology",
-    location: "Boston, MA",
-    size: "200-500 employees",
-    description:
-      "Healthcare technology company developing cutting-edge medical software and devices.",
-    openJobs: 15,
-    rating: 4.7,
-    website: "https://innovatelabs.com",
-    founded: "2018",
-    tags: ["Healthcare", "Impact", "R&D", "Remote Friendly"],
-  },
-  {
-    id: "4",
-    name: "CloudFirst",
-    industry: "Cloud Computing",
-    location: "Seattle, WA",
-    size: "1000+ employees",
-    description:
-      "Enterprise cloud solutions provider helping businesses scale their infrastructure.",
-    openJobs: 25,
-    rating: 4.3,
-    website: "https://cloudfirst.com",
-    founded: "2012",
-    tags: ["Enterprise", "Cloud", "Scalable", "Learning"],
-  },
-  {
-    id: "5",
-    name: "DesignStudio",
-    industry: "Design & Creative",
-    location: "Los Angeles, CA",
-    size: "10-50 employees",
-    description:
-      "Creative design agency specializing in brand identity, UX/UI design, and digital experiences.",
-    openJobs: 3,
-    rating: 4.8,
-    website: "https://designstudio.com",
-    founded: "2019",
-    tags: ["Creative", "Design", "Collaborative", "Portfolio"],
-  },
-  {
-    id: "6",
-    name: "DataCorp",
-    industry: "Data & Analytics",
-    location: "Austin, TX",
-    size: "100-200 employees",
-    description:
-      "Data analytics company providing business intelligence and machine learning solutions.",
-    openJobs: 7,
-    rating: 4.4,
-    website: "https://datacorp.com",
-    founded: "2017",
-    tags: ["Data Science", "AI/ML", "Analytics", "Remote Friendly"],
-  },
-];
+import { Company } from "@/types";
+import { companiesApi } from "@/lib/api";
 
 export default function CompaniesPage() {
   const router = useRouter();
+  const [companies, setCompanies] = useState<Company[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [industryFilter, setIndustryFilter] = useState("");
   const [sizeFilter, setSizeFilter] = useState("");
-  const [filteredCompanies, setFilteredCompanies] = useState(mockCompanies);
+  const [filteredCompanies, setFilteredCompanies] = useState<Company[]>([]);
+
+  // Fetch companies from API
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      try {
+        setLoading(true);
+        const params = {
+          search: searchTerm || undefined,
+        };
+
+        const response = await companiesApi.getCompanies(params);
+        setCompanies(response.results || []);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching companies:", err);
+        setError("Failed to fetch companies. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCompanies();
+  }, [searchTerm]);
 
   const industries = [
-    ...new Set(mockCompanies.map((company) => company.industry)),
+    ...new Set(companies.map((company) => company.industry).filter(Boolean)),
   ];
-  const sizes = [...new Set(mockCompanies.map((company) => company.size))];
-
-  const handleSearch = () => {
-    const filtered = mockCompanies.filter((company) => {
+  const sizes = [
+    ...new Set(companies.map((company) => company.size).filter(Boolean)),
+  ];
+  // Filter companies based on search and filters
+  useEffect(() => {
+    const filtered = companies.filter((company) => {
       const matchesSearch =
+        !searchTerm ||
         company.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        company.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        company.tags.some((tag) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        company.description.toLowerCase().includes(searchTerm.toLowerCase());
 
       const matchesIndustry =
         !industryFilter || company.industry === industryFilter;
@@ -148,13 +68,12 @@ export default function CompaniesPage() {
     });
 
     setFilteredCompanies(filtered);
-  };
+  }, [companies, searchTerm, industryFilter, sizeFilter]);
 
   const resetFilters = () => {
     setSearchTerm("");
     setIndustryFilter("");
     setSizeFilter("");
-    setFilteredCompanies(mockCompanies);
   };
 
   const renderStars = (rating: number) => {
@@ -172,6 +91,33 @@ export default function CompaniesPage() {
       </div>
     );
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading companies...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 mb-4">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -201,7 +147,6 @@ export default function CompaniesPage() {
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
-
               {/* Industry Filter */}
               <div>
                 <select
@@ -217,7 +162,6 @@ export default function CompaniesPage() {
                   ))}
                 </select>
               </div>
-
               {/* Size Filter */}
               <div>
                 <select
@@ -232,19 +176,12 @@ export default function CompaniesPage() {
                     </option>
                   ))}
                 </select>
-              </div>
-
-              {/* Search Button */}
-              <div className="flex space-x-2">
-                <button
-                  onClick={handleSearch}
-                  className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-                >
-                  Search
-                </button>
+              </div>{" "}
+              {/* Reset Button */}
+              <div>
                 <button
                   onClick={resetFilters}
-                  className="px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Reset
                 </button>
@@ -258,8 +195,7 @@ export default function CompaniesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-6">
           <p className="text-gray-600">
-            Showing {filteredCompanies.length} of {mockCompanies.length}{" "}
-            companies
+            Showing {filteredCompanies.length} of {companies.length} companies
           </p>
           <select className="border border-gray-300 rounded-lg px-4 py-2">
             <option>Sort by: Name</option>
@@ -309,12 +245,12 @@ export default function CompaniesPage() {
                 </div>
                 <div className="flex items-center text-gray-600 text-sm">
                   <UserGroupIcon className="h-4 w-4 mr-2" />
-                  {company.size}
+                  {company.size}{" "}
                 </div>
                 <div className="flex items-center justify-between">
                   {renderStars(company.rating)}
                   <span className="text-sm text-blue-600 font-medium">
-                    {company.openJobs} open jobs
+                    View Details
                   </span>
                 </div>
               </div>
@@ -324,19 +260,21 @@ export default function CompaniesPage() {
                 {company.description}
               </p>
 
-              {/* Tags */}
+              {/* Company Info */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {company.tags.slice(0, 3).map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs"
-                  >
-                    {tag}
+                {company.industry && (
+                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs">
+                    {company.industry}
                   </span>
-                ))}
-                {company.tags.length > 3 && (
-                  <span className="text-gray-500 text-xs">
-                    +{company.tags.length - 3} more
+                )}
+                {company.size && (
+                  <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+                    {company.size}
+                  </span>
+                )}
+                {company.founded && (
+                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs">
+                    Founded {company.founded}
                   </span>
                 )}
               </div>
