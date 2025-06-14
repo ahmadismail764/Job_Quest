@@ -1,15 +1,16 @@
 from django.urls import path
 from . import views
-from .views import *
-from jobs.views import *
 
+# Temporary: Keep essential views until we fully migrate to API
 urlpatterns = [
     path('', views.home, name='home'),
-    path('signup/', views.signup, name='signup'),
     path('login/', views.login_user, name='login'),
+    path('signup/', views.signup, name='signup'),
     path('logout/', views.logout_view, name='logout'),
-    path('admindashboard/', views.admindashboard, name='admindashboard'),
-    path('userdashboard/', views.userdashboard, name='userdashboard'),
+    path('dashboard/', views.userdashboard, name='userdashboard'),
+    path('admin-dashboard/', views.admindashboard, name='admindashboard'),
+    
+    # These will be removed once frontend is connected
     path('add_award/', views.add_award, name='add_award'),
     path('add_cert/', views.add_cert, name='add_cert'),
     path('add_exper/', views.add_exper, name='add_exper'),

@@ -55,8 +55,7 @@ def apply_for_job(request, job_id):
         current_user = UserAccount.objects.get(user=request.user)
         application = form.save(commit=False)
         application.job = job
-        application.applied_by = current_user
-        job.applied_by.add(current_user)
+        application.applicant = current_user
         application.save()
         return redirect('job-detail', job_id=job.id)
     return render(request, 'jobapp.html', {'form': form})

@@ -111,7 +111,7 @@ def userdashboard(request):
     current_user = UserAccount.objects.get(user=request.user)
     if current_user.type_job == 'admin':
         return redirect('admindashboard')
-    applied_jobs = Application.objects.filter(applied_by=current_user)
+    applied_jobs = Application.objects.filter(applicant=current_user)
     exper = Experience.objects.filter(user_account=current_user)
     project = Project.objects.filter(user_account=current_user)
     lics = License.objects.filter(user_account=current_user)

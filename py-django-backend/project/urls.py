@@ -19,6 +19,12 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # API endpoints (main interface)
+    path('api/', include('jobs.api_urls')),
+    path('api/user/', include('user.api_urls')),
+    
+    # Temporary: Keep legacy routes until frontend is fully connected
     path('', include('user.urls')),
     path('jobs/', include('jobs.urls')),
 ]
