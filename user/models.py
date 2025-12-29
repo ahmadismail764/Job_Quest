@@ -34,7 +34,7 @@ class Education(models.Model):
     type = models.CharField(max_length=20, null=False, blank=False, choices=(
         ('high_school', 'High School'), ('bachelor', 'Bachelor'), ('master', 'Master'), ('doctorate', 'Doctorate')))
     institute = models.CharField(max_length=100)
-    start = models.CharField(max_length=100)
+    start = models.DateField(default=timezone.now, null=True)
     end = models.DateField(default=timezone.now, null=True)
 
 
@@ -42,7 +42,7 @@ class License(models.Model):
     user_account = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     where = models.CharField(max_length=100)
-    when = models.CharField(max_length=100)
+    when = models.DateField(default=timezone.now, null=True)
 
 
 class Cert(models.Model):
