@@ -1,7 +1,7 @@
 # 🚀 **Job_Quest**
 
 **Your Gateway to Career Success!**  
-*Find your dream job or the perfect candidate with a modern, intuitive platform.*
+_Find your dream job or the perfect candidate with a modern, intuitive platform._
 
 ---
 
@@ -67,9 +67,9 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## 🛠️ Tech Stack
 
-| Back-end | Front-end      | Version Control |
-|----------|----------------|-----------------|
-| Django   | HTML, CSS, JS  | Git & GitHub    |
+| Back-end | Front-end     | Version Control |
+| -------- | ------------- | --------------- |
+| Django   | HTML, CSS, JS | Git & GitHub    |
 
 ---
 

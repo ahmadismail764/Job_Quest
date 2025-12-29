@@ -1,7 +1,11 @@
+# Pycache files
+__pycache__/
 *.pyc
-*.sqlite3
-*/migrations/*
-*/__pycache__/*
+
+# Database destruction
+migrations/*
 .vscode/*
+
+# Virtual envs and configs etc
 .venv/
 .env

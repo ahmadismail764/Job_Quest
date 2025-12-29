@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from user.models import UserAccount
+from app_core_users.models import UserAccount
 
 
 class Job(models.Model):

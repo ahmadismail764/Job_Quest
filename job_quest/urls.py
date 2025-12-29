@@ -1,5 +1,5 @@
 """
-URL configuration for project project.
+URL configuration for job_quest project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -19,6 +19,6 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('user.urls')),
-    path('jobs/', include('jobs.urls')),
+    path('', include('app_core_users.urls')),
+    path('jobs/', include('app_jobs.urls')),
 ]

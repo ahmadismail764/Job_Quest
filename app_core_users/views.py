@@ -2,15 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as auth_logout
-from .forms import UserRegistrationForm
-from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 
-from .models import *
-from .forms import *
-from jobs.models import Job, Application
-from .services import process_experience
+from .models import UserAccount, Award, Cert, Exper, Project, License, Interest, Skill
+from .forms import UserRegistrationForm, LoginForm, ExperienceForm, ProjectForm, LicenseForm, CertForm, AwardFrom
+from app_jobs.models import Job, Application
 
 
 @csrf_protect
@@ -33,7 +30,7 @@ def login_user(request):
     else:
         form = LoginForm()
 
-    return render(request, 'login.html', {'form': form, 'error_message': error_message})
+    return render(request, 'user/login.html', {'form': form, 'error_message': error_message})
 
 
 def signup(request):
@@ -48,10 +45,10 @@ def signup(request):
 
             # Check if the username already exists
             if User.objects.filter(username=username).exists():
-                return render(request, 'signup.html', {'form': form, 'error_message': 'Username already exists. Please choose a different username.'})
+                return render(request, 'user/signup.html', {'form': form, 'error_message': 'Username already exists. Please choose a different username.'})
 
             if user_type == 'admin' and not company_name:
-                return render(request, 'signup.html', {'form': form, 'error_message': 'Company Name is required for Company Admin.'})
+                return render(request, 'user/signup.html', {'form': form, 'error_message': 'Company Name is required for Company Admin.'})
 
             user = User.objects.create_user(
                 username=username, email=email, password=password)
@@ -77,7 +74,7 @@ def signup(request):
     else:
         form = UserRegistrationForm()
 
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'user/signup.html', {'form': form})
 
 
 def logout_view(request):
@@ -86,7 +83,7 @@ def logout_view(request):
 
 
 def home(request):
-    return render(request, 'homepage.html')
+    return render(request, 'user/homepage.html')
 
 
 @login_required(login_url='login')
@@ -103,7 +100,7 @@ def admindashboard(request):
         'award': award,
         'cert': cert,
     }
-    return render(request, 'admindashboard.html', context)
+    return render(request, 'user/admindashboard.html', context)
 
 
 @login_required(login_url='login')
@@ -128,27 +125,13 @@ def userdashboard(request):
         'interests': interests,
         'skills': skills,
     }
-    return render(request, 'userdashboard.html', context)
+    return render(request, 'user/userdashboard.html', context)
 
 @login_required(login_url='login')
 def delete_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
     job.delete()
     return redirect('/admindashboard')
-
-@login_required(login_url='login')
-def add_experience(request):
-    if request.method == 'POST':
-        form = ExperienceForm(request.POST)
-        if form.is_valid():
-            current_user = UserAccount.objects.get(user=request.user)
-            experience = form.save(commit=False)
-            experience.user_account = current_user
-            experience.save()
-            return redirect('userdashboard')
-    else:
-        form = ExperienceForm()
-    return render(request, 'addexperience.html', {'form': form})
 
 
 @login_required(login_url='login')
@@ -163,7 +146,7 @@ def add_project(request):
             return redirect('userdashboard')
     else:
         form = ProjectForm()
-    return render(request, 'addproject.html', {'form': form})
+    return render(request, 'user/add_project.html', {'form': form})
 
 @login_required(login_url='login')
 def add_license(request):
@@ -177,7 +160,7 @@ def add_license(request):
             return redirect('userdashboard')
     else:
         form = LicenseForm()
-    return render(request, 'addlicense.html', {'form': form})
+    return render(request, 'user/add_license.html', {'form': form})
 
 @login_required(login_url='login')
 def add_cert(request):
@@ -191,7 +174,7 @@ def add_cert(request):
             return redirect('userdashboard')
     else:
         form = CertForm()
-    return render(request, 'addcert.html', {'form': form})
+    return render(request, 'user/add_cert.html', {'form': form})
 
 
 @login_required(login_url='login')
@@ -206,14 +189,18 @@ def add_award(request):
             return redirect('userdashboard')
     else:
         form = AwardFrom()
-    return render(request, 'add_award.html', {'form': form})
+    return render(request, 'user/add_award.html', {'form': form})
 
 @login_required(login_url='login')
 def add_exper(request):
     if request.method == 'POST':
         form = ExperienceForm(request.POST)
         if form.is_valid():
-            process_experience(form.cleaned_data)
+            current_user = UserAccount.objects.get(user=request.user)
+            experience = form.save(commit=False)
+            experience.user_account = current_user
+            experience.save()
+            return redirect('userdashboard')
     else:
         form = ExperienceForm()
-    return render(request, 'add_exper.html', {'form': form})
+    return render(request, 'user/add_exper.html', {'form': form})
