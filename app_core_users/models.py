@@ -12,7 +12,8 @@ class UserAccount(models.Model):
     email = models.EmailField(default='default@default.com')
 
     def __str__(self):
-        return self.user.username
+        if self.user: 
+            return self.user.username
 
 
 class Exper(models.Model):
